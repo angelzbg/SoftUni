@@ -1,0 +1,1 @@
+(input) => console.log(input.slice(1).reduce( (a,b) => { return Number(a)+Number(b)}, 0 ));

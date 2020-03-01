@@ -1,0 +1,1 @@
+(input) => console.log(Number(input[0]) > Number(input[1]) ? input[0] : input[1])

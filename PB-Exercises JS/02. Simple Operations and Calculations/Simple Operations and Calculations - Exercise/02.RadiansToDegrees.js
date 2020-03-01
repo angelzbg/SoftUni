@@ -1,0 +1,1 @@
+(input) => console.log((Number(input.shift())*(180/Math.PI)).toFixed(0))

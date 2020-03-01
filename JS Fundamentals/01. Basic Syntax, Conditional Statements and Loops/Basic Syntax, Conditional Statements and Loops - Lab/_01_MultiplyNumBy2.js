@@ -1,0 +1,1 @@
+(input) => console.log(input*2)

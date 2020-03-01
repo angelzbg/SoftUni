@@ -1,0 +1,1 @@
+(input) => console.log((Number(input.shift())*2.5+Number(input.shift())*4).toFixed(2) + " lv.")

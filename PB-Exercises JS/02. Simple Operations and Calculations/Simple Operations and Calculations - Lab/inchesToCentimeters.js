@@ -1,0 +1,1 @@
+(input) => console.log(Number(input.shift())*2.54)

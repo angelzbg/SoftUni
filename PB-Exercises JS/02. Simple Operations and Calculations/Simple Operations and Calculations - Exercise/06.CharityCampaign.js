@@ -1,0 +1,1 @@
+(input) => console.log(((Number(input[0]) * (Number(input[1]) * ((Number(input[2])*45) + (Number(input[3])*5.80) + (Number(input[4])*3.20))))*0.875).toFixed(2));

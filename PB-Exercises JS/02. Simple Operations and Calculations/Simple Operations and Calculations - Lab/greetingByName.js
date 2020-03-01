@@ -1,0 +1,1 @@
+(input) => console.log(`Hello, ${input.shift()}!`)

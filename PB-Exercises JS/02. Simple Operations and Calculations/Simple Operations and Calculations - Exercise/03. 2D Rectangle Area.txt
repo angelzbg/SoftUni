@@ -1,0 +1,6 @@
+(input) => {
+  const x1 = Number(input.shift()), y1 = Number(input.shift()),
+  		x2 = Number(input.shift()), y2 = Number(input.shift()),
+  		length = Math.abs(x1-x2), width = Math.abs(y1-y2);
+  console.log((length*width).toFixed(2) + "\n" + (2*(width+length)).toFixed(2));
+}

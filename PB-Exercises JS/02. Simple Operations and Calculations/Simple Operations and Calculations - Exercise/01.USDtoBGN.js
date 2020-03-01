@@ -1,0 +1,1 @@
+(input) => console.log((Number(input.shift())*1.79549).toFixed(2))

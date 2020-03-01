@@ -1,0 +1,1 @@
+(input) => console.log(`The architect ${input.shift()} will need ${Number(input[0])*3} hours to complete ${input.shift()} project/s.`)
