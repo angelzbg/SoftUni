@@ -8,7 +8,7 @@
             else guests.push(cmd[0]);
         } else { // not
             if(index === -1) console.log(`${cmd[0]} is not in the list!`);
-            else guests.splice(index, 0);
+            else guests.splice(index, 1);
         }
     }
 
