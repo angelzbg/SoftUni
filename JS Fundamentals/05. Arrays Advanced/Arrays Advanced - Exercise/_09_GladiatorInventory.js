@@ -1,4 +1,4 @@
-(input) => {
+gladiatorInventory = (input) => {
     // Porednata piqna zadacha ot softuni
     let inventory = input.shift().split(' ');
     input.forEach(line => {
@@ -11,8 +11,7 @@
         } else if(cmd === 'Repair') {
             let index = inventory.indexOf(args);
             if(index > -1) {
-                inventory.splice(index, 1);
-                inventory.push(args);
+                inventory.push(inventory.splice(index, 1));
             }
         } else { // 'Upgrade'
             let [ equipment, upgrade ] = args.split('-');
@@ -24,3 +23,14 @@
     });
     console.log(inventory.join(' '));
 }
+
+gladiatorInventory(['SWORD Shield Spear',
+'Buy Bag',
+'Trash Shield',
+'Repair Spear',
+'Upgrade SWORD-Steel']);
+
+gladiatorInventory(['SWORD Shield Spear',
+'Trash Bow',
+'Repair Shield',
+'Upgrade Helmet-V']);
