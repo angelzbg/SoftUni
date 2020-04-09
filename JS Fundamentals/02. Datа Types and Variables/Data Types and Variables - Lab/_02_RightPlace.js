@@ -1,4 +1,1 @@
-(missing, ch, word) => {
-    if(word === missing.replace('_', ch)) console.log('Matched');
-    else console.log('Not Matched');
-}
+rightPlace = (missing, ch, word) => console.log(word === missing.replace('_', ch) ? 'Matched' : 'Not Matched');

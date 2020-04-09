@@ -1,4 +1,4 @@
-(n) => {
+chessBoard = (n) => {
     let html = '<div class="chessboard">';
     for(let i=1; i<=n; i++) {
         html += '\n  <div>';

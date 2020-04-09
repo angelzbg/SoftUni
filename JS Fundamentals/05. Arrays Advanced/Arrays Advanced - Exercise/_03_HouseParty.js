@@ -1,4 +1,4 @@
-(input) => {
+houseParty = (input) => {
     let guests = [];
     while(input.length > 0) {
         let cmd = input.shift().split(' ');

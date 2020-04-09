@@ -1,4 +1,4 @@
-(num) => {
+triplesOfLatinLetters = (num) => {
     let n = Number(num);
     for(let i = 0; i < n; i++){
         let firstLetter = String.fromCharCode(i + 97);

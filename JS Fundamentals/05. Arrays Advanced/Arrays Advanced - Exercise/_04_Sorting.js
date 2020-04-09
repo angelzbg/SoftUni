@@ -1,4 +1,4 @@
-(arr) => {
+sorting = (arr) => {
     let ascending = arr.sort( (a, b) => { return a-b; } );
     let descending = ascending.slice(0).reverse();
     let result = [];

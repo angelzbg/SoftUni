@@ -1,4 +1,4 @@
-(arr) => {
+evenOddSubtraction = (arr) => {
     let even = 0, odd = 0;
     arr.forEach(el => {
         if(el % 2 == 0) even += el;

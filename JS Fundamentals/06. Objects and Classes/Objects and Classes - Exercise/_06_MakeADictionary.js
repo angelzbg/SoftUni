@@ -1,4 +1,4 @@
-(input) => {
+makeDictionary = (input) => {
     let dictionary = {};
     input.forEach(line => {
         let obj = JSON.parse(line);

@@ -1,4 +1,4 @@
-(input) => {
+jansNotation = (input) => {
     let nums = [];
     while(input.length > 0) {
         let whatever = input.shift();

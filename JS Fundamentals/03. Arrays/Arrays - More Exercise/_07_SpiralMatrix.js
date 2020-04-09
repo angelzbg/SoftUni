@@ -1,4 +1,4 @@
-(rows, cols) => {
+spiralMatrix = (rows, cols) => {
     let count=0, maxCount=rows*cols, minRow=0, minCol=0, maxRow=rows-1, maxCol=cols-1;
 
     let matrix = [];

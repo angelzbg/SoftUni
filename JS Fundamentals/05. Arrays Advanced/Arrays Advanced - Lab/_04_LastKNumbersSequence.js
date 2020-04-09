@@ -1,4 +1,4 @@
-(n, k) => {
+lastKNumbersSequence = (n, k) => {
     let numbers = [ 1 ];
 
     for(let i=1; i<n; i++) {

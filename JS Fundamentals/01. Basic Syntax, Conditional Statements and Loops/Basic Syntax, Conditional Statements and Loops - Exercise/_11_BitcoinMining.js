@@ -1,5 +1,4 @@
-(arrIn) => {
- 
+bitcoinMining = (arrIn) => {
     let array = arrIn.slice(0, 999);
     let dayCounter = 0;
     let totalGold = 0;
@@ -8,9 +7,7 @@
     let moneyLeft = 0;
     let firstCoinDay = 0;
     let bool = true;
-    array.forEach(func);
- 
-    function func(gold, index) {
+    array.forEach((gold, index) => {
         dayCounter = index + 1;
         if (dayCounter % 3 == 0) {
             gold = gold * 0.7;
@@ -22,7 +19,8 @@
             firstCoinDay = dayCounter;
             bool = false;
         }
-    }
+    });
+
     bitcoins = Math.floor(money / 11949.16);
     moneyLeft = (money % 11949.16).toFixed(2);
  

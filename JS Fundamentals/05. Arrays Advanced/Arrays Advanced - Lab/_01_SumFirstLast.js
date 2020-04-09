@@ -1,3 +1,1 @@
-(arr) => {
-    return Number(arr[0]) + Number(arr[arr.length-1]);
-}
+sumFirstAndLast = (arr) => Number(arr[0]) + Number(arr[arr.length-1]);

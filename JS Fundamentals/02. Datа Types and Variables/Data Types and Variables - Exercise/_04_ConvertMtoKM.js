@@ -1,1 +1,1 @@
-(m) => console.log((m/1000).toFixed(2))
+convertMtoKM = (m) => console.log((m/1000).toFixed(2));

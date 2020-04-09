@@ -1,5 +1,4 @@
-(input) => {
-
+songs = (input) => {
     class Song {
         constructor(typeList, name, time) {
             this.typeList = typeList;

@@ -1,4 +1,4 @@
-([w, h, x, y]) => {
+orbit = ([w, h, x, y]) => {
     let rows = w;
     let cols = h;
     let starRow = x;

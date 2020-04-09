@@ -1,4 +1,4 @@
-(password) => {
+passwordValidator = (password) => {
     let checkLength = (pwd) => {
         if(pwd.length < 6 || pwd.length > 10) {
             console.log('Password must be between 6 and 10 characters');

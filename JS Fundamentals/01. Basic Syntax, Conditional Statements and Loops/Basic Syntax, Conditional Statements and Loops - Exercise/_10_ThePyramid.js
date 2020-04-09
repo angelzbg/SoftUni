@@ -1,11 +1,11 @@
-(base, increment) => {
+thePyramid = (base, increment) => {
    
     let totalstone = 0;
     let totalmarble = 0;
     let totallapis = 0;
     let totalgold = 0;
     let row = 0;
-    let currentbase=base;
+    let currentbase = base;
  
     while (currentbase>2) {
      let marbel=currentbase*4-4;
@@ -13,9 +13,9 @@
         totalstone+=stone;
  
         row++;
-        if(row%5===0){
+        if(row%5===0) {
             totallapis+=marbel;
-        }else{
+        } else {
             totalmarble+=marbel;
         }
         currentbase-=2;

@@ -1,5 +1,5 @@
-(num) => {
-    let numStr = num+'';
+oddAndEvenSum = (num) => {
+    let numStr = num.toString();
     let oddSum = 0, evenSum = 0;
     for(let i=0; i<numStr.length; i++) {
         let n = Number(numStr[i]);

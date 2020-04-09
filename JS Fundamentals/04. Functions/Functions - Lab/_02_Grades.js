@@ -1,4 +1,4 @@
-(score) => {
+grades = (score) => {
     let grade = 'Excellent';
     if(score < 3.00) grade = 'Fail';
     else if(score < 3.50) grade = 'Poor';

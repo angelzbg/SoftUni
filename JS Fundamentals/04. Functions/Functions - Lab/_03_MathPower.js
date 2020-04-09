@@ -1,3 +1,1 @@
-(num, power) => {
-    return Math.pow(num, power);
-}
+mathPower = (num, power) => Math.pow(num, power);

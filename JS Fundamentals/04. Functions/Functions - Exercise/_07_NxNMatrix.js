@@ -1,4 +1,4 @@
-(N) => {
+NxNMatrix = (N) => {
     /* If we need the matrix
     let matrix = [];
     for(let i=0; i<N; i++) {

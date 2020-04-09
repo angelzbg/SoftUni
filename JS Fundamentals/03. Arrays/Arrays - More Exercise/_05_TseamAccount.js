@@ -1,7 +1,6 @@
-(input) => {
+tseamAccount = (input) => {
     let list = input.shift().split(' ');
-    let line = input.shift();
-    while(line !== 'Play!') {
+    while( (line = input.shift()) !== 'Play!' ) {
         line = line.split(' ');
         let cmd = line[0], game = line[1];
 
@@ -23,8 +22,6 @@
             let index = list.indexOf(game);
             if(index !== -1) list.splice(index+1, 0, `${list[index]}:${expansion}`);
         }
-
-        line = input.shift();
     }
     console.log(list.join(' '));
 }

@@ -1,4 +1,4 @@
-(input) => {
+employees = (input) => {
     input.forEach(name => {
         let employee = { // pointless
             name,

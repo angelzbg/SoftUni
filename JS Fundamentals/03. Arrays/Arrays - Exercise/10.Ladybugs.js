@@ -1,4 +1,4 @@
-(input) => {
+ladyBugs = (input) => {
     let size = Number(input.shift());
     let field = [];
     for(let i=0; i<size; i++) field.push(0);
@@ -15,13 +15,13 @@
         let line = input[i].split(" ");
         let index = Number(line[0]), direction = line[1], flight = Number(line[2]);
 
-        if (index < 0 || index >= field.length || field[index] == 0) continue;
+        if (index < 0 || index >= field.length || field[index] === 0) continue;
 
         field[index] = 0;
         let currentFlight = flight;
         if (direction === "right") {
             while (index + currentFlight < field.length && index + currentFlight >= 0) {
-                if (field[index + currentFlight] == 0) {
+                if (field[index + currentFlight] === 0) {
                     field[index + currentFlight] = 1;
                     break;
                 } else {
@@ -30,7 +30,7 @@
             }
         } else if (direction === "left") {
             while (index - currentFlight >= 0 && index - currentFlight < field.length) {
-                if (field[index - currentFlight] == 0) {
+                if (field[index - currentFlight] === 0) {
                     field[index - currentFlight] = 1;
                     break;
                 } else {

@@ -1,4 +1,4 @@
-(num) => {
+perfectNumber = (num) => {
     let divisors = [];
     for(let i=1; i<=Math.floor(num/2); i++) {
         if(Number.isInteger(num/i)) divisors.push(i);

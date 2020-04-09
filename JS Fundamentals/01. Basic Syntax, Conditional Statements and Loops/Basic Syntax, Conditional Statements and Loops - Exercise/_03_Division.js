@@ -1,4 +1,4 @@
-(num) => {
+division = (num) => {
     let output = 'Not divisible', leftPart = 'The number is divisible by ';
     if(num % 10 == 0) output = leftPart + '10';
     else if(num % 7 == 0) output = leftPart + '7';

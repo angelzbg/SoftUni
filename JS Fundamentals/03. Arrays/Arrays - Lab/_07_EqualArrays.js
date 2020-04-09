@@ -1,17 +1,12 @@
-(arr1, arr2) => {
-    let ar1 = arr1.map( el => Number(el));
-    let ar2 = arr2.map( el => Number(el));
-    let identical = true;
-    for(let i=0; i<ar1.length; i++) {
-        if(ar1[i] != ar2[i]) {
-            console.log(`Arrays are not identical. Found difference at ${i} index`);
-            identical = false;
-            break;
+equalArrays = (arr1, arr2) => {
+    arr1 = arr1.map( el => Number(el));
+    arr2 = arr2.map( el => Number(el));
+    for(let i=0; i<arr1.length; i++) {
+        if(arr1[i] != arr2[i]) {
+            return console.log(`Arrays are not identical. Found difference at ${i} index`);
         }
     }
 
-    if(identical) {
-        let sum = ar1.reduce((a, b) => a + b, 0);
-        console.log(`Arrays are identical. Sum: ${sum}`);
-    }
+    let sum = arr1.reduce((a, b) => a + b, 0);
+    console.log(`Arrays are identical. Sum: ${sum}`);
 }

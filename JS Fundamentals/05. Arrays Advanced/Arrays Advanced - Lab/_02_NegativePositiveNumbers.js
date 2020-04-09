@@ -1,4 +1,4 @@
-(arr) => {
+negativeOrPositiveNumbers = (arr) => {
     let positive = [], negative = [];
     arr.forEach(num => {
         if(num < 0) negative.splice(0, 0, num);

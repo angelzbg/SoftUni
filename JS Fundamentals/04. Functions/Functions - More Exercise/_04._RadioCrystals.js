@@ -1,15 +1,14 @@
-(input) => {
+radioCrystals = (input) => {
     let Operations = {
         cut: (x) => x / 4,
         lap: (x) => x * 0.8,
         grind: (x) => x - 20,
         etch: (x) => x - 2,
         xRay: (x) => x + 1,
-        'Cut': 0,
-        'Lap': 0,
-        'Grind': 0,
-        'Etch': 0,
-        'X-ray': 0
+        Cut: 0,
+        Lap: 0,
+        Grind: 0,
+        Etch: 0
     };
     let print = (operation) => {
         if(Operations[operation] > 0) console.log(`${operation} x${Operations[operation]}\nTransporting and washing`);
@@ -23,25 +22,25 @@
 
         while(currentThickness / 4 >= targetThickness - 1) {
             currentThickness = Math.floor(Operations.cut(currentThickness));
-            Operations['Cut']++;
+            Operations.Cut++;
         }
         print('Cut');
 
         while(currentThickness * 0.8 >= targetThickness - 1) {
             currentThickness = Math.floor(Operations.lap(currentThickness));
-            Operations['Lap']++;
+            Operations.Lap++;
         }
         print('Lap');
 
         while(currentThickness - 20 >= targetThickness - 1) {
             currentThickness = Operations.grind(currentThickness);
-            Operations['Grind']++;
+            Operations.Grind++;
         }
         print('Grind');
 
         while(currentThickness - 2 >= targetThickness - 1) {
             currentThickness = Operations.etch(currentThickness);
-            Operations['Etch']++;
+            Operations.Etch++;
         }
         print('Etch');
 

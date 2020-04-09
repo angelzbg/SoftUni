@@ -1,4 +1,4 @@
-(matrix) => {
+bunnyKill = (matrix) => {
     let snowBallDamage = 0;
     let killedBunnies = 0;
     let coor = matrix.pop().split(' ').map(c => c.split(',').map(Number));

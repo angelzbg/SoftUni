@@ -1,4 +1,4 @@
-(arr) => {
+addAndRemove = (arr) => {
     let counter = 0, newArr = [];
     arr.forEach(el => {
         counter++;

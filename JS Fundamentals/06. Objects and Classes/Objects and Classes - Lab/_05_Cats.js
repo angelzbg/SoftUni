@@ -1,4 +1,4 @@
-(input) => {
+cats = (input) => {
     class Cat {
         constructor(name, age) {
             this.name = name;

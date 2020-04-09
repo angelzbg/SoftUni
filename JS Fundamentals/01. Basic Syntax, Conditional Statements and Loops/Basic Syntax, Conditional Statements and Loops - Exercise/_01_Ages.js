@@ -1,4 +1,4 @@
-(age) => {
+ages = (age) => {
     let output = '';
     if(age < 0) output = 'out of bounds';
     else if(age < 3) output = 'baby';

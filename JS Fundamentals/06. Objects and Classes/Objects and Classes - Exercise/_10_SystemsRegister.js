@@ -1,4 +1,4 @@
-(input) => {
+systemsRegister = (input) => {
     let DB = {};
 
     input.forEach(l => {

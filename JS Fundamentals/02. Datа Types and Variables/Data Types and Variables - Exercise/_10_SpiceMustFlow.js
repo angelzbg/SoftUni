@@ -1,4 +1,4 @@
-(startingYield) => {
+spiceMustFlow = (startingYield) => {
     let yieldStorage = 0;
     let yield = startingYield;
     let days = 0;

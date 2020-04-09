@@ -1,4 +1,4 @@
-(_stock, _ordered) => {
+storeProvision = (_stock, _ordered) => {
     let products = [];
     while(_stock.length > 0) {
         products.push({ name: _stock.shift(), quantity: Number(_stock.shift()) });

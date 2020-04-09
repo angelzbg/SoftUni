@@ -1,14 +1,1 @@
-(num) => {
-    let isAmazing = (num) => {
-
-        let numStr = num + '';
-        let sum = 0;
-        for(let i=0; i<numStr.length; i++) {
-            sum += Number(numStr[i]);
-        }
-        sum += '';
-        return sum.includes('9') ? 'True' : 'False';
-    }
-
-    console.log(`${num} Amazing? ${isAmazing(num)}`);
-}
+amazingNumbers = (num) => console.log(`${num} Amazing? ${num.toString().split('').map(Number).reduce((a, b) => a + b, 0).toString().includes('9') ? 'True' : 'False'}`);

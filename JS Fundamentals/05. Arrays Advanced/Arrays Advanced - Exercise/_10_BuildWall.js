@@ -1,4 +1,4 @@
-(params) => {
+buildWall = (params) => {
     params = params.map(Number);
 
     let dailyUsage = [];

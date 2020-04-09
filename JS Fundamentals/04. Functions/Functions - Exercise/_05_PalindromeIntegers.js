@@ -1,4 +1,4 @@
-(arr) => {
+palindromeInteger = (arr) => {
     let isPalindrome = (str) => {
         let len = str.length;
         for(let i=0; i<len/2; i++) {
@@ -7,6 +7,6 @@
         return true;
     }
     for(let i=0; i<arr.length; i++) {
-        console.log(isPalindrome(arr[i]+''));
+        console.log(isPalindrome(arr[i].toString()));
     }
 }

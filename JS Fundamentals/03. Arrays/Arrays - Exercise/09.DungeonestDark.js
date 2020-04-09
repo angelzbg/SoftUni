@@ -1,4 +1,4 @@
-(input) => {
+dungeonestDark = (input) => {
     let dungeon = input.shift().split('|');
     let health = 100, coins = 0;
     for(let i=0; i<dungeon.length; i++) {

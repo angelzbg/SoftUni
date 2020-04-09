@@ -1,4 +1,1 @@
-(numName) => {
-    let nums = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
-    console.log(nums.indexOf(numName));
-}
+digitsWithWords = (numName) => console.log([ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ].indexOf(numName));

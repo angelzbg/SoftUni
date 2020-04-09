@@ -1,5 +1,4 @@
-(loses, _$Helmet, _$Sword, _$Shield, _$Armor) => {
-
+gladiatorExpenses = (loses, _$Helmet, _$Sword, _$Shield, _$Armor) => {
     let price = 0;
 
     for(let f = 1; f <= loses; f++) {
@@ -13,5 +12,4 @@
     }
 
     console.log(`Gladiator expenses: ${price.toFixed(2)} aureus`);
-
 }

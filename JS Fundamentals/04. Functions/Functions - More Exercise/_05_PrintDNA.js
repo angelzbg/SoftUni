@@ -1,4 +1,4 @@
-function test(rows) {
+printDNA = (rows) => {
     let pairs = ['AT', 'CG', 'TT', 'AG', 'GG'];
     let starSequence = [2, 1, 0, 1];
     let lineSequence = [0, 2, 4, 2];
@@ -21,7 +21,6 @@ function test(rows) {
     }
 
     console.log(output); 
-
 }
 
-test(10);
+printDNA(10);

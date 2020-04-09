@@ -1,4 +1,4 @@
-(M) => {
+magicMatrices = (M) => {
     let isMagicMatrix = (m) => {
         let rows = m.length,
             cows = m[0].length,
@@ -17,7 +17,7 @@
         }
 
         return true;
-    }
+    };
 
     console.log(isMagicMatrix(M));
 }

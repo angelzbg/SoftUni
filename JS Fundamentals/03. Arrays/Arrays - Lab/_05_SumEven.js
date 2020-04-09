@@ -1,7 +1,6 @@
-(arr) => {
+sumEven = (arr) => {
     let sum = 0;
-    arr.forEach(el => {
-        let num = Number(el);
+    arr.map(Number).forEach(num => {
         if(num % 2 == 0) sum += num;
     });
     console.log(sum);

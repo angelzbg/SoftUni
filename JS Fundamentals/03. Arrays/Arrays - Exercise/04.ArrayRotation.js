@@ -1,7 +1,4 @@
-(arr, r) => {
-    for(let i=0; i<r; i++) {
-        arr.push(arr[0]);
-        arr = arr.slice(1);
-    }
+arrayRotation = (arr, r) => {
+    for(let i=0; i<r; i++) arr.push(arr.shift());
     console.log(arr.join(' '));
 }

@@ -1,5 +1,1 @@
-(dist, pass, priceL) => {
-    let neededFuel = (dist / 100) * 7 + pass * 0.100;
-    let money = priceL * neededFuel;
-    console.log(`Needed money for that trip is ${money}lv.`);
-}
+fuelMoney = (dist, pass, priceL) => console.log(`Needed money for that trip is ${priceL * ((dist / 100) * 7 + pass * 0.100)}lv.`);

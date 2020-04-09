@@ -1,4 +1,4 @@
-(heroes) => {
+inventory = (heroes) => {
     heroes = heroes.map(h => {
         let [ name, level, items ] = h.split(' / ');
         level = Number(level);

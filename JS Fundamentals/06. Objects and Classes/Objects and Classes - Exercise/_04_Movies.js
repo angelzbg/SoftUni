@@ -1,4 +1,4 @@
-(input) => {
+movies = (input) => {
     let movies = [];
     for(let i=0; i<input.length; i++) {
         let args = input[i].split(' ');
