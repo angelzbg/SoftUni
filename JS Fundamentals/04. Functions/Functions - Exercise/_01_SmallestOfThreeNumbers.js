@@ -1,1 +1,3 @@
-smallestOfThreeNumbers = (...nums) => console.log(Math.min(...nums));
+smallestOfThreeNumbers = (...nums) => {
+    console.log(Math.min(...nums));
+}

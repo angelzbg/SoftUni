@@ -1,5 +1,4 @@
 thePyramid = (base, increment) => {
-   
     let totalstone = 0;
     let totalmarble = 0;
     let totallapis = 0;

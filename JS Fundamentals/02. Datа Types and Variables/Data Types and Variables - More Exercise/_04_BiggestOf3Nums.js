@@ -1,1 +1,3 @@
-biggestOf3Nums = (...nums) => console.log(Math.max(...nums));
+biggestOf3Nums = (...nums) => {
+    console.log(Math.max(...nums));
+}

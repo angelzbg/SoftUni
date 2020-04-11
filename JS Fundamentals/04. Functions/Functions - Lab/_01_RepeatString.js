@@ -1,1 +1,3 @@
-repeatString = (str, n) => str.repeat(n);
+repeatString = (str, n) => {
+    return str.repeat(n);
+}

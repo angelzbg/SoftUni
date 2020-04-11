@@ -16,5 +16,3 @@ rageQuit = ([input]) => {
     console.log(`Unique symbols used: ${symbolsCount.size}`);
     console.log(output);
 }
-
-rageQuit(['aSd2&5s@1']);

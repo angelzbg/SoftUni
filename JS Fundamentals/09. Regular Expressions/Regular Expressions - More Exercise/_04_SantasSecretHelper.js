@@ -11,13 +11,3 @@ santasHelper = (input) => {
     }
     console.log([...goodKids].join('\n'));
 }
-
-santasHelper([
-    '4',
-    '~lwzjkl~jenlymfDFsffmiCwozwlzjln%K%',
-    '0zfjrl}xnrlDWeqqmi/wnznlwzjnn%K%onhfhnf',
-    ';:<lyiljz{onzDPere=;=9<;8=rhknlf%K%',
-    "Wonvfkmwzkmpwvzkm'lhjnlDWeqerxle0wlnzj{nz%K%nohwn",
-    'DReh}e=<4lhzj1%K%',
-    'end'
-  ]);

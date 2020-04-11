@@ -1,5 +1,5 @@
 numbersFromNto1 = (n) => {
     let output = '';
-    for(let i=n; n>0; n--) output += n + '\n';
+    for(let i = n; n > 0; n--) output += n + '\n';
     console.log(output);
 }

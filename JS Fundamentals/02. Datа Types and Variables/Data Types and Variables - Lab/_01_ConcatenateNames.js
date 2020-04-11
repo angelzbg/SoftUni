@@ -1,1 +1,3 @@
-concatenateNames = (fn, ln, del) => console.log(`${fn}${del}${ln}`);
+concatenateNames = (fn, ln, del) => {
+    console.log(`${fn}${del}${ln}`);
+}

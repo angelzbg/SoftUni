@@ -9,12 +9,3 @@ minerTask = (arr) => {
         console.log(`${res} -> ${value}`);
     });
 }
-
-minerTask([
-    'Gold',
-    '155',
-    'Silver',
-    '10',
-    'Copper',
-    '17'
-    ]);

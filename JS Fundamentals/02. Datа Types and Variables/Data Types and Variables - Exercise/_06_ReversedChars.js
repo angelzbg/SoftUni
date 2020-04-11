@@ -1,1 +1,3 @@
-reversedChars = (...chars) => console.log(chars.reverse().join(' '));
+reversedChars = (...chars) => {
+    console.log(chars.reverse().join(' '));
+}

@@ -20,14 +20,3 @@ partyTime = (input) => {
     vips.forEach(g => console.log(g));
     regular.forEach(g => console.log(g));
 }
-
-partyTime(['7IK9Yo0h',
-'9NoBUajQ',
-'Ce8vwPmE',
-'SVQXQCbc',
-'tSzE5t0p',
-'PARTY',
-'9NoBUajQ',
-'Ce8vwPmE',
-'SVQXQCbc'
-]);

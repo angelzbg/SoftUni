@@ -1,4 +1,4 @@
-(ppl, type, day) => {
+vacation = (ppl, type, day) => {
     let table = {
         Students: {
             Friday: ppl*8.45*(ppl > 29 ? 0.85: 1),

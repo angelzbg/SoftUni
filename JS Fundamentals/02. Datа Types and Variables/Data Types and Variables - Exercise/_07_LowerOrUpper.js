@@ -1,1 +1,3 @@
-LowerOrUpper = (ch) => console.log( ch === ch.toUpperCase() ? 'upper-case' : 'lower-case');
+LowerOrUpper = (ch) => {
+    console.log( ch === ch.toUpperCase() ? 'upper-case' : 'lower-case');
+}

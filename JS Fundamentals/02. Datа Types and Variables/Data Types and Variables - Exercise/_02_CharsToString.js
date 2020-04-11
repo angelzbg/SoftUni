@@ -1,1 +1,3 @@
-charsToString = (...chars) => console.log(chars.join(''));
+charsToString = (...chars) => {
+    console.log(chars.join(''));
+}

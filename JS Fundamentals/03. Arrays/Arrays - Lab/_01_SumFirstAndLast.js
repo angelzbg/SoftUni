@@ -1,1 +1,3 @@
-sumFirstAndLast = (a) => console.log( (Number(a[0])+Number(a[a.length-1])) );
+sumFirstAndLast = (a) => {
+    console.log( (Number(a[0])+Number(a[a.length-1])) );
+}
