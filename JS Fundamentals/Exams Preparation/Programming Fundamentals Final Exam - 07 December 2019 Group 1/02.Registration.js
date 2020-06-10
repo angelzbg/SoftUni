@@ -4,7 +4,7 @@ registration = (input) => {
     for(let i = 0; i < N; i++) {
         let registration = input.shift();
         let match = registration.match(/U\$(?<username>[A-Z][a-z]{2,})U\$P@\$(?<password>[A-Za-z]{5,}[0-9]+)P@\$/);
-        if(match !== null) {
+        if(match) {
             console.log(`Registration was successful\nUsername: ${match.groups.username}, Password: ${match.groups.password}`);
             successfulCount++;
         } else {
