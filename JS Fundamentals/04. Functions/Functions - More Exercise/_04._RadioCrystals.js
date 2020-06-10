@@ -10,6 +10,7 @@ radioCrystals = (input) => {
         Grind: 0,
         Etch: 0
     };
+    
     let print = (operation) => {
         if(Operations[operation] > 0) {
             console.log(`${operation} x${Operations[operation]}\nTransporting and washing`);

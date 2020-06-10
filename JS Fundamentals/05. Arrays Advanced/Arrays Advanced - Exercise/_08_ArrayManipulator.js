@@ -1,5 +1,6 @@
 arrayMinipulator = (nums, cmds) => {
     let cmd = cmds.shift().split(' ');
+
     while(cmd[0] !== 'print') {
         if(cmd[0] === 'add') {
             nums.splice(Number(cmd[1]), 0, Number(cmd[2]));
@@ -19,9 +20,11 @@ arrayMinipulator = (nums, cmds) => {
             for(let i = 0; i < len; i += 2) {
                 summed.push(nums[i] + (nums[i + 1] || 0));
             }
+            
             nums = summed;
         }
         cmd = cmds.shift().split(' ');
     }
+
     console.log('[ ' + nums.join(', ') + ' ]');
 };

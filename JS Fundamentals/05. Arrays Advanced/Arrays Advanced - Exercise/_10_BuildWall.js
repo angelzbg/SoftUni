@@ -1,8 +1,7 @@
 buildWall = (params) => {
     params = params.map(Number);
-
     let dailyUsage = [];
-
+    
     let isCompleted = false;
     while(!isCompleted) {
         isCompleted = true;

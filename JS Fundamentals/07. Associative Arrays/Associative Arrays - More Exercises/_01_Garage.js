@@ -4,9 +4,11 @@ garage = (input) => {
         let split = line.split(' - ');
         let num = split.shift();
         let car = {};
+        
         split.shift().split(', ').map(part => part.split(': ')).forEach(el => {
             car[el[0]] = el[1];
         });
+
         if(garages[num]) {
             garages[num].push(car);
         } else {
@@ -17,11 +19,13 @@ garage = (input) => {
 
     garagesFix.forEach(num => { // po uslovie trqbva sortirovki, no realno s tqh 60/100, a bez 100/100...
         console.log(`Garage № ${num}`);
+
         garages[num].forEach(car => {
             let output = '';
             for(key in car) {
                 output += `, ${key} - ${car[key]}`;
             }
+
             output = '---' + output.substr(1);
             console.log(output);
         });

@@ -2,6 +2,7 @@ gladiatorInventory = (input) => {
     let inventory = input.shift().split(' ');
     input.forEach(line => {
         let [ cmd, args ] = line.split(' ');
+        
         if(cmd === 'Buy') {
             if(inventory.indexOf(args) === -1) {
                 inventory.push(args);
@@ -21,5 +22,6 @@ gladiatorInventory = (input) => {
             }
         }
     });
+
     console.log(inventory.join(' '));
 };

@@ -17,5 +17,4 @@ class Storage {
         this.storage.forEach(p => products += `${JSON.stringify(p)}\n`);
         return products.trim();
     }
-
 }

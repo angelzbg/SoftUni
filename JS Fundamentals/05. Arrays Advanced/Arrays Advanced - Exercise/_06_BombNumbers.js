@@ -5,7 +5,9 @@ bombNumber = (nums, [ special, power ]) => {
         for(let i = indexSpecial - power; i <= indexSpecial + power; i++) {
             nums[i] = 0;
         }
+        
         indexSpecial = nums.indexOf(special, indexSpecial + power + 1);
     }
+
     console.log(nums.reduce( (a, b) => a + b, 0 ));
 };

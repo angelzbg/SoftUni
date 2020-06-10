@@ -5,5 +5,6 @@ perfectNumber = (num) => {
             divisors.push(i);
         }
     }
+    
     console.log( divisors.reduce((a, b) => a + b, 0) === num ? 'We have a perfect number!' : "It's not so perfect." );
 };

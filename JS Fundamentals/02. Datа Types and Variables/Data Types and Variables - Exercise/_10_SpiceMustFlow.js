@@ -8,6 +8,7 @@ spiceMustFlow = (startingYield) => {
         yieldStorage -= 26;
         yield -= 10;
     }
+    
     yieldStorage -= yieldStorage > 25 ? 26 : yieldStorage;
     console.log(`${days}\n${yieldStorage}`);
 };

@@ -7,5 +7,6 @@ negativeOrPositiveNumbers = (arr) => {
             positive.push(num);
         }
     });
+    
     console.log(`${negative.join('\n')}\n${positive.join('\n')}`);
 };

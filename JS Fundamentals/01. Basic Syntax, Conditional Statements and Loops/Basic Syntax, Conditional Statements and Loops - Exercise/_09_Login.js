@@ -8,5 +8,6 @@ login = (input) => {
             console.log('Incorrect password. Try again.');
         }
     }
+    
     console.log(`User ${user} logged in.`);
 };

@@ -5,5 +5,6 @@ processOddNumbers = (arr) => {
             reversed.splice(0, 0, num * 2);
         }
     });
+    
     console.log(reversed.join(' '));
 };

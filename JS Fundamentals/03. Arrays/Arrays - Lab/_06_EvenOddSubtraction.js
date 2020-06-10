@@ -7,5 +7,6 @@ evenOddSubtraction = (arr) => {
             odd += el;
         }
     });
+    
     console.log(even - odd);
 }

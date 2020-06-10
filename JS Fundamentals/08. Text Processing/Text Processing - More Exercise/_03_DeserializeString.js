@@ -6,5 +6,6 @@ deserializeString = (serialized) => {
             symbols[index] = symbol;
         });
     }
+    
     console.log(symbols.join(''));
 };

@@ -5,5 +5,6 @@ replaceRepeating = (string) => {
             replaced += string[i];
         }
     }
+    
     console.log(replaced);
 };

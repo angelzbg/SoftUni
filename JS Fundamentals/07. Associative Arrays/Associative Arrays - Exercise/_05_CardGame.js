@@ -19,6 +19,7 @@ cardGame = (arr) => {
                 points = cardPower * TYPES[type];
             POINTS += points;
         });
+        
         console.log(`${name}: ${POINTS}`);
     });
 };

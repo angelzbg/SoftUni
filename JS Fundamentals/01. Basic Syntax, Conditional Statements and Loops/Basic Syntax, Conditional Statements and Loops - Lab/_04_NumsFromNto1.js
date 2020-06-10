@@ -3,5 +3,6 @@ numbersFromNto1 = (n) => {
     while(n > 0) {
         output += `${n--}\n`;
     }
+    
     console.log(output);
 };

@@ -8,8 +8,10 @@ treasureFinder = (input) => {
             } else {
                 keyIndex++;
             }
+
             return String.fromCharCode(ch.charCodeAt(0) - keys[keyIndex]);
         }).join('');
+        
         let result = /(.+)?&(?<type>.+)&(.+)?<(?<coords>.+)>/g.exec(line).groups;
         console.log(`Found ${result.type} at ${result.coords}`);
     }

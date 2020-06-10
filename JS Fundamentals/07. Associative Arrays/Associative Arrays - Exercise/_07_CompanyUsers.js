@@ -6,6 +6,7 @@ users = (arr) => {
         if(!users[company]) {
             users[company] = new Set();
         }
+        
         users[company].add(uid);
     });
 

@@ -5,6 +5,7 @@ oddOccurrences = (arr) => {
     .forEach(el => {
         occurrences[el] = 1 + (occurrences[el] || 0);
     });
+
     let output = '';
     Object.entries(occurrences)
     .forEach(([key, value]) => {
@@ -12,5 +13,6 @@ oddOccurrences = (arr) => {
             output += `${key} `;
         }
     });
+    
     console.log(output.trim());
 }

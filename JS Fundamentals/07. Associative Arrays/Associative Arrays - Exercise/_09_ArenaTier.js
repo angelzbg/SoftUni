@@ -54,6 +54,7 @@ arena = (arr) => {
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .forEach(([name, total]) => {
         console.log(`${name}: ${total} skill`);
+        
         Object.entries(arena[name])
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
         .forEach(([skill, power]) => {

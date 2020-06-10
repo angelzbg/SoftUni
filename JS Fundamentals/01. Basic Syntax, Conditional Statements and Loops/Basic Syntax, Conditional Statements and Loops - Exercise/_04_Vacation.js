@@ -15,6 +15,7 @@ vacation = (ppl, type, day) => {
             Saturday: ppl * 20 * (ppl > 9 && ppl < 21 ? 0.95: 1),
             Sunday: ppl * 22.5 * (ppl > 9 && ppl < 21 ? 0.95: 1)
         }
-    }
+    };
+    
     console.log(`Total price: ${table[type][day].toFixed(2)}`);
 };

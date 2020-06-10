@@ -5,10 +5,12 @@ equalNeighbors = (matrix) => {
             if(matrix[i][j] === matrix[i][j+1]) {
                 count++;
             }
+            
             if(matrix[i+1] && matrix[i][j] === matrix[i+1][j]) {
                 count++;
             }
         }
     }
+
     console.log(count);
 };

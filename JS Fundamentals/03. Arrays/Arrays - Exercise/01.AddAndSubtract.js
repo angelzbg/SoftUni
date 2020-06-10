@@ -4,6 +4,7 @@ addAndSubtract = (arr) => {
         if(arr[i] % 2 == 0) arr[i] += i;
         else arr[i] -= i;
     }
+    
     console.log(arr);
     console.log(sum);
     let newSum = arr.reduce((a, b) => a + b, 0);

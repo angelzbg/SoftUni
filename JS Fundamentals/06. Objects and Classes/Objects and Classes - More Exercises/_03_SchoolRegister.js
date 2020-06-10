@@ -14,6 +14,7 @@ schoolRegister = (input) => {
             }
         }
     });
+    
     Object.keys(register).sort((a,b) => a - b).forEach(grade => {
         console.log(`${grade} Grade`);
         console.log(`List of students: ${register[grade].map(s => s.name).join(', ')}`);

@@ -17,5 +17,6 @@ theatrePromotions = (day, age) => {
         else if(age < 65) price = 12;
         else price = 10;
     }
+    
     console.log(`${price}$`);
 };

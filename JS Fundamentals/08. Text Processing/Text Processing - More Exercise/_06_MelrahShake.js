@@ -23,5 +23,6 @@ melrahShake = ([string, pattern]) => {
             break;
         }
     }
+    
     console.log(`No shake.\n${string}`);
 };

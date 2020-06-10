@@ -13,6 +13,7 @@ loadingBar = (num) => {
             bar += '.';
         }
     }
+    
     bar += ']';
     console.log(`${bar}\nStill loading...`);
 };

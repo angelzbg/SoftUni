@@ -4,5 +4,6 @@ printAndSum = (start, end) => {
         output += `${i} `;
         sum += i;
     }
+    
     console.log(`${output}\nSum: ${sum}`);
 };

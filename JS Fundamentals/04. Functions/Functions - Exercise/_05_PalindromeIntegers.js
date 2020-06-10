@@ -8,6 +8,7 @@ palindromeInteger = (arr) => {
         }
         return true;
     }
+    
     for(let i = 0; i < arr.length; i++) {
         console.log(isPalindrome(arr[i].toString()));
     }

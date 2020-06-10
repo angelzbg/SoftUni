@@ -6,10 +6,12 @@ bunnyKill = (matrix) => {
     
     let matrixRow = matrix.length;
     let matrixCol = matrix[0].length;
+    
     for (let i = 0; i < coor.length; i++) {
         let bombRow = coor[i][0];
         let bombCol = coor[i][1];
         let bombValue = matrix[bombRow][bombCol];
+
         if (bombValue > 0) {
             for (let row = bombRow - 1; row <= bombRow + 1; row++) {
                 for (let col = bombCol - 1; col <= bombCol + 1; col++) {
@@ -18,6 +20,7 @@ bunnyKill = (matrix) => {
                     }
                 }
             }
+
             killedBunnies++;
             snowBallDamage += bombValue;
         }

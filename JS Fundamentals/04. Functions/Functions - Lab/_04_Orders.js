@@ -5,5 +5,6 @@ orders = (product, quantity) => {
         coke: 1.40,
         snacks: 2.00
     };
+    
     console.log((products[product] * quantity).toFixed(2));
 };

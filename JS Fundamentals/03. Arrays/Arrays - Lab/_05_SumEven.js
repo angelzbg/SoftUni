@@ -5,5 +5,6 @@ sumEven = (arr) => {
             sum += num;
         }
     });
+    
     console.log(sum);
 };

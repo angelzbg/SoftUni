@@ -6,5 +6,6 @@ foreignLanguages = (country) => {
         Argentina: 'Spanish',
         Mexico: 'Spanish'
     };
+    
     console.log(table[country] || 'unknown');
 };

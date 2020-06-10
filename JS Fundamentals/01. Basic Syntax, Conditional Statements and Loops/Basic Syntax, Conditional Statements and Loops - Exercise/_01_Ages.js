@@ -6,5 +6,6 @@ ages = (age) => {
     else if(age < 20) output = 'teenager';
     else if(age < 66) output = 'adult';
     else output = 'elder';
+    
     console.log(output);
 };

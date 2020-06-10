@@ -18,5 +18,6 @@ tseamAccount = (input) => {
             list.splice(index + 1, 0, `${list[index]}:${expansion}`);
         }
     }
+    
     console.log(list.join(' '));
 };

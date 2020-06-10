@@ -2,6 +2,7 @@ rageQuit = ([input]) => {
     let output = '';
     let symbolsCount = new Set();
     let patternParts = /\D+\d+/g, patternNum = /\d+/g, patternSymbols = /\D+/g;
+    
     while((result = patternParts.exec(input))) {
         result = result[0].toUpperCase();
         let count = result.match(patternNum)[0];

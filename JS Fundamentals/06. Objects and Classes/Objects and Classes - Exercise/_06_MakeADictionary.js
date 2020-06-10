@@ -4,6 +4,7 @@ makeDictionary = (input) => {
         let obj = JSON.parse(line);
         Object.assign(dictionary, obj);
     });
+    
     Object.keys(dictionary).sort().forEach(key => {
         console.log(`Term: ${key} => Definition: ${dictionary[key]}`);
     });

@@ -6,5 +6,6 @@ division = (num) => {
             return console.log(leftPart + div[i]);
         }
     }
+    
     console.log(output);
 };

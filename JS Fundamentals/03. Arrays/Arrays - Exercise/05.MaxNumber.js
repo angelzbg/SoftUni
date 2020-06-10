@@ -7,5 +7,6 @@ maxNumber = (arr) => {
             biggest = arr[i];
         }
     }
+    
     console.log(output.join(' '));
 };

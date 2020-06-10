@@ -8,5 +8,6 @@ addAndRemove = (arr) => {
             newArr.pop();
         }
     });
+
     console.log(newArr.join(' ') || 'Empty');
 };

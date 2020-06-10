@@ -8,6 +8,7 @@ train = (input) => {
             wagons.push(Number(cmd[1]));
         } else {
             let passangers = Number(cmd[0]);
+            
             for(let i = 0; i < wagons.length; i++) {
                 if(wagons[i] + passangers <= capacity) {
                     wagons[i] += passangers;

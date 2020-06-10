@@ -3,6 +3,7 @@ travelTime = (input) => {
     input.forEach(el => {
         let [ country, town, price ] = el.split(' > ');
         price = Number(price);
+        
         if(destinations[country]) {
             if(destinations[country][town]) {
                 if(destinations[country][town] > price) {

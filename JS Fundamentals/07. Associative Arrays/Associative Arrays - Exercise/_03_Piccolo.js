@@ -8,5 +8,6 @@ piccolo = (input) => {
             cars.delete(car);
         }
     });
+    
     [...cars].sort().forEach(car => console.log(car));
 }

@@ -7,5 +7,6 @@ magicSum = (arr, num) => {
             }
         }
     }
+    
     console.log(output);
 };

@@ -6,5 +6,6 @@ triangleOfNumbers = (num) => {
         }
         output += '\n';
     }
+    
     console.log(output);
 };

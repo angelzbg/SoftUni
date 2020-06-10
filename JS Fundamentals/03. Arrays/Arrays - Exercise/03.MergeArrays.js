@@ -4,5 +4,6 @@ mergeArrays = (ar1, ar2) => {
         if(i % 2 == 0) ar3.push(Number(ar1[i]) + Number(ar2[i]));
         else ar3.push(ar1[i] + ar2[i]);
     }
+    
     console.log(ar3.join(' - '));
 };

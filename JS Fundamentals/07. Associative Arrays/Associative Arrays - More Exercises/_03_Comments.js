@@ -8,6 +8,7 @@ comments = (input) => {
         } else { // save the info
             let parts = line.split(': ');
             let [ username, article ] = parts.shift().split(' posts on ');
+            
             if(articles[article] && users.has(username)) {
                 let [ title, content ] = parts.shift().split(', ');
                 articles[article].push({ title, content, username });

@@ -19,6 +19,9 @@ bitcoinMining = (array) => {
     let leftMoney = (money % 11949.16).toFixed(2);
  
     console.log(`Bought bitcoins: ${coins}`);
-    if (coins > 0) console.log(`Day of the first purchased bitcoin: ${firstDay}`);
+    if (coins > 0) {
+        console.log(`Day of the first purchased bitcoin: ${firstDay}`);
+    }
+    
     console.log(`Left money: ${leftMoney} lv.`);
 };

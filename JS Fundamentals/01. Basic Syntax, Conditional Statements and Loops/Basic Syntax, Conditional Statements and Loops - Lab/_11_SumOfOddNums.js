@@ -5,6 +5,7 @@ sumOfOddNums = (n) => {
         output += `\n${num}`;
         sum += num;
     }
+    
     output += `\nSum: ${sum}`;
     console.log(output);
 };

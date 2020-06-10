@@ -5,5 +5,6 @@ nonDecreasingSubsequence = (arr) => {
             newArr.push(arr[i]);
         }
     }
+    
     console.log(newArr.join(' '));
 };

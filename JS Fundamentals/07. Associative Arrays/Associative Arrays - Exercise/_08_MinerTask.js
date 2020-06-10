@@ -4,6 +4,7 @@ minerTask = (arr) => {
         let res = arr.shift(), value = Number(arr.shift());
         mined[res] = value + (mined[res] || 0);
     }
+    
     Object.entries(mined)
     .forEach(([res, value]) => {
         console.log(`${res} -> ${value}`);

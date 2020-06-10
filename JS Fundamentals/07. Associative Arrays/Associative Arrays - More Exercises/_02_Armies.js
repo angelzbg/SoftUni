@@ -6,6 +6,7 @@ armies = (arr) => {
         let format = line.includes('arrives') ? 1 : 
                     line.includes(':') ? 2 :
                     line.includes('+') ? 3 : 4;
+
         if(format === 1) { // Add the leader (no army)
             let leader = line.split(' arrives')[0];
             leaders[leader] = {
@@ -15,6 +16,7 @@ armies = (arr) => {
         } else if(format === 2) { // Add army and count to leader (if exists)
             let parts = line.split(': ');
             let leader = parts.shift();
+
             if(leaders[leader]) {
                 let [ armyName, count ] = parts.shift().split(', ');
                 count = Number(count);
@@ -25,16 +27,19 @@ armies = (arr) => {
         } else if(format === 3) { // If the army exists somewhere add the count
             let [armyName, count] = line.split(' + ');
             count = Number(count);
-            if(armies[armyName] !== undefined) {
+
+            if(armies[armyName]) {
                 armies[armyName].count += count;
                 leaders[armies[armyName].leader].count += count;
             }
         } else { // 4 - delete the leader and his army (if he exists)
             let leader = line.split(' defeated')[0];
+            
             if(leaders[leader]) {
                 for(armyName in leaders[leader].armies) {
                     delete armies[armyName];
                 }
+
                 delete leaders[leader];
             }
         }

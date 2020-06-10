@@ -23,5 +23,4 @@ class Laptop {
     get price() {
         return 800 - this.info.age * 2 + this.quality * 0.5;
     }
-    
 }

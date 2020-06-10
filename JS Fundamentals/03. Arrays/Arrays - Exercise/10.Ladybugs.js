@@ -19,6 +19,7 @@ ladyBugs = (input) => {
 
         field[index] = 0;
         let currentFlight = flight;
+
         if (direction === "right") {
             while (index + currentFlight < field.length && index + currentFlight >= 0) {
                 if (field[index + currentFlight] === 0) {
@@ -39,5 +40,6 @@ ladyBugs = (input) => {
             }
         }
     }
+    
     console.log(field.join(' '));
 };

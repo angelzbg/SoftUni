@@ -7,12 +7,14 @@ starEnigma = (input) => {
     for(let i = 0; i < count; i++) {
         let line = input.shift();
         let ruleCount = line.match(patternLetters);
+        
         if(ruleCount) {
             ruleCount = ruleCount.length;
             let decrypt1 = '';
             for(let j = 0; j < line.length; j++) {
                 decrypt1 += String.fromCharCode(line.charCodeAt(j) - ruleCount);
             }
+
             line = decrypt1;
         }
         let result = line.match(validPattern);
