@@ -16,4 +16,4 @@ race = (input) => {
     console.log(`1st place: ${sortedRacers[0]}`);
     console.log(`2nd place: ${sortedRacers[1]}`);
     console.log(`3rd place: ${sortedRacers[2]}`);
-}
+};

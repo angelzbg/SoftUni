@@ -4,7 +4,7 @@ wordsTracker = (arr) => {
         words[word] = 0;
     });
     arr.forEach(word => {
-        if(words[word] !== undefined) {
+        if(words[word]) {
             words[word]++;
         }
     });
@@ -13,4 +13,4 @@ wordsTracker = (arr) => {
     .forEach(([word, count]) => {
         console.log(`${word} - ${count}`);
     });
-}
+};

@@ -8,4 +8,4 @@ sequances = (input) => {
         .map(JSON.parse)
         .sort((a, b) => a.length - b.length)
         .forEach(el => console.log(`[${el.join(', ')}]`));
-}
+};

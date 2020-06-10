@@ -13,4 +13,4 @@ cats = (input) => {
         let [ name, age ] = el.split(' ');
         new Cat(name, age).meow();
     });
-}
+};

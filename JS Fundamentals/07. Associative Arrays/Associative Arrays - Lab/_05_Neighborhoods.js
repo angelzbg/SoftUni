@@ -5,7 +5,9 @@ neighborhoods = (input) => {
     });
     input.forEach(line => {
         let [ neighborhood, person ] = line.split(' - ');
-        if(neighborhoods[neighborhood]) neighborhoods[neighborhood].push(person);
+        if(neighborhoods[neighborhood]) {
+            neighborhoods[neighborhood].push(person);
+        }
     });
     Object.keys(neighborhoods)
     .sort((a, b) => neighborhoods[b].length - neighborhoods[a].length)
@@ -13,4 +15,4 @@ neighborhoods = (input) => {
         console.log(`${neighborhood}: ${neighborhoods[neighborhood].length}`);
         neighborhoods[neighborhood].forEach(person => console.log(`--${person}`));
     });
-}
+};

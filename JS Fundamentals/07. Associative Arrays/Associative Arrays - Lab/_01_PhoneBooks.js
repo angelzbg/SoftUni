@@ -5,5 +5,6 @@ phoneBook = (input) => {
         phoneBook[name] = phone;
     });
 
-    Object.entries(phoneBook).forEach(([key, value]) => console.log(`${key} -> ${value}`));
-}
+    Object.entries(phoneBook)
+    .forEach(([key, value]) => console.log(`${key} -> ${value}`));
+};

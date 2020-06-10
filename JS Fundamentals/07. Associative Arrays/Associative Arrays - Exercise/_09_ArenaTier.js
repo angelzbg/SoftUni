@@ -10,7 +10,7 @@ arena = (arr) => {
             let [ name, skill, power ] = split;
             power = Number(power);
             if(arena[name]) {
-                if(arena[name][skill] !== undefined) {
+                if(arena[name][skill]) {
                     if(arena[name][skill] < power) {
                         let diff = power - arena[name][skill];
                         arena[name][skill] = power;
@@ -50,16 +50,14 @@ arena = (arr) => {
         line = arr.shift();
     }
 
-    Object
-    .entries(totalPowers)
+    Object.entries(totalPowers)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .forEach(([name, total]) => {
         console.log(`${name}: ${total} skill`);
-        Object
-        .entries(arena[name])
+        Object.entries(arena[name])
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
         .forEach(([skill, power]) => {
             console.log(`- ${skill} <!> ${power}`);
         })
     });
-}
+};

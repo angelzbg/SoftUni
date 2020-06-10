@@ -4,4 +4,4 @@ multiplicationTable = (num) => {
         output += `${num} X ${i} = ${num*i}\n`;
     }
     console.log(output);
-}
+};

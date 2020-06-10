@@ -1,6 +1,6 @@
 equalArrays = (arr1, arr2) => {
-    arr1 = arr1.map( el => Number(el));
-    arr2 = arr2.map( el => Number(el));
+    arr1 = arr1.map(Number);
+    arr2 = arr2.map(Number);
     for(let i=0; i<arr1.length; i++) {
         if(arr1[i] != arr2[i]) {
             return console.log(`Arrays are not identical. Found difference at ${i} index`);

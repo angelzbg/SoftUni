@@ -25,5 +25,7 @@ passwordValidator = (password) => {
         return true;
     };
 
-    if(checkLength(password) & checkSymbols(password) & checkDigits(password)) console.log('Password is valid');
-}
+    if(checkLength(password) & checkSymbols(password) & checkDigits(password)) {
+        console.log('Password is valid');
+    }
+};

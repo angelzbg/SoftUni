@@ -23,4 +23,4 @@ browserHistory = (browser, commands) => {
     console.log(`Open Tabs: ${browser['Open Tabs'].join(', ')}`);
     console.log(`Recently Closed: ${browser['Recently Closed'].join(', ')}`);
     console.log(`Browser Logs: ${browser['Browser Logs'].join(', ')}`);
-}
+};

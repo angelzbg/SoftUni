@@ -2,7 +2,7 @@ bookShelf = (input) => {
     let shelfs = {}, shelfsGenres = {};
 
     input.forEach(line => {
-        if(line.includes('->')) { // create a shelf if the id is not taken.
+        if(line.includes('->')) { // create a shelf if the id if not taken.
             let [ id, genre ] = line.split(' -> ');
             if(!shelfs[id]) {
                 shelfs[id] = genre;
@@ -27,4 +27,4 @@ bookShelf = (input) => {
             console.log(`--> ${book.title}: ${book.author}`);
         });
     });
-}
+};

@@ -15,7 +15,7 @@ armies = (arr) => {
         } else if(format === 2) { // Add army and count to leader (if exists)
             let parts = line.split(': ');
             let leader = parts.shift();
-            if(leaders[leader] !== undefined) {
+            if(leaders[leader]) {
                 let [ armyName, count ] = parts.shift().split(', ');
                 count = Number(count);
                 armies[armyName] = { count, leader };
@@ -52,4 +52,4 @@ armies = (arr) => {
         });
     });
 
-}
+};

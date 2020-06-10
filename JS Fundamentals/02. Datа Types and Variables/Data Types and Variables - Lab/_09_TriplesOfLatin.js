@@ -10,4 +10,4 @@ triplesOfLatinLetters = (num) => {
             }
         }
     }
-}
+};

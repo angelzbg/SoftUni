@@ -8,4 +8,4 @@ postOffice = ([input]) => {
         let word = thirdPart.match(new RegExp(`(?<=\\s|^)${ch}[^\\s]{${len}}(?=\\s|$)`, 'g'))[0];
         console.log(word);
     });
-}
+};

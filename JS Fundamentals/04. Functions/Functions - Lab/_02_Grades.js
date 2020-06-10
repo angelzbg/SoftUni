@@ -5,4 +5,4 @@ grades = (score) => {
     else if(score < 4.50) grade = 'Good';
     else if(score < 5.50) grade = 'Very good';
     console.log(grade);
-}
+};

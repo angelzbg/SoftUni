@@ -4,4 +4,4 @@ listOfProducts = (arr) => {
         output += `${i+1}.${prod}\n`;
     });
     console.log(output);
-}
+};

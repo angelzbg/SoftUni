@@ -5,7 +5,7 @@ rosettaStone = (input) => {
 
     for(let i=0; i<encodedMatrix.length; i++){
         for(let j=0; j<encodedMatrix[i].length; j++){
-            encodedMatrix[i][j] += templateMatrix[i%templateMatrix.length][j%templateMatrix[0].length];
+            encodedMatrix[i][j] += templateMatrix[i % templateMatrix.length][j % templateMatrix[0].length];
             encodedMatrix[i][j] %= 27;
 
             if(encodedMatrix[i][j] == 0) encodedMatrix[i][j] = " ";
@@ -16,4 +16,4 @@ rosettaStone = (input) => {
     let encodedMessage = "";
     encodedMatrix.forEach(row => encodedMessage += row.join(''));
     console.log(encodedMessage.trim());
-}
+};

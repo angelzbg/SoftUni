@@ -8,4 +8,4 @@ numberModification = (n) => {
         average = nums.reduce( (a, b) => a + b, 0 ) / nums.length;
     }
     console.log(numStr);
-}
+};

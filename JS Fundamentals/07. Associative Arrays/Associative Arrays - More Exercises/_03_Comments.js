@@ -25,4 +25,4 @@ comments = (input) => {
             console.log(`--- From user ${c.username}: ${c.title} - ${c.content}`);
         });
     });
-}
+};

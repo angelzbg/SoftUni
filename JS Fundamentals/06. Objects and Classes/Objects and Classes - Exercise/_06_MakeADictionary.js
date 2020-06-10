@@ -7,4 +7,4 @@ makeDictionary = (input) => {
     Object.keys(dictionary).sort().forEach(key => {
         console.log(`Term: ${key} => Definition: ${dictionary[key]}`);
     });
-}
+};

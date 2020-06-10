@@ -41,4 +41,4 @@ airPollution = (matrix, commands) => {
     }
 
     console.log(polutedAreas.length > 0 ? `Polluted areas: ${polutedAreas.join(', ')}` : 'No polluted areas');
-}
+};

@@ -14,19 +14,22 @@ netherRealms = ([line]) => {
     const demons = {};
 
     // Algorithm
-    while( (result = patterns.name.exec(line)) !== null ) {
+    while((result = patterns.name.exec(line))) {
         let demonName = result[0];
 
         let healthChars = demonName.match(patterns.health);
         let health = healthChars === null ? 0 : sumArray(healthChars.map(ch => ch.charCodeAt(0)));
         
         let numbers = demonName.match(patterns.numbers);
-        let damage = numbers === null ? 0 : sumArray(numbers.map(Number));
+        let damage = !numbers ? 0 : sumArray(numbers.map(Number));
         let operators = demonName.match(patterns.operators);
-        if(operators !== null && damage !== 0) {
+        if(operators && damage !== 0) {
             operators.forEach(o => {
-                if(o === '*') damage *= 2;
-                else damage /= 2;
+                if(o === '*') {
+                    damage *= 2;
+                } else {
+                    damage /= 2;
+                }
             });
         }
         

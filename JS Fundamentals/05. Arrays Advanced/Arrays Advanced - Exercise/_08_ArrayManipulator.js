@@ -16,10 +16,12 @@ arrayMinipulator = (nums, cmds) => {
             }
         } else if(cmd[0] === 'sumPairs') {
             let summed = [], len = nums.length;
-            for(let i=0; i<len; i+=2) summed.push(nums[i] + (nums[i+1] || 0));
+            for(let i = 0; i < len; i += 2) {
+                summed.push(nums[i] + (nums[i + 1] || 0));
+            }
             nums = summed;
         }
         cmd = cmds.shift().split(' ');
     }
     console.log('[ ' + nums.join(', ') + ' ]');
-}
+};

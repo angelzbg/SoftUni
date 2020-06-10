@@ -12,4 +12,4 @@ gladiatorExpenses = (loses, _$Helmet, _$Sword, _$Shield, _$Armor) => {
     }
 
     console.log(`Gladiator expenses: ${price.toFixed(2)} aureus`);
-}
+};

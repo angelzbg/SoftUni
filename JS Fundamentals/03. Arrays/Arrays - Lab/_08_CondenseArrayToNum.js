@@ -1,5 +1,5 @@
 condenseArrayToNum = (arr) => {
-    if(arr.length == 1) return console.log(arr[0]);
+    if(arr.length === 1) return console.log(arr[0]);
 
     let condensed = arr;
     while(condensed.length > 2) {
@@ -11,4 +11,4 @@ condenseArrayToNum = (arr) => {
     }
     
     console.log(condensed[0] + condensed[1]);
-}
+};

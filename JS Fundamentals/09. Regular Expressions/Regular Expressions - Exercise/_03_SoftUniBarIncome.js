@@ -3,7 +3,7 @@ barIncome = (input) => {
     let pattern = /%(?<name>[A-Z][a-z]+)%(?:.+)?\<(?<product>\w+)\>(?:.+)?\|(?<count>\d+)\|(?:[^0-9]+)?(?<price>\d+(\.\d+)?)\$/;
     while( (line = input.shift()) !== 'end of shift' ) {
         let result = line.match(pattern);
-        if(result !== null) {
+        if(result) {
             let g = result.groups;
             let price = Number(g.count) * Number(g.price);
             total += price;
@@ -12,4 +12,4 @@ barIncome = (input) => {
     }
 
     console.log(`Total income: ${total.toFixed(2)}`);
-}
+};

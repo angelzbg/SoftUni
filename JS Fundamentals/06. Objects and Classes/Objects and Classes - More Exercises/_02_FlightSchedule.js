@@ -1,19 +1,20 @@
 flightsSchedule = (input) => {
     let flights = {};
     input.shift().forEach(flight => {
-        let parts = flight.split(' ');
-        flights[parts[0]] = { Destination: parts[1], Status: 'Ready to fly' };
+        let [ sector, destination ] = flight.split(' ');
+        flights[sector] = { Destination: destination, Status: 'Ready to fly' };
     });
     input.shift().forEach(flight => {
-        let parts = flight.split(' ');
-        if(flights[parts[0]]) {
-            flights[parts[0]].Status = parts[1];
+        let [ sector, status ] = flight.split(' ');
+        if(flights[sector]) {
+            flights[sector].Status = status;
         }
     });
     let statusFilter = input.shift().shift();
-    Object.entries(flights).forEach(([key, value]) => {
+    Object.entries(flights)
+    .forEach(([key, value]) => {
         if(value.Status === statusFilter) {
             console.log(value);
         }
     });
-}
+};

@@ -3,4 +3,4 @@ hardWords = ([string, words]) => {
         string = string.replace(blank, words.filter(w => w.length === blank.length)[0]);
     });
     console.log(string);
-}
+};

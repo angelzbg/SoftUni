@@ -5,9 +5,9 @@ santasHelper = (input) => {
     while( (line = input.shift()) !== 'end' ) {
         line = line.split('').map(ch => String.fromCharCode(ch.charCodeAt(0) - key)).join('');
         let result = line.match(pattern);
-        if(result !== null) {
+        if(result) {
             goodKids.add(result.groups.name);
         }
     }
     console.log([...goodKids].join('\n'));
-}
+};

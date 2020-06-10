@@ -6,5 +6,5 @@ foreignLanguages = (country) => {
         Argentina: 'Spanish',
         Mexico: 'Spanish'
     };
-    console.log(table[country] !== undefined ? table[country] : 'unknown');
-}
+    console.log(table[country] || 'unknown');
+};

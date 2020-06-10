@@ -1,13 +1,13 @@
 equalSums = (arr) => {
-    for(let i=0; i<arr.length; i++) {
+    for(let i = 0; i < arr.length; i++) {
         let left = 0, right = 0;
-        for(let j=0; j<arr.length; j++) {
-            if(j<i) left += arr[j];
-            else if(j>i) right += arr[j];
+        for(let j = 0; j < arr.length; j++) {
+            if(j < i) left += arr[j];
+            else if(j > i) right += arr[j];
         }
         if(left === right) {
             return console.log(i);
         }
     }
     console.log('no');
-}
+};

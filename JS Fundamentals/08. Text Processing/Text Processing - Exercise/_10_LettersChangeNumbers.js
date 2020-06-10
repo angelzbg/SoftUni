@@ -20,4 +20,4 @@ lettersChangeNumbers = (string) => {
     }
 
     console.log(sum.toFixed(2));
-}
+};

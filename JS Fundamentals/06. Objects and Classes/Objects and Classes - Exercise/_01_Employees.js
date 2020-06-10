@@ -6,4 +6,4 @@ employees = (input) => {
         };
         console.log(`Name: ${employee.name} -- Personal Number: ${employee.number}`);
     });
-}
+};

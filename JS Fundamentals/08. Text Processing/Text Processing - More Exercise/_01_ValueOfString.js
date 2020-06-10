@@ -5,4 +5,4 @@ valueOfString = ([ string, type ]) => {
         sum += letter.charCodeAt(0);
     });
     console.log(`The total sum is: ${sum}`);
-}
+};

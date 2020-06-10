@@ -23,4 +23,4 @@ buildWall = (params) => {
 
     console.log(dailyUsage.join(', '));
     console.log(`${ dailyUsage.reduce((a, b) => a + b, 0) * 1900 } pesos`);    
-}
+};

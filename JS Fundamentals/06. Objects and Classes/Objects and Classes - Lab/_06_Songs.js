@@ -13,11 +13,13 @@ songs = (input) => {
 
     for(let i=0; i<count; i++) {
         let [ typeList, name, time ] = input[i].split('_');
-        if(typeFilter === 'all' || typeFilter === typeList) songs.push(new Song(typeList, name, time));
+        if(typeFilter === 'all' || typeFilter === typeList) {
+            songs.push(new Song(typeList, name, time));
+        }
     }
 
     songs.forEach(song => {
         console.log(song.name);
     });
 
-}
+};

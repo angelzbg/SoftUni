@@ -1,5 +1,7 @@
 theatrePromotions = (day, age) => {
-    if(age < 0 || age > 122) return console.log('Error!');
+    if(age < 0 || age > 122) {
+        return console.log('Error!');
+    }
     
     let price = 0;
     if(day === 'Weekday') {
@@ -16,4 +18,4 @@ theatrePromotions = (day, age) => {
         else price = 10;
     }
     console.log(`${price}$`);
-}
+};

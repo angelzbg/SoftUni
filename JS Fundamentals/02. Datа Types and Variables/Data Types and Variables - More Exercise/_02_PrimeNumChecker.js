@@ -5,4 +5,4 @@ primerNumberChecker = (num) => {
         return true;
     }
     console.log(isPrime(num));
-}
+};

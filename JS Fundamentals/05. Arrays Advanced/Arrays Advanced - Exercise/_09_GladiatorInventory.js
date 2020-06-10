@@ -7,20 +7,19 @@ gladiatorInventory = (input) => {
                 inventory.push(args);
             }
         } else if(cmd === 'Trash') {
-            let index = inventory.indexOf(args);
-            if(index > -1) inventory.splice(index, 1);
+            if((index = inventory.indexOf(args)) > -1) {
+                inventory.splice(index, 1);
+            }
         } else if(cmd === 'Repair') {
-            let index = inventory.indexOf(args);
-            if(index > -1) {
+            if((index = inventory.indexOf(args)) > -1) {
                 inventory.push(inventory.splice(index, 1));
             }
         } else { // 'Upgrade'
             let [ equipment, upgrade ] = args.split('-');
-            let index = inventory.indexOf(equipment);
-            if(index > -1) {
+            if((index = inventory.indexOf(equipment)) > -1) {
                 inventory.splice(index+1, 0, `${equipment}:${upgrade}`);
             }
         }
     });
     console.log(inventory.join(' '));
-}
+};

@@ -21,4 +21,4 @@ printDNA = (rows) => {
     }
 
     console.log(output); 
-}
+};

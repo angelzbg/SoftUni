@@ -1,3 +1,3 @@
 multiplyNumBy2 = (input) => {
-    console.log(input*2);
-}
+    console.log(input * 2);
+};

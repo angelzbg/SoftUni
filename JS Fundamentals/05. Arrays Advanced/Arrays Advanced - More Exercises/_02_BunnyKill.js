@@ -33,4 +33,4 @@ bunnyKill = (matrix) => {
     }
 
     console.log(`${snowBallDamage}\n${killedBunnies}`);
-}
+};

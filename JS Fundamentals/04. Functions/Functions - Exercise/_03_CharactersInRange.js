@@ -4,9 +4,9 @@ charactersInRange = (ch1, ch2) => {
         end = start !== code1 ? code1 : code2,
         output = '';
 
-    for(let i=start+1; i<end; i++) {
+    for(let i = start + 1; i < end; i++) {
         output += String.fromCharCode(i) + ' ';
     }
 
     console.log(output);
-}
+};

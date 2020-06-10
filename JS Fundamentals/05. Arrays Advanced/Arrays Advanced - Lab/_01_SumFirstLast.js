@@ -1,3 +1,3 @@
 sumFirstAndLast = (arr) => {
-    return Number(arr[0]) + Number(arr[arr.length-1]);
-}
+    return Number(arr.shift()) + Number(arr.pop());
+};

@@ -26,4 +26,4 @@ garage = (input) => {
             console.log(output);
         });
     });
-}
+};

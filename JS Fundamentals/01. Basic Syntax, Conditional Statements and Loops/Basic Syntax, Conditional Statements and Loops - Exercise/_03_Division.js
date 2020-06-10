@@ -1,9 +1,10 @@
 division = (num) => {
+	let div = [ 10, 7, 6, 3, 2 ];
     let output = 'Not divisible', leftPart = 'The number is divisible by ';
-    if(num % 10 == 0) output = leftPart + '10';
-    else if(num % 7 == 0) output = leftPart + '7';
-    else if(num % 6 == 0) output = leftPart + '6';
-    else if(num % 3 == 0) output = leftPart + '3';
-    else if(num % 2 == 0) output = leftPart + '2';
+	for(let i = 0; i < 5; i++) {
+		if(num % div[i] === 0) {
+            return console.log(leftPart + div[i]);
+        }
+    }
     console.log(output);
-}
+};

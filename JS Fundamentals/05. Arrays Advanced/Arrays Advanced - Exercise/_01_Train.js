@@ -4,10 +4,11 @@ train = (input) => {
 
     while(input.length > 0) {
         let cmd = input.shift().split(' ');
-        if(cmd[0] === 'Add') wagons.push(Number(cmd[1]));
-        else {
+        if(cmd[0] === 'Add') {
+            wagons.push(Number(cmd[1]));
+        } else {
             let passangers = Number(cmd[0]);
-            for(let i=0; i<wagons.length; i++) {
+            for(let i = 0; i < wagons.length; i++) {
                 if(wagons[i] + passangers <= capacity) {
                     wagons[i] += passangers;
                     break;
@@ -17,4 +18,4 @@ train = (input) => {
     }
 
     console.log(wagons.join(' '));
-}
+};

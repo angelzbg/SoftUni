@@ -11,7 +11,9 @@ radioCrystals = (input) => {
         Etch: 0
     };
     let print = (operation) => {
-        if(Operations[operation] > 0) console.log(`${operation} x${Operations[operation]}\nTransporting and washing`);
+        if(Operations[operation] > 0) {
+            console.log(`${operation} x${Operations[operation]}\nTransporting and washing`);
+        }
     };
 
     for (let i = 1; i < input.length; i++) {
@@ -53,4 +55,4 @@ radioCrystals = (input) => {
             console.log(`Finished crystal ${currentThickness} microns`);
         }
     }
-}
+};

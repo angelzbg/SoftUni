@@ -2,7 +2,7 @@ rageQuit = ([input]) => {
     let output = '';
     let symbolsCount = new Set();
     let patternParts = /\D+\d+/g, patternNum = /\d+/g, patternSymbols = /\D+/g;
-    while( (result = patternParts.exec(input)) !== null) {
+    while((result = patternParts.exec(input))) {
         result = result[0].toUpperCase();
         let count = result.match(patternNum)[0];
         result = result.match(patternSymbols)[0];
@@ -15,4 +15,4 @@ rageQuit = ([input]) => {
 
     console.log(`Unique symbols used: ${symbolsCount.size}`);
     console.log(output);
-}
+};

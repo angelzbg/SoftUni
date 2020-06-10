@@ -1,5 +1,4 @@
 catalogue = (products) => {
-    // 100 davat da se mami ?
     products = products.map(p => p.split(' : ').join(': ')).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
     let currentLetter = products[0][0];
     console.log(currentLetter);
@@ -10,4 +9,4 @@ catalogue = (products) => {
         }
         console.log(`  ${p}`);
     });
-}
+};

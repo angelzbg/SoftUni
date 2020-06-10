@@ -1,7 +1,7 @@
 ladyBugs = (input) => {
     let size = Number(input.shift());
     let field = [];
-    for(let i=0; i<size; i++) field.push(0);
+    for(let i = 0; i < size; i++) field.push(0);
 
     let indexes = input.shift().split(' ').map(el => Number(el));
 
@@ -11,7 +11,7 @@ ladyBugs = (input) => {
         }
     }
 
-    for(let i=0; i<input.length; i++) {
+    for(let i = 0; i < input.length; i++) {
         let line = input[i].split(" ");
         let index = Number(line[0]), direction = line[1], flight = Number(line[2]);
 
@@ -40,4 +40,4 @@ ladyBugs = (input) => {
         }
     }
     console.log(field.join(' '));
-}
+};

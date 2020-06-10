@@ -9,4 +9,4 @@ furniture = (furniture) => {
         }
     }
     console.log(`Total money spend: ${price.toFixed(2)}`);
-}
+};

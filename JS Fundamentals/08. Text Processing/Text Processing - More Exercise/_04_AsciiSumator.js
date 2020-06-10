@@ -9,4 +9,4 @@ asciiSumator = ([ char1, char2, symbols ]) => {
         }
     });
     console.log(sum);
-}
+};
