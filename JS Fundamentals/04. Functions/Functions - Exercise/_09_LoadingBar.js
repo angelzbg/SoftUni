@@ -5,15 +5,6 @@ loadingBar = (num) => {
         return console.log('100% Complete!\n[%%%%%%%%%%]');
     }
     
-    let bar = `${num}% [`;
-    for(let i = 1; i < 11; i++) {
-        if(i <= progress) {
-            bar += '%';
-        } else {
-            bar += '.';
-        }
-    }
-    
-    bar += ']';
+    let bar = `${num}% [${'%'.repeat(progress)}${'.'.repeat(10-progress)}]`;
     console.log(`${bar}\nStill loading...`);
 };
