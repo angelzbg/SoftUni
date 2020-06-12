@@ -1,13 +1,14 @@
 carWash = (cmds) => {
     let progress = 0;
-    let cleaner = {
-        'soap': () => progress += 10,
-        'water': () => progress *= 1.20,
-        'vacuum cleaner': () => progress *= 1.25,
-        'mud': () => progress *= 0.90
+
+    const cleaner = {
+        'soap': (x) => x + 10,
+        'water': (x) => x * 1.20,
+        'vacuum cleaner': (x) => x * 1.25,
+        'mud': (x) => x * 0.90
     };
 
-    cmds.forEach(cmd => cleaner[cmd]());
+    cmds.forEach(cmd => progress = cleaner[cmd](progress));
   
     console.log(`The car is ${(progress).toFixed(2)}% clean.`);
 };
