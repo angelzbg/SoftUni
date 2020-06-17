@@ -1,10 +1,10 @@
 perfectNumber = (num) => {
-    let divisors = [];
-    for(let i = 1; i <= Math.floor(num / 2); i++) {
-        if(Number.isInteger(num / i)) {
-            divisors.push(i);
+    let sum = 0;
+    const half = Math.floor(num / 2);
+    for(let divisor = 1; divisor <= half; divisor++) {
+        if(Number.isInteger(num / divisor)) {
+            sum += divisor;
         }
     }
-    
-    console.log( divisors.reduce((a, b) => a + b, 0) === num ? 'We have a perfect number!' : "It's not so perfect." );
-};
+    console.log(sum === num ? 'We have a perfect number!' : "It's not so perfect.");
+}
