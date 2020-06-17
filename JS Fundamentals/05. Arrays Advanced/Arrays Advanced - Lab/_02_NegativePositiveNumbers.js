@@ -1,12 +1,12 @@
 negativeOrPositiveNumbers = (arr) => {
-    let positive = [], negative = [];
+    let result = [];
     arr.forEach(num => {
         if(num < 0) {
-            negative.splice(0, 0, num);
+            result.unshift(num);
         } else {
-            positive.push(num);
+            result.push(num);
         }
     });
     
-    console.log(`${negative.join('\n')}\n${positive.join('\n')}`);
+    console.log(result.join('\n'));
 };
