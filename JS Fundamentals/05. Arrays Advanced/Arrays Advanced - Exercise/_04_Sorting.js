@@ -1,18 +1,11 @@
-sorting = (arr) => {
-    let ascending = arr.sort( (a, b) => { return a - b; } );
-    let descending = ascending.slice(0).reverse();
-    let result = [];
-    let half = Math.ceil(ascending.length / 2);
+sorting = (array) => {
+    array = array.sort((a, b) => a - b);
+	let result = [];
 
-    for(let i = 0; i < half; i++) {
-        result.push(descending[i]);
-        
-        if(descending[i] === ascending[i]) {
-            break;
-        }
-
-        result.push(ascending[i]);
+    while (array.length) {
+        result.push(array.pop());
+        result.push(array.shift());
     }
 
-    console.log('\n' + result.join(' '));
+    console.log(result.join(' '));
 };
