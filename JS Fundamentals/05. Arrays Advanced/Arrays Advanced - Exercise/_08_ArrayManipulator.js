@@ -1,7 +1,5 @@
 arrayMinipulator = (nums, cmds) => {
-    let cmd = cmds.shift().split(' ');
-
-    while(cmd[0] !== 'print') {
+    while((cmd = cmds.shift().split(' '))[0] !== 'print') {
         if(cmd[0] === 'add') {
             nums.splice(Number(cmd[1]), 0, Number(cmd[2]));
         } else if(cmd[0] === 'addMany') {
@@ -12,7 +10,7 @@ arrayMinipulator = (nums, cmds) => {
             nums.splice(Number(cmd[1]), 1);
         } else if(cmd[0] === 'shift') {
             let shifts = Number(cmd[1]);
-            for(let i=0; i<shifts; i++) {
+            for(let i = 0; i < shifts; i++) {
                 nums.push(nums.shift());
             }
         } else if(cmd[0] === 'sumPairs') {
@@ -23,7 +21,6 @@ arrayMinipulator = (nums, cmds) => {
             
             nums = summed;
         }
-        cmd = cmds.shift().split(' ');
     }
 
     console.log('[ ' + nums.join(', ') + ' ]');
