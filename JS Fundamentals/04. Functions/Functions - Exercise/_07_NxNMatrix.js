@@ -3,3 +3,7 @@ NxNMatrix = (N) => {
         console.log(`${N} `.repeat(N));
     }
 };
+
+NxNMatrix = (N) => {
+    new Array(N).fill(new Array(N).fill(N)).forEach(row => console.log(row.join(' ')));
+};
