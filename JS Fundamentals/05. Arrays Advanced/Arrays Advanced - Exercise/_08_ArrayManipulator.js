@@ -14,9 +14,9 @@ arrayMinipulator = (nums, cmds) => {
                 nums.push(nums.shift());
             }
         } else if(cmd[0] === 'sumPairs') {
-            let summed = [], len = nums.length;
-            for(let i = 0; i < len; i += 2) {
-                summed.push(nums[i] + (nums[i + 1] || 0));
+            let summed = [];
+            while(nums.length) {
+                summed.push(nums.shift() + (nums.shift() || 0));
             }
             
             nums = summed;
@@ -25,3 +25,13 @@ arrayMinipulator = (nums, cmds) => {
 
     console.log('[ ' + nums.join(', ') + ' ]');
 };
+
+
+
+
+else if (commandArr[0] == 'addMany') {
+    commandArr.shift();
+    let index = commandArr.shift();
+    manipulatedArr.splice(index, 0, ...commandArr.map(Number));
+    // ====================================================
+  }
