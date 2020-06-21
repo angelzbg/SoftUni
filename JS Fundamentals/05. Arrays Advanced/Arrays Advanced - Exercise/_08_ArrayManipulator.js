@@ -25,13 +25,3 @@ arrayMinipulator = (nums, cmds) => {
 
     console.log('[ ' + nums.join(', ') + ' ]');
 };
-
-
-
-
-else if (commandArr[0] == 'addMany') {
-    commandArr.shift();
-    let index = commandArr.shift();
-    manipulatedArr.splice(index, 0, ...commandArr.map(Number));
-    // ====================================================
-  }
