@@ -1,12 +1,7 @@
-spiceMustFlow = (startingYield) => {
-    let yieldStorage = 0;
-    let yield = startingYield;
-    let days = 0;
+spiceMustFlow = (startingYield = 1) => {
+    let [yieldStorage, yield, days] = [0, startingYield, 0];
     while(yield > 99) {
-        days++;
-        yieldStorage += yield;
-        yieldStorage -= 26;
-        yield -= 10;
+        [days, yieldStorage, yield] = [days + 1, yieldStorage + yield - 26, yield - 10];
     }
     
     yieldStorage -= yieldStorage > 25 ? 26 : yieldStorage;

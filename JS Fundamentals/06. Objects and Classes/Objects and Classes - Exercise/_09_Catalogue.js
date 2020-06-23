@@ -1,4 +1,4 @@
-catalogue = (products) => {
+catalogue = (products = []) => {
     products = products.map(p => p.split(' : ').join(': ')).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
     let currentLetter = products[0][0];
     console.log(currentLetter);

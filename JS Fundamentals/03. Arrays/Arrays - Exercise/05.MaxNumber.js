@@ -1,4 +1,4 @@
-maxNumber = (arr) => {
+maxNumber = (arr = []) => {
     let biggest = arr[arr.length - 1];
     let output = [ biggest ];
     for(let i = arr.length - 2; i >- 1; i--) {

@@ -1,4 +1,4 @@
-magicSum = (arr, num) => {
+magicSum = (arr = [], num = 1) => {
     let output = '';
     for(let i = 0; i < arr.length - 1; i++) {
         for(let j = i + 1; j < arr.length; j++) {

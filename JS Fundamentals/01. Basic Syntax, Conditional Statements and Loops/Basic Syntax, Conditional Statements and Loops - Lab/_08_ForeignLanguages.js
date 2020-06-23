@@ -1,4 +1,4 @@
-foreignLanguages = (country) => {
+foreignLanguages = (country = '') => {
     let table = {
         England: 'English',
         USA: 'English',

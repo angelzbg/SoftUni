@@ -1,4 +1,4 @@
-postOffice = ([input]) => {
+postOffice = ([input = '']) => {
     input = input.split('|');
     let firstPart = input[0], secondPart = input[1], thirdPart = input[2];
 

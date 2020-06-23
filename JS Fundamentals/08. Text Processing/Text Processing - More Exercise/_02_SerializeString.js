@@ -1,4 +1,4 @@
-serializeString = ([ string ]) => {
+serializeString = ([ string = '' ]) => {
     let symbols = {};
     string.split('').forEach((symbol, index) => {
         symbols[symbol] = (symbols[symbol] || []).concat(index);

@@ -1,4 +1,4 @@
-comments = (input) => {
+comments = (input = []) => {
     let articles = {}, users = new Set();
     input.forEach(line => {
         if(line.substr(0, 4) === 'user') { // add the user to the list of users

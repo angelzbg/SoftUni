@@ -1,4 +1,4 @@
-minerTask = (arr) => {
+minerTask = (arr = []) => {
     const mined = {};
     while(arr.length > 0) {
         let res = arr.shift(), value = Number(arr.shift());

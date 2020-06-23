@@ -1,4 +1,4 @@
-passwordGenerator = ([str1, str2, word]) => {
+passwordGenerator = ([str1 = '', str2 = '', word = '']) => {
     word = word;
     let specialIndex = -1;
     let password = (str1 + str2).split('');

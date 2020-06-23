@@ -1,4 +1,4 @@
-garage = (input) => {
+garage = (input = []) => {
     let garages = {}, garagesFix = new Set(); // shtoto uslovieto e totalno sburkano
     input.forEach(line => {
         let split = line.split(' - ');

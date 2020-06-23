@@ -1,4 +1,4 @@
-schoolRegister = (input) => {
+schoolRegister = (input = []) => {
     let register = {};
     input.forEach(line => {
         let tokens = line.split(', '),

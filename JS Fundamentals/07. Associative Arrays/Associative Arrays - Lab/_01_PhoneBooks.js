@@ -1,4 +1,4 @@
-phoneBook = (input) => {
+phoneBook = (input = []) => {
     let phoneBook = {};
     input.forEach(el => {
         let [ name, phone ] = el.split(' ');

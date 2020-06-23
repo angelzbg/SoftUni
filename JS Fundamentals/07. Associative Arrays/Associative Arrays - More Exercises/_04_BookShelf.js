@@ -1,4 +1,4 @@
-bookShelf = (input) => {
+bookShelf = (input = []) => {
     let shelfs = {}, shelfsGenres = {};
 
     input.forEach(line => {

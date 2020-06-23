@@ -1,4 +1,4 @@
-tseamAccount = (input) => {
+tseamAccount = (input = []) => {
     let list = input.shift().split(' ');
     while(([cmd, game] = input.shift().split(' '))[0] !== 'Play!' ) {
         if(cmd === 'Install') {

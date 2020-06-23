@@ -1,5 +1,5 @@
-addAndRemove = (arr) => {
-    let counter = 0, newArr = [];
+addAndRemove = (arr = []) => {
+    let [counter, newArr] = [0, []];
     arr.forEach(el => {
         counter++;
         if(el === 'add') {

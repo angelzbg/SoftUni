@@ -1,4 +1,4 @@
-winningTicket = ([input]) => {
+winningTicket = ([input = '']) => {
     let patternRepeat = /([@#\$\^])\1{5,9}/g;
     
     input = input.split(/[\s,]+/).forEach(ticket => {

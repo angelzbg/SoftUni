@@ -1,5 +1,6 @@
-thePyramid = (base, increment) => {
+thePyramid = (base = 1, increment = 1) => {
     let stone = marble = lapis = gold = row = 0;
+    //let [stone, marble, lapis, gold, row] = new Array(5).fill(0);
  
     while (base > 2) {
         let requiredMarbel = base * 4 - 4;

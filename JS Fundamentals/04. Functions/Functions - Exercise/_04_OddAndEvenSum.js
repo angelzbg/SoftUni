@@ -1,4 +1,4 @@
-oddAndEvenSum = (num) => {
+oddAndEvenSum = (num = 1) => {
     let numStr = num.toString();
     let oddSum = 0, evenSum = 0;
     

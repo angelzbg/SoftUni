@@ -1,5 +1,5 @@
-arrayRotation = (arr, r) => {
-    for(let i = 0; i < r; i++) {
+arrayRotation = (arr = [], r = 1) => {
+    while(r--) {
         arr.push(arr.shift());
     }
 

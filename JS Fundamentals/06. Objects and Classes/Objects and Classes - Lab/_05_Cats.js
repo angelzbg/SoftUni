@@ -1,4 +1,4 @@
-cats = (input) => {
+cats = (input = []) => {
     class Cat {
         
         constructor(name, age) {

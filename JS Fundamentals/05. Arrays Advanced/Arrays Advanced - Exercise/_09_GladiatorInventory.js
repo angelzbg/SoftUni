@@ -1,4 +1,4 @@
-gladiatorInventory = (input) => {
+gladiatorInventory = (input = []) => {
     let inventory = input.shift().split(' ');
     input.forEach(line => {
         let [ cmd, args ] = line.split(' ');

@@ -1,8 +1,10 @@
 spiralMatrix = (rows, cols) => {
-    let count = 0, maxCount = rows * cols, minRow = 0, minCol = 0, maxRow = rows - 1, maxCol = cols - 1;
+    let [count, maxCount, minRow, minCol, maxRow, maxCol] = [0, rows * cols, 0, 0, rows - 1, cols - 1];
 
     let matrix = [];
-    for (let i = 0; i < rows; i++) matrix.push([]);
+    for (let i = 0; i < rows; i++) {
+        matrix.push([]);
+    }
 
     while (count < maxCount) {
         for (let c = minCol; c <= maxCol && count < maxCount; c++) {

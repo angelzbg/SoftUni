@@ -1,4 +1,4 @@
-armies = (arr) => {
+armies = (arr = []) => {
     // Tuk stana high level bez da iskam xD
     let leaders = {}, armies = {};
 

@@ -1,4 +1,4 @@
-asciiSumator = ([ char1, char2, symbols ]) => {
+asciiSumator = ([ char1 = '', char2 = '', symbols = [] ]) => {
     char1 = char1.charCodeAt(0);
     char2 = char2.charCodeAt(0);
     symbols = symbols.split('').map(ch => ch.charCodeAt(0));

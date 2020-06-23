@@ -1,6 +1,4 @@
-englishNameOfLastDigit = (num) => {
-    let names = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
-    let lastNum = num + '';
-    lastNum = Number(lastNum[lastNum.length-1]);
-    console.log(names[lastNum]);
+englishNameOfLastDigit = (num = 1) => {
+    const names = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
+    console.log(names[Number(num.toString().split('').pop())]);
 };

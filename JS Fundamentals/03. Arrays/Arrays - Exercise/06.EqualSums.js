@@ -1,4 +1,4 @@
-equalSums = (arr) => {
+equalSums = (arr = []) => {
     for(let i = 0; i < arr.length; i++) {
         let left = 0, right = 0;
         for(let j = 0; j < arr.length; j++) {

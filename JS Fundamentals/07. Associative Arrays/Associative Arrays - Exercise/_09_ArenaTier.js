@@ -1,4 +1,4 @@
-arena = (arr) => {
+arena = (arr = []) => {
     let arena = {};
     let totalPowers = {};
     

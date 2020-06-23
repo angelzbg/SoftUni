@@ -1,4 +1,4 @@
-schoolGrade = (input) => {
+schoolGrade = (input = []) => {
     let storage = {};
     input.forEach(el => {
         let split = el.split(' ');

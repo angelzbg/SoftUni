@@ -1,3 +1,3 @@
-repeatString = (str, n) => {
+repeatString = (str = '', n = 1) => {
     return str.repeat(n);
 };

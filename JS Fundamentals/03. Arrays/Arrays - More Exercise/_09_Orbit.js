@@ -1,8 +1,5 @@
-orbit = ([w, h, x, y]) => {
-    let rows = w;
-    let cols = h;
-    let starRow = x;
-    let starCol = y;
+orbit = (input = []) => {
+    let [rows, cols, starRow, starCol] = input;
  
     let matrix = [];
     for(let i = 0; i < rows; i++) {

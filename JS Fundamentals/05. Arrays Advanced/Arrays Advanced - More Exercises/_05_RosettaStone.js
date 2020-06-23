@@ -1,4 +1,4 @@
-rosettaStone = (input) => {
+rosettaStone = (input = []) => {
     let n = Number(input.shift());
     let templateMatrix = input.splice(0, n).map(row => row.split(' ').map(Number));
     let encodedMatrix = input.map(row => row.split(' ').map(Number));

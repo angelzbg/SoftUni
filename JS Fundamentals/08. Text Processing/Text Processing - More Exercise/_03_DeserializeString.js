@@ -1,4 +1,4 @@
-deserializeString = (serialized) => {
+deserializeString = (serialized = []) => {
     let symbols = [];
     while((line = serialized.shift().split(':'))[0] !== 'end') {
         let symbol = line.shift();

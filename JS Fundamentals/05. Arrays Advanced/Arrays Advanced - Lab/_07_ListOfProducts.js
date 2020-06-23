@@ -1,4 +1,4 @@
-listOfProducts = (arr) => {
+listOfProducts = (arr = []) => {
     arr.sort();
     let output = '';
     arr.forEach((prod, i) => {

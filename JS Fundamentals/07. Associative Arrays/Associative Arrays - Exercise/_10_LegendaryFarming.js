@@ -1,4 +1,4 @@
-legendary = (input) => {
+legendary = (input = []) => {
     let materials = {},
         required = {
             fragments: 'Valanyr',

@@ -1,4 +1,4 @@
-sorting = (array) => {
+sorting = (array = []) => {
     array = array.sort((a, b) => a - b);
 	let result = [];
 

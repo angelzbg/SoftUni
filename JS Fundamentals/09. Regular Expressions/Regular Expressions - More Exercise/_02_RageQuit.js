@@ -1,4 +1,4 @@
-rageQuit = ([input]) => {
+rageQuit = ([input = '']) => {
     let output = '';
     let symbolsCount = new Set();
     let patternParts = /\D+\d+/g, patternNum = /\d+/g, patternSymbols = /\D+/g;

@@ -1,4 +1,4 @@
-train = (input) => {
+train = (input = []) => {
     let wagons = input.shift().split(' ').map(Number),
         capacity = Number(input.shift());
 

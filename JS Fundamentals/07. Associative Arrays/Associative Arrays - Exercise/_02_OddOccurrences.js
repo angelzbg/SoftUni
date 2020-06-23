@@ -1,4 +1,4 @@
-oddOccurrences = (arr) => {
+oddOccurrences = (arr = []) => {
     let occurrences = {};
     arr = arr.split(' ')
     .map(el => el.toLowerCase())

@@ -1,4 +1,4 @@
-bitcoinMining = (array) => {
+bitcoinMining = (array = []) => {
     let gold = money = 0;
     let firstDay;
 

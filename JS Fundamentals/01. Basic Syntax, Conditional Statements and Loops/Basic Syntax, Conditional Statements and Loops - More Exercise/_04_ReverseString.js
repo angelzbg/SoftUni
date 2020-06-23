@@ -1,3 +1,3 @@
-reverseString = (str) => {
+reverseString = (str = '') => {
     console.log(str.split('').reverse().join(''));
 };

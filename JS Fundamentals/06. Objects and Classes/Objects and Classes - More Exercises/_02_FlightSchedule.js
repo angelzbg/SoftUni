@@ -1,4 +1,4 @@
-flightsSchedule = (input) => {
+flightsSchedule = (input = []) => {
     let flights = {};
     input.shift().forEach(flight => {
         let [ sector, destination ] = flight.split(' ');

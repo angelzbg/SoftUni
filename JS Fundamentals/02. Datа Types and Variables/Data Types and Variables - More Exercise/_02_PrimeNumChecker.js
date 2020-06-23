@@ -1,5 +1,5 @@
-primerNumberChecker = (num) => {
-    let isPrime = (num) => {
+primerNumberChecker = (num = 1) => {
+    const isPrime = (num) => {
         if(num === 2 || num === 3) {
             return true;
         }

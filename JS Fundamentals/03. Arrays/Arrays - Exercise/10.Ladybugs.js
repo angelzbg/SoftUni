@@ -1,4 +1,4 @@
-ladyBugs = (input) => {
+ladyBugs = (input = []) => {
     let size = Number(input.shift());
     let field = [];
     for(let i = 0; i < size; i++) field.push(0);

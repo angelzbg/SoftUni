@@ -1,4 +1,4 @@
-valueOfString = ([ string, type ]) => {
+valueOfString = ([ string = '', type = '' ]) => {
     let pattern = type === 'UPPERCASE' ? /[A-Z]/g : /[a-z]/g;
     let sum = 0;
 

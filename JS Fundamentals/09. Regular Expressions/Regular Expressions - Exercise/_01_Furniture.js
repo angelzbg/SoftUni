@@ -1,4 +1,4 @@
-furniture = (furniture) => {
+furniture = (furniture = []) => {
     let price = 0;
     console.log('Bought furniture:');
     let pattern = />>(?<name>.+)<<(?<price>\d+(?:\.\d+)?)!(?<count>\d+)/;

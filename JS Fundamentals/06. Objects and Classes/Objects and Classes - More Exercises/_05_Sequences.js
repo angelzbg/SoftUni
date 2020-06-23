@@ -1,4 +1,4 @@
-sequances = (input) => {
+sequences = (input = []) => {
     // Kopirano ot drug ama to tva e mn gotino, nqma da go izmislq po-umno xD
     input = input
         .map(JSON.parse)

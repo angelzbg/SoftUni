@@ -1,4 +1,4 @@
-wordsTracker = (arr) => {
+wordsTracker = (arr = []) => {
     let words = {};
     arr.shift().split(' ').forEach(word => {
         words[word] = 0;

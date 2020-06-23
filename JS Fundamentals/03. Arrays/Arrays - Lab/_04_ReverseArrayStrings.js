@@ -1,3 +1,3 @@
-reverseArrayString = (arr) => {
+reverseArrayString = (arr = []) => {
     console.log(arr.reverse().join(' '));
 };

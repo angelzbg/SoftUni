@@ -1,4 +1,4 @@
-loadingBar = (num) => {
+loadingBar = (num = 1) => {
     let progress = num / 10;
 
     if(progress === 10) {

@@ -1,4 +1,4 @@
-race = (input) => {
+race = (input = []) => {
     let racersNames = new Set(input.shift().split(', '));
     let racers = {};
 

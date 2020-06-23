@@ -1,4 +1,4 @@
-carWash = (cmds) => {
+carWash = (cmds = []) => {
     let progress = 0;
 
     const cleaner = {

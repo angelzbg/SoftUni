@@ -15,7 +15,7 @@ bunnyKill = (matrix) => {
         if (bombValue > 0) {
             for (let row = bombRow - 1; row <= bombRow + 1; row++) {
                 for (let col = bombCol - 1; col <= bombCol + 1; col++) {
-                    if ((row >= 0) && (col >= 0) && (row < matrixRow) && (col < matrixCol)) {
+                    if (row >= 0 && col >= 0 && row < matrixRow && col < matrixCol) {
                         matrix[row][col] -= bombValue;
                     }
                 }

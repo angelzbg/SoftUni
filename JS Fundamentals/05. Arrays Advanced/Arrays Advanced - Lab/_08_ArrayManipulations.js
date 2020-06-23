@@ -1,4 +1,4 @@
-arrayManipulator = (input) => {
+arrayManipulator = (input = []) => {
     let arr = input.shift().split(' ').map(Number);
     while(input.length > 0) {
         let cmd = input.shift().split(' ');

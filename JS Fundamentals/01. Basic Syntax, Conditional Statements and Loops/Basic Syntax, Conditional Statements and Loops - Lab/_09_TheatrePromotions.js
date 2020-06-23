@@ -1,4 +1,4 @@
-theatrePromotions = (day, age) => {
+theatrePromotions = (day = '', age = 1) => {
     if(age < 0 || age > 122) {
         return console.log('Error!');
     }

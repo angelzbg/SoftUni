@@ -1,4 +1,4 @@
-bombNumber = (nums, [ special, power ]) => {
+bombNumber = (nums = [], [ special = 1, power = 1 ]) => {
     let indexSpecial = nums.indexOf(special);
     while(indexSpecial !== -1) {
         //nums.splice(indexSpecial-power, power*2+1);

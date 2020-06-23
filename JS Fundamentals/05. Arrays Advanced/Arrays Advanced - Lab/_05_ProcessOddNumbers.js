@@ -1,4 +1,4 @@
-processOddNumbers = (arr) => {
+processOddNumbers = (arr = []) => {
     let reversed = [];
     arr.forEach( (num, i) => {
         if(i % 2 === 1) {

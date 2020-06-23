@@ -1,4 +1,4 @@
-users = (arr) => {
+users = (arr = []) => {
     let users = {};
 
     arr.forEach(el => {

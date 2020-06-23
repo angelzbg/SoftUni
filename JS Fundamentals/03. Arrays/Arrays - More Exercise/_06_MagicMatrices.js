@@ -1,11 +1,11 @@
 magicMatrices = (M) => {
     let isMagicMatrix = (m) => {
-        let rows = m.length,
-            cows = m[0].length,
-            sum = m[0].reduce((a, b) => a + b, 0);
+        let [rows, cows, sum] = [m.length, m[0].length, m[0].reduce((a, b) => a + b, 0)];
         
         for(let i = 1; i < rows; i++) {
-            if(m[i].reduce((a, b) => a + b, 0) !== sum) return false;
+            if(m[i].reduce((a, b) => a + b, 0) !== sum) {
+                return false;
+            }
         }
 
         for(let i = 0; i < cows; i++) {

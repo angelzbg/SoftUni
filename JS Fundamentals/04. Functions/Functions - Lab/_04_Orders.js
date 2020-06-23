@@ -1,4 +1,4 @@
-orders = (product, quantity) => {
+orders = (product = '', quantity = 1) => {
     let products = {
         coffee: 1.50,
         water: 1.00,

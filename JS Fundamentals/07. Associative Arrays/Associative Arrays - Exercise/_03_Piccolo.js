@@ -1,4 +1,4 @@
-piccolo = (input) => {
+piccolo = (input = []) => {
     let cars = new Set();
     input.forEach(line => {
         let [ direction, car ] = line.split(', ');

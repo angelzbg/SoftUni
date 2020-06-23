@@ -1,5 +1,5 @@
-lettersChangeNumbers = (string) => {
-    let alphabetPosition = (letter) => parseInt(letter, 36) - 9;
+lettersChangeNumbers = (string = '') => {
+    const alphabetPosition = (letter) => parseInt(letter, 36) - 9;
 
     let sum = 0;
     let pattern = /(?<first>[A-Za-z])(?<number>[0-9]+)(?<last>[A-Za-z])/g;

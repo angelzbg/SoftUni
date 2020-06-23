@@ -1,4 +1,4 @@
-starEnigma = (input) => {
+starEnigma = (input = []) => {
     let attacked = [], destroyed = [];
     let patternLetters = /[starSTAR]/g;
     let validPattern = /@(?<name>[a-zA-Z]+)(?:[^@\-!:]+)?:(?<population>\d+)(?:[^@\-!:]+)?!(?<type>[AD])!(?:[^@\-!:]+)?->(?<soldiers>\d+)/;

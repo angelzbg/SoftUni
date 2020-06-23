@@ -1,4 +1,4 @@
-evenOddSubtraction = (arr) => {
+evenOddSubtraction = (arr = []) => {
     let even = odd = 0;
     arr.forEach(el => {
         if(el % 2 === 0) {

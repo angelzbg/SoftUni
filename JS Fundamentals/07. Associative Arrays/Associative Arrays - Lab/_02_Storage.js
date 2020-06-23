@@ -1,4 +1,4 @@
-storage = (input) => {
+storage = (input = []) => {
     let storage = new Map();
     input.forEach(el => {
         let [ product, quantity ] = el.split(' ');

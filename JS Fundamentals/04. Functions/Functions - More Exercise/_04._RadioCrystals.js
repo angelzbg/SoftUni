@@ -1,4 +1,4 @@
-radioCrystals = (input) => {
+radioCrystals = (input = []) => {
     let Operations = {
         cut: (x) => x / 4,
         lap: (x) => x * 0.8,

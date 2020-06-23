@@ -1,4 +1,4 @@
-cardGame = (arr) => {
+cardGame = (arr = []) => {
     let CARDS = { 'J': 11, 'Q': 12, 'K': 13, 'A': 14 },
         TYPES = { 'S': 4, 'H': 3, 'D': 2, 'C': 1 },
         decks = {};

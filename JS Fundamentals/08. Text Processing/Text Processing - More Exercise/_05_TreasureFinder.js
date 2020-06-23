@@ -1,4 +1,4 @@
-treasureFinder = (input) => {
+treasureFinder = (input = []) => {
     let keys = input.shift().split(' ').map(Number);
     while((line = input.shift()) !== 'find') {
         let keyIndex = -1;

@@ -1,4 +1,4 @@
-santasHelper = (input) => {
+santasHelper = (input = []) => {
     let goodKids = new Set();
     let key = Number(input.shift());
     let pattern = /@(?<name>[A-Za-z]+)[^@!:>-]*!(?<behavior>G)!/;

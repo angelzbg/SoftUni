@@ -1,4 +1,4 @@
-melrahShake = ([string, pattern]) => {
+melrahShake = ([string = '', pattern = '']) => {
     while(string.length > 0 && pattern.length > 0) {
         let firstIndex = string.indexOf(pattern);
         let lastIndex = string.lastIndexOf(pattern);

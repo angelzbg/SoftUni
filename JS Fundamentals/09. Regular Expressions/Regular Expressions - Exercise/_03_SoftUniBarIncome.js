@@ -1,8 +1,8 @@
-barIncome = (input) => {
+barIncome = (input = []) => {
     let total = 0;
     let pattern = /%(?<name>[A-Z][a-z]+)%(?:.+)?\<(?<product>\w+)\>(?:.+)?\|(?<count>\d+)\|(?:[^0-9]+)?(?<price>\d+(\.\d+)?)\$/;
 
-    while( (line = input.shift()) !== 'end of shift' ) {
+    while((line = input.shift()) !== 'end of shift') {
         let result = line.match(pattern);
 
         if(result) {

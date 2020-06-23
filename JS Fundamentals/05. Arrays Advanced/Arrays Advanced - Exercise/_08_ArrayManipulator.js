@@ -1,4 +1,4 @@
-arrayMinipulator = (nums, cmds) => {
+arrayMinipulator = (nums = [], cmds = []) => {
     while((cmd = cmds.shift().split(' '))[0] !== 'print') {
         if(cmd[0] === 'add') {
             nums.splice(Number(cmd[1]), 0, Number(cmd[2]));

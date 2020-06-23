@@ -1,4 +1,4 @@
-negativeOrPositiveNumbers = (arr) => {
+negativeOrPositiveNumbers = (arr = []) => {
     let result = [];
     arr.forEach(num => {
         if(num < 0) {

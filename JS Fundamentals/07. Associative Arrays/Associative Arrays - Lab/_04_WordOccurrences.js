@@ -1,4 +1,4 @@
-wordOccurrences = (input) => {
+wordOccurrences = (input = []) => {
     let words = {};
     input.forEach(word => words[word] = 1 + (words[word] || 0));
     

@@ -1,4 +1,4 @@
-neighborhoods = (input) => {
+neighborhoods = (input = []) => {
     let neighborhoods = {};
     input.shift().split(', ').forEach(neighborhood => {
         neighborhoods[neighborhood] = [];

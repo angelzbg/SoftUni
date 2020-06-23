@@ -1,4 +1,4 @@
-browserHistory = (browser, commands) => {
+browserHistory = (browser = {}, commands = []) => {
     commands.forEach(line => {
         let cmd = line.split(' ');
         if(cmd[0] === 'Open') {

@@ -1,4 +1,4 @@
-simpleCalculator = (num1, num2, operator) => {
+simpleCalculator = (num1 = 1, num2 = 1, operator = '') => {
     let MyMath = {
         multiply: (n1, n2) => n1 * n2,
         divide: (n1, n2) => n1 / n2,

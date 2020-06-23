@@ -1,5 +1,5 @@
 // Oshte edna piqna zadacha :3
-partyTime = (input) => {
+partyTime = (input = []) => {
     let guests = input.slice(0, input.indexOf('PARTY'));
     let comingGuests = input.slice(guests.length + 1);
     let vips = [], regular = [];

@@ -1,6 +1,5 @@
-equalArrays = (arr1, arr2) => {
-    arr1 = arr1.map(Number);
-    arr2 = arr2.map(Number);
+equalArrays = (arr1 = [], arr2 = []) => {
+    [arr1, arr2] = [arr1.map(Number), arr2.map(Number)];
 
     for(let i = 0; i < arr1.length; i++) {
         if(arr1[i] != arr2[i]) {

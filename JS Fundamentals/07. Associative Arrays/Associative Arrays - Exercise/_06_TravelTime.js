@@ -1,4 +1,4 @@
-travelTime = (input) => {
+travelTime = (input = []) => {
     let destinations = {};
     input.forEach(el => {
         let [ country, town, price ] = el.split(' > ');
