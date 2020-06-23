@@ -1,4 +1,4 @@
-stringLength = (str1, str2, str3) => {
+stringLength = (str1 = '', str2 = '', str3 = '') => {
     const getStringsLength = (...strings) => {
         return strings.join('').length;
     };
