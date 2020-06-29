@@ -1,4 +1,4 @@
-secretChat = (input) => {
+secretChat = (input = []) => {
     let message = input.shift();
     while((cmd = input.shift().split(':|:'))[0] !== 'Reveal') {
         if(cmd[0] === 'InsertSpace') {

@@ -1,14 +1,20 @@
-catalogue = (products = []) => {
-    products = products.map(p => p.split(' : ').join(': ')).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-    let currentLetter = products[0][0];
-    console.log(currentLetter);
-
-    products.forEach(p => {
-        if(currentLetter !== p[0]) {
-            currentLetter = p[0];
-            console.log(currentLetter);
-        }
-        
-        console.log(`  ${p}`);
+catalogue = (input = []) => {
+    const catalogue = {};
+    input.forEach(line => {
+        let [name, price] = line.split(' : ');
+        catalogue[name] = price;
     });
+
+    let letter;
+    Object
+        .entries(catalogue)
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .forEach(([name, price]) => {
+            if (name[0] !== letter) {
+                letter = name[0];
+                console.log(name[0]);
+            }
+
+            console.log(`  ${name}: ${price}`);
+        });
 };
