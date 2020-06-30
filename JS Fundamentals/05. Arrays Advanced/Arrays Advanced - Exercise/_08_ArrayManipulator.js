@@ -9,7 +9,7 @@ arrayMinipulator = (nums = [], cmds = []) => {
         } else if(cmd[0] === 'remove') {
             nums.splice(Number(cmd[1]), 1);
         } else if(cmd[0] === 'shift') {
-            let shifts = Number(cmd[1]);
+            let shifts = Number(cmd[1]) % nums.length;
             for(let i = 0; i < shifts; i++) {
                 nums.push(nums.shift());
             }
