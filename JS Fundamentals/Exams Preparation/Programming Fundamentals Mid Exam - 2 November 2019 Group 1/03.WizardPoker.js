@@ -23,10 +23,8 @@ wizardPoker = (input) => {
                 deck.splice(index, 1);
             }
         } else if(cmd[0] === 'Swap') {
-            let indexCard1 = deck.indexOf(cmd[1]),
-                indexCard2 = deck.indexOf(cmd[2]);
-            deck[indexCard1] = cmd[2];
-            deck[indexCard2] = cmd[1];
+            let [indexCard1, indexCard2] = [deck.indexOf(cmd[1]), deck.indexOf(cmd[2])];
+            [deck[indexCard1], deck[indexCard2]] = [cmd[2], cmd[1]];
         } else { // 'Shuffle'
             deck.reverse();
         }
