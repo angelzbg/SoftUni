@@ -1,13 +1,9 @@
 piccolo = (input = []) => {
-    let cars = new Set();
-    input.forEach(line => {
+    [...input.reduce((cars, line) => {
         let [ direction, car ] = line.split(', ');
-        if(direction === 'IN') {
-            cars.add(car);
-        } else {
-            cars.delete(car);
-        }
-    });
-    
-    [...cars].sort().forEach(car => console.log(car));
-}
+        cars[direction === 'IN' ? 'add' : 'delete'](car);
+        return cars;
+    }, new Set())]
+    .sort()
+    .forEach(car => console.log(car));
+};
