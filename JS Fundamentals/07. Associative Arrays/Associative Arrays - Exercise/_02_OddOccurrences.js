@@ -1,18 +1,14 @@
-oddOccurrences = (arr = []) => {
-    let occurrences = {};
-    arr = arr.split(' ')
-    .map(el => el.toLowerCase())
-    .forEach(el => {
-        occurrences[el] = 1 + (occurrences[el] || 0);
-    });
-
-    let output = '';
-    Object.entries(occurrences)
-    .forEach(([key, value]) => {
-        if(value % 2 === 1) {
-            output += `${key} `;
-        }
-    });
-    
-    console.log(output.trim());
-}
+oddOccurrences = (str = "") => {
+  return Object.entries(
+    str
+      .toLowerCase()
+      .split(" ")
+      .reduce((occ, word) => {
+        occ[word] = 1 + (occ[word] || 0);
+        return occ;
+      }, {})
+  )
+    .filter(([key, value]) => value % 2 === 1)
+    .map(([key, value]) => key)
+    .join(" ");
+};
