@@ -4,7 +4,7 @@ piccolo = (input = []) => {
       let [direction, car] = line.split(", ");
       cars[direction === "IN" ? "add" : "delete"](car);
       return cars;
-    }, new Set()),
+    }, new Set())
   ]
     .sort()
     .forEach((car) => console.log(car));
