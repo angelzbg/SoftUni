@@ -25,5 +25,5 @@ spiralMatrix = (rows = 0, cols = 0) => {
         minCol++;
     }
 
-    matrix.forEach(r => console.log(r.join(' ')));
+    matrix.forEach((r) => console.log(r.join(' ')));
 };

@@ -15,16 +15,16 @@ class List {
             this.list.splice(index, 1);
             this.size--;
         } else {
-            throw new Error;
+            throw new Error();
         }
         return this.list.sort((a, b) => a - b);
     }
 
     get(index) {
         if (this.list[index] !== undefined) {
-            return this.list[index]
+            return this.list[index];
         } else {
-            throw new Error;
+            throw new Error();
         }
     }
 }

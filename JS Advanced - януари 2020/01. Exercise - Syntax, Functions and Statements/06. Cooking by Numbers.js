@@ -6,12 +6,11 @@ cookingByNumbers = (input = []) => {
         dice: (x) => Math.sqrt(x),
         spice: (x) => x + 1,
         bake: (x) => x * 3,
-        fillet: (x) => x - x / 5
+        fillet: (x) => x - x / 5,
     };
 
-
     const cook = (number = 1, operations = {}, commands = [], index = 0) => {
-        if(!commands[index]) {
+        if (!commands[index]) {
             return;
         }
 

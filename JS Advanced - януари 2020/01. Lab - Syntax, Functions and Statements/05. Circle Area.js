@@ -1,5 +1,5 @@
 circleArea = (radius) => {
-    if((type = typeof radius) !== 'number') {
+    if ((type = typeof radius) !== 'number') {
         return console.log(`We can not calculate the circle area, because we receive a ${type}.`);
     }
 

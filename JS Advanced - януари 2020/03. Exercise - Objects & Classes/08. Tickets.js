@@ -7,14 +7,12 @@ tickets = (data = [], criteria = '') => {
         }
     }
 
-    const statuses = { available: 0, departed: 1, sold: 2};
+    const statuses = { available: 0, departed: 1, sold: 2 };
     const sortTickets = {
-        'price': (a, b) => a.price - b.price,
-        'status': (a, b) => statuses[a.status] - statuses[b.status],
-        'destination': (a, b) => a.destination.localeCompare(b.destination)
+        price: (a, b) => a.price - b.price,
+        status: (a, b) => statuses[a.status] - statuses[b.status],
+        destination: (a, b) => a.destination.localeCompare(b.destination),
     };
 
-    return data
-        .map(str => new Ticket(...str.split('|')))
-        .sort(sortTickets[criteria]);
+    return data.map((str) => new Ticket(...str.split('|'))).sort(sortTickets[criteria]);
 };

@@ -1,13 +1,26 @@
 fromJSONToHTMLTable = (json = '') => {
     const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' };
-    const escapeHTML = (str) => str.replace(/[&<>'"]/g, tag => entities[tag]);
+    const escapeHTML = (str) => str.replace(/[&<>'"]/g, (tag) => entities[tag]);
 
     const getHeadRow = (array) => {
-        return '\n   <tr>' + Object.keys(array[0]).map(val => `<th>${val}</th>`).join('') + '</tr>';
+        return (
+            '\n   <tr>' +
+            Object.keys(array[0])
+                .map((val) => `<th>${val}</th>`)
+                .join('') +
+            '</tr>'
+        );
     };
     const getRows = (array) => {
         return array
-            .map(el => '\n   <tr>' + Object.values(el).map(val => `<td>${escapeHTML(val.toString())}</td>`).join('') + '</tr>')
+            .map(
+                (el) =>
+                    '\n   <tr>' +
+                    Object.values(el)
+                        .map((val) => `<td>${escapeHTML(val.toString())}</td>`)
+                        .join('') +
+                    '</tr>',
+            )
             .join('');
     };
 

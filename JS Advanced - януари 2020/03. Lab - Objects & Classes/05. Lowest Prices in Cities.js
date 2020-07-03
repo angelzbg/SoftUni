@@ -1,8 +1,8 @@
 lowestPrices = (input = []) => {
     let prices = {};
-    input.forEach(line => {
+    input.forEach((line) => {
         let [town, product, price] = line.split(' | ');
-        if(!prices[product]) {
+        if (!prices[product]) {
             prices[product] = {};
         }
 

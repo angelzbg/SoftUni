@@ -9,7 +9,7 @@ stringLength = (str1 = '', str2 = '', str3 = '') => {
 
     const stringsLength = getStringsLength(str1, str2, str3);
     const averageLength = getAverage(stringsLength, 3);
-    
+
     console.log(stringsLength);
     console.log(averageLength);
 };

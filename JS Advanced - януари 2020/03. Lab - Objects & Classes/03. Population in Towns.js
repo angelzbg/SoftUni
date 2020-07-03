@@ -1,7 +1,7 @@
 populationInTowns = (towns = []) => {
     let populations = {};
-    
-    towns.forEach(line => {
+
+    towns.forEach((line) => {
         let [town, population] = line.split(' <-> ');
         populations[town] = Number(population) + (populations[town] || 0);
     });

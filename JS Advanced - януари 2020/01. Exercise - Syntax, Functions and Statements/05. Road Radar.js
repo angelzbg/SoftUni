@@ -3,26 +3,24 @@ roadRadar = ([speed = 1, area = ''] = []) => {
         residential: 20,
         city: 50,
         interstate: 90,
-        motorway: 130
+        motorway: 130,
     };
 
     const speedings = {
         0: 'speeding',
         20: 'excessive speeding',
-        40: 'reckless driving'
+        40: 'reckless driving',
     };
 
     const getOverSpeedPrint = (overLimit = 0, speedings = {}) => {
-        if(overLimit < 1) {
+        if (overLimit < 1) {
             return;
         }
 
-        const printKey =
-            Object
-            .keys(speedings)
+        const printKey = Object.keys(speedings)
             .sort((a, b) => b - a)
-            .find(over => overLimit > over);
-        
+            .find((over) => overLimit > over);
+
         return speedings[printKey] || '';
     };
 
