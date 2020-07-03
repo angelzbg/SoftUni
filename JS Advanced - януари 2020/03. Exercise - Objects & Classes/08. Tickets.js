@@ -14,5 +14,7 @@ tickets = (data = [], criteria = '') => {
         'destination': (a, b) => a.destination.localeCompare(b.destination)
     };
 
-    return data.map(str => new Ticket(...str.split('|'))).sort(sortTickets[criteria]);
+    return data
+        .map(str => new Ticket(...str.split('|')))
+        .sort(sortTickets[criteria]);
 };
