@@ -1,13 +1,10 @@
 wordsTracker = (arr = []) => {
   return Object.entries(
     arr.reduce(
-      (words, word) => {
-        if (words[word] !== undefined) {
-          words[word]++;
-        }
-
-        return words;
-      },
+      (words, word) =>
+        words[word] !== undefined
+          ? Object.assign(words, { [word]: words[word] + 1 })
+          : words,
       arr
         .shift()
         .split(" ")
