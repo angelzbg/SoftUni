@@ -3,13 +3,7 @@ heartDelivery = (input = []) => {
     let index = 0;
 
     while (([jump, len] = input.shift().split(' ').map(Number))[1] !== undefined) {
-        while (len > 0) {
-            [index, len] = [index + 1, len - 1];
-            if (index === houses.length) {
-                index = 0;
-                break;
-            }
-        }
+        index = len + index >= houses.length ? 0 : len + index;
 
         if (houses[index] === 0) {
             console.log(`Place ${index} already had Valentine's day.`);
