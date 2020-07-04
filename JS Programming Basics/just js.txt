@@ -1,0 +1,22 @@
+(async () => {})(); // async function wrapper (escapes Parsing error: Can not use keyword 'await' outside an async function)
+
+Array.reduce(); // manages almost every operation you might do with array (especially when nested data needs to be parsed/formatted)
+Array.map();
+
+let [] = (Array || () => {} returning an array)
+
+let {} = Object;
+
+Object.freeze();
+Object.defineProperty();
+
+--------------------------
+let foundIndex = Array.findIndex(obj => obj.property === value);
+if(foundIndex !== -1) {
+    Array.splice(foundIndex, 1);
+}
+
+is much faster than if we want to delete a specific element and serch by ID for example
+
+Array = Array.filter(obj => obj.property !== value);
+--------------------------
