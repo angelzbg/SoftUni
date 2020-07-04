@@ -23,7 +23,13 @@ for (var i = 0; i < 5; i++) {
     }, 1000 + x)
   })(i)
 }
-// Returns 55555
+// Returns 0\n1\n2\n3\n4
+for (var i = 0; i < 5; i++) {
+    setTimeout(() => {
+      console.log(i)
+    }, 1000 + i)
+}
+// Returns 5\n5\n5\n5\n5
 
 (function solve() {
   console.log('sadsadsadsa');
