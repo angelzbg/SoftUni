@@ -1,5 +1,5 @@
 cappyJuice = (data = []) => {
-    Object.entries(
+    return Object.entries(
         data.reduce(
             (factory, juiceStr) => {
                 let [name, value] = juiceStr.split(' => ');
@@ -12,7 +12,7 @@ cappyJuice = (data = []) => {
             },
             { storage: {}, bottles: {} },
         ).bottles,
-    ).forEach(([name, bottles]) => {
-        console.log(`${name} => ${bottles}`);
-    });
+    )
+        .map(([name, bottles]) => `${name} => ${bottles}`)
+        .join('\n');
 };
