@@ -1,26 +1,20 @@
 songs = (input = []) => {
-    class Song {
-        
-        constructor(typeList, name, time) {
-            this.typeList = typeList;
-            this.name = name;
-            this.time = time;
-        }
+    function Song(songStr) {
+        [this.type, this.name, this.time] = songStr.split('_');
     }
 
-    let typeFilter = input.pop(),
-        count = input.shift(),
-        songs = [];
+    input.shift();
+    const type = input.pop();
 
-    for(let i=0; i<count; i++) {
-        let [ typeList, name, time ] = input[i].split('_');
-        if(typeFilter === 'all' || typeFilter === typeList) {
-            songs.push(new Song(typeList, name, time));
-        }
-    }
+    return input
+        .reduce((songs, songStr) => {
+            const currentSong = new Song(songStr);
+            if (type === 'all' || type === currentSong.type) {
+                songs.push(currentSong);
+            }
 
-    songs.forEach(song => {
-        console.log(song.name);
-    });
-
+            return songs;
+        }, [])
+        .map((song) => song.name)
+        .join('\n');
 };
