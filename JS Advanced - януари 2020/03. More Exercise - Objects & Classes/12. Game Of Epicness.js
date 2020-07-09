@@ -6,7 +6,7 @@ gameOfEpicness = (kingdoms = [], battles = []) => {
 
         this.score = (isWin) => {
             this.army = Math.floor(this.army * (isWin ? 1.1 : 0.9));
-            isWin ? this.wins++ : this.losses++;
+            this[isWin ? 'wins' : 'losses']++;
         };
 
         this.attack = (defender) => {
