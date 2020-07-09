@@ -1,10 +1,9 @@
 phoneBook = (input = []) => {
-    let phoneBook = {};
-    input.forEach(el => {
-        let [ name, phone ] = el.split(' ');
-        phoneBook[name] = phone;
-    });
-
-    Object.entries(phoneBook)
-    .forEach(([key, value]) => console.log(`${key} -> ${value}`));
+    return Object.entries(
+        input
+            .map((contactsString) => contactsString.split(' '))
+            .reduce((contacts, [name, phone]) => Object.assign(contacts, { [name]: phone }), {}),
+    )
+        .map(([name, number]) => `${name} -> ${number}`)
+        .join('\n');
 };
