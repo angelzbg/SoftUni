@@ -1,5 +1,4 @@
 class Laptop {
-
     constructor(info, quality) {
         this.info = info;
         this.quality = quality;

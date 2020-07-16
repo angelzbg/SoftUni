@@ -1,10 +1,10 @@
 melrahShake = ([string = '', pattern = '']) => {
-    while(string.length > 0 && pattern.length > 0) {
+    while (string.length > 0 && pattern.length > 0) {
         let firstIndex = string.indexOf(pattern);
         let lastIndex = string.lastIndexOf(pattern);
 
         if (firstIndex >= 0 && lastIndex >= 0 && firstIndex !== lastIndex) {
-            console.log("Shaked it.");
+            console.log('Shaked it.');
 
             string = string.split('');
             string.splice(firstIndex, pattern.length);
@@ -23,6 +23,6 @@ melrahShake = ([string = '', pattern = '']) => {
             break;
         }
     }
-    
+
     console.log(`No shake.\n${string}`);
 };

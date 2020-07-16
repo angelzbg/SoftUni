@@ -1,6 +1,5 @@
 cats = (input = []) => {
     class Cat {
-        
         constructor(name, age) {
             this.name = name;
             this.age = age;
@@ -12,8 +11,8 @@ cats = (input = []) => {
         }
     }
 
-    input.forEach(el => {
-        let [ name, age ] = el.split(' ');
+    input.forEach((el) => {
+        let [name, age] = el.split(' ');
         new Cat(name, age).meow();
     });
 };

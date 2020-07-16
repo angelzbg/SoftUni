@@ -1,5 +1,5 @@
 arrayRotation = (arr = [], r = 1) => {
-    while(r--) {
+    while (r--) {
         arr.push(arr.shift());
     }
 

@@ -11,7 +11,8 @@ grades = (score = 1) => {
     ///*
     // const grades = [ undefined, undefined, 'Fail', 'Poor', 'Good', 'Very good', 'Excellent' ];
     const grades = { 2: 'Fail', 3: 'Poor', 4: 'Good', 5: 'Very good', 6: 'Excellent' };
-    const int = Math.trunc(score), fract = score - int;
+    const int = Math.trunc(score),
+        fract = score - int;
     const grade = int + (fract >= 0.5 && int !== 2 ? 1 : 0);
 
     console.log(grades[grade]);

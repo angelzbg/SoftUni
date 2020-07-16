@@ -1,10 +1,11 @@
 employees = (input = []) => {
-    input.forEach(name => {
-        let employee = { // pointless
+    input.forEach((name) => {
+        let employee = {
+            // pointless
             name,
-            number: name.length
+            number: name.length,
         };
-        
+
         console.log(`Name: ${employee.name} -- Personal Number: ${employee.number}`);
     });
 };

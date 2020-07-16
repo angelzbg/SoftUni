@@ -9,7 +9,7 @@ printDNA = (rows = 1) => {
         let pair = pairs.shift().split('');
         let starCount = starSequence.shift();
         let lineCount = lineSequence.shift();
-        
+
         let stars = '*'.repeat(starCount);
         let lines = '-'.repeat(lineCount);
 
@@ -20,5 +20,5 @@ printDNA = (rows = 1) => {
         lineSequence.push(lineCount);
     }
 
-    console.log(output); 
+    console.log(output);
 };

@@ -1,12 +1,15 @@
 bunnyKill = (matrix) => {
     let snowBallDamage = 0;
     let killedBunnies = 0;
-    let coor = matrix.pop().split(' ').map(c => c.split(',').map(Number));
-    matrix = matrix.map(row => row.split(' ').map(Number));
-    
+    let coor = matrix
+        .pop()
+        .split(' ')
+        .map((c) => c.split(',').map(Number));
+    matrix = matrix.map((row) => row.split(' ').map(Number));
+
     let matrixRow = matrix.length;
     let matrixCol = matrix[0].length;
-    
+
     for (let i = 0; i < coor.length; i++) {
         let bombRow = coor[i][0];
         let bombCol = coor[i][1];

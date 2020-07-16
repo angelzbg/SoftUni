@@ -1,5 +1,5 @@
 airPollution = (matrix = [], commands = []) => {
-    matrix = matrix.map(row => row.split(' ').map(Number));
+    matrix = matrix.map((row) => row.split(' ').map(Number));
 
     for (const line of commands) {
         let split = line.split(' ');

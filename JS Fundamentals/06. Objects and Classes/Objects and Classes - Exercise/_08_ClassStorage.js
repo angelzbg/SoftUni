@@ -1,5 +1,4 @@
 class Storage {
-
     constructor(capacity) {
         this.capacity = capacity;
         this.storage = [];
@@ -14,7 +13,7 @@ class Storage {
 
     getProducts() {
         let products = '';
-        this.storage.forEach(p => products += `${JSON.stringify(p)}\n`);
+        this.storage.forEach((p) => (products += `${JSON.stringify(p)}\n`));
         return products.trim();
     }
 }

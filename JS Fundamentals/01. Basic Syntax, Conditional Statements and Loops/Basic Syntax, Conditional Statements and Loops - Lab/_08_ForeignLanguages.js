@@ -4,8 +4,8 @@ foreignLanguages = (country = '') => {
         USA: 'English',
         Spain: 'Spanish',
         Argentina: 'Spanish',
-        Mexico: 'Spanish'
+        Mexico: 'Spanish',
     };
-    
+
     console.log(table[country] || 'unknown');
 };

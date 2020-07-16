@@ -3,9 +3,9 @@ passwordGenerator = ([str1 = '', str2 = '', word = '']) => {
     let specialIndex = -1;
     let password = (str1 + str2).split('');
 
-    for(let i = 0; i < password.length; i++) {
-        if('aeiou'.includes(password[i])) {
-            if(specialIndex === word.length - 1) {
+    for (let i = 0; i < password.length; i++) {
+        if ('aeiou'.includes(password[i])) {
+            if (specialIndex === word.length - 1) {
                 specialIndex = 0;
             } else {
                 specialIndex++;

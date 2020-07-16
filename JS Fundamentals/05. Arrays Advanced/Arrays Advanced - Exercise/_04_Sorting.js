@@ -1,8 +1,8 @@
 sorting = (array = []) => {
     array = array.sort((a, b) => a - b);
-	let result = [];
+    let result = [];
 
-    while(array.length) {
+    while (array.length) {
         result.push(array.pop(), array.shift());
     }
 

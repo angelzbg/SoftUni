@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${file}"
+            "program": "${workspaceFolder}\\JS Advanced - януари 2020\\01. Exercise - Syntax, Functions and Statements\\deletems.js"
         }
     ]
 }

@@ -1,13 +1,13 @@
 houseParty = (input = []) => {
     let guests = [];
-    while(input.length > 0) {
+    while (input.length > 0) {
         let cmd = input.shift().split(' ');
         let index = guests.indexOf(cmd[0]);
 
-        if(index !== -1) {
+        if (index !== -1) {
             console.log(`${cmd[0]} is ${cmd[2] === 'going!' ? 'already' : 'not'} in the list!`);
         } else {
-            if(cmd[2] === 'going!') {
+            if (cmd[2] === 'going!') {
                 guests.push(cmd[0]);
             } else {
                 guests.splice(index, 1);

@@ -1,3 +1,3 @@
 sumFirstAndLast = (array = []) => {
-    console.log((Number(array.shift()) + Number(array.pop())));
+    console.log(Number(array.shift()) + Number(array.pop()));
 };

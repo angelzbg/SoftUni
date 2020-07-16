@@ -1,6 +1,6 @@
 passwordValidator = (password = '') => {
     const checkLength = (pwd = '') => {
-        if(pwd.length < 6 || pwd.length > 10) {
+        if (pwd.length < 6 || pwd.length > 10) {
             console.log('Password must be between 6 and 10 characters');
             return false;
         }
@@ -9,7 +9,7 @@ passwordValidator = (password = '') => {
     };
 
     const checkSymbols = (pwd = '') => {
-        if(!pwd.match(/^[A-Za-z0-9]+$/)) {
+        if (!pwd.match(/^[A-Za-z0-9]+$/)) {
             console.log('Password must consist only of letters and digits');
             return false;
         }
@@ -18,7 +18,7 @@ passwordValidator = (password = '') => {
     };
 
     const checkDigits = (pwd = '') => {
-        if(!(digits = pwd.match(/[0-9]/g)) || digits.length < 2) {
+        if (!(digits = pwd.match(/[0-9]/g)) || digits.length < 2) {
             console.log('Password must have at least 2 digits');
             return false;
         }
@@ -26,7 +26,7 @@ passwordValidator = (password = '') => {
         return true;
     };
 
-    if(checkLength(password) & checkSymbols(password) & checkDigits(password)) {
+    if (checkLength(password) & checkSymbols(password) & checkDigits(password)) {
         console.log('Password is valid');
     }
 };
