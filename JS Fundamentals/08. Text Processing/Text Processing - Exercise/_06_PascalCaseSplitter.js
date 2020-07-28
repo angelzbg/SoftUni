@@ -1,3 +1,1 @@
-pascalCaseSplitter = (string = '') => {
-    console.log(string.match(/[A-Z]([a-z]+)?/g).join(', '));
-};
+pascalCaseSplitter = (string = '') => string.match(/[A-Z]([a-z]+)?/g).join(', ');
