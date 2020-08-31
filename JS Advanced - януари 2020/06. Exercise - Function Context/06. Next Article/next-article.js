@@ -5,4 +5,3 @@ getArticleGenerator = (
     ++currentArticle <= maxArticle
         ? content.insertAdjacentHTML('beforeend', `<article>${articles[currentArticle]}</article>`)
         : null;
-// ne kopirai, che na 100% ne znaesh kvo sum pisal, ama naistina
