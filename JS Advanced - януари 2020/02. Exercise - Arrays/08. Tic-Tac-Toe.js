@@ -2,68 +2,56 @@ ticTacToe = (moves = []) => {
     const x = 3;
     const ticTac = new Array(x).fill([]).map(() => new Array(x).fill(false));
 
+    const checkLine = (line) => (new Set(line).size === 1 && line[0] ? line[0] : false);
+
     const checkToe = (array) => {
         for (let i = 0; i < x; i++) {
             // row check
-            if (array[i].filter((el) => el !== false && el === array[i][0]).length === x) {
-                return array[i][0];
+            let winner = checkLine(array[i]);
+            if (winner) {
+                return winner;
             }
         }
 
         // col check
         for (let i = 0; i < x; i++) {
-            let winner = true;
-            for (let j = 1; j < x; j++) {
-                if (array[j][i] !== array[j - 1][i] || array[j][i] === false) {
-                    winner = false;
-                    break;
-                }
+            let line = [];
+            for (let j = 0; j < x; j++) {
+                line.push(array[j][i]);
             }
 
+            let winner = checkLine(line);
             if (winner) {
-                return array[0][i];
+                return winner;
             }
         }
 
         // main diagonal check
-        let winner = true;
-        for (let i = 1; i < x; i++) {
-            if (array[i][i] !== array[i - 1][i - 1] || array[i][i] === false) {
-                winner = false;
-                break;
-            }
+        let line = [];
+        for (let i = 0; i < x; i++) {
+            line.push(array[i][i]);
         }
 
+        let winner = checkLine(line);
         if (winner) {
-            return array[0][0];
+            return winner;
         }
 
         // opposite diagonal check
-        winner = true;
-        for (let i = 1; i < x; i++) {
-            for (let j = x - 1; j > -1; j++) {
-                if (array[i][j] !== array[i - 1][j + 1] || array[i][i] === false) {
-                    winner = false;
-                    break;
-                }
-            }
+        line = [];
+        for (let i = 0; i < x; i++) {
+            line.push(array[i][x - i - 1]);
         }
 
-        if (winner) {
-            return array[0][2];
-        }
-
-        return false;
+        return checkLine(line);
     };
 
-    let counter = 0,
-        winner;
+    let [counter, winner] = [0, undefined];
     while (moves.length) {
         let [r, c] = moves.shift().split(' ').map(Number);
-        while (ticTac[r][c] !== false && moves.length) {
+        if (!!ticTac[r][c]) {
             console.log('This place is already taken. Please choose another!');
-            let [x, y] = moves.shift().split(' ').map(Number);
-            [r, c] = [x, y];
+            continue;
         }
 
         ticTac[r][c] = counter % 2 === 0 ? 'X' : 'O';
