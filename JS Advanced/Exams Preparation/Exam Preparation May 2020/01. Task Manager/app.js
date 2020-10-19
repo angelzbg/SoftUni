@@ -1,5 +1,4 @@
 function solve() {
-  const byIDs = (...ids) => ids.map((id) => document.getElementById(id));
   const createElements = (...types) => types.map((type) => document.createElement(type));
 
   const append = (child, parent) => {
@@ -7,13 +6,13 @@ function solve() {
     return (nextChild, nextParent) => append(nextChild, nextParent || parent);
   };
 
-  const [open, progress, complete] = [...document.querySelectorAll('.wrapper section div:nth-child(2)')].slice(1);
+  const elements = [...document.querySelectorAll('input, textarea, button, section div:nth-child(2)')].slice(1);
+  const [taskIn, descriptionIn, dateIn, add, open, progress, complete] = elements;
 
-  const [taskIn, descriptionIn, dateIn, add] = byIDs('task', 'description', 'date', 'add');
   add.addEventListener('click', (event) => {
     event.preventDefault();
     const [name, description, due] = [taskIn, descriptionIn, dateIn].map((el) => el.value.trim());
-    if (![name, description, due].filter((value) => !value).length) {
+    if ([name, description, due].findIndex((value) => !value) === -1) {
       [taskIn, descriptionIn, dateIn].forEach((el) => (el.value = ''));
 
       const elements = createElements('article', 'h3', 'p', 'p', 'div', 'button', 'button', 'button');
