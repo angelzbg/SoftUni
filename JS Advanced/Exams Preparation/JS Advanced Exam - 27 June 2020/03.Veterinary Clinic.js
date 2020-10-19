@@ -1,73 +1,66 @@
-class Veterinaryclinic {
-    constructor(clinicName, capacity) {
-        [this.clinicName, this.capacity, this.clients, this.workload, this.profit] = [clinicName, capacity, [], 0, 0];
+class VeterinaryClinic {
+  constructor(clinicName, capacity) {
+    Object.assign(this, { clinicName, capacity, clients: [], totalProfit: 0, currentWorkload: 0 });
+  }
+
+  newCustomer = (ownerName, petName, kind, procedures) => {
+    if (this.currentWorkload === this.capacity) {
+      throw new Error('Sorry, we are not able to accept more patients!');
     }
 
-    newCustomer(ownerName, petName, kind, procedures) {
-        if (this.workload === this.capacity) {
-            throw new Error('Sorry, we are not able to accept more patients!');
-        }
-
-        const foundClient = this.clients.find((c) => c.ownerName === ownerName);
-
-        if (foundClient) {
-            const foundPet = foundClient.pets[petName];
-            if (foundPet) {
-                if (foundPet.procedures.length) {
-                    throw new Error(
-                        `This pet is already registered under ${ownerName} name! ${petName} is on our lists, waiting for ${foundPet.procedures.join(
-                            ', ',
-                        )}.`,
-                    );
-                } else {
-                    foundPet.procedures = procedures;
-                }
-            } else {
-                foundClient.pets[petName] = { kind, procedures };
-            }
-        } else {
-            this.clients.push({ ownerName, pets: { [petName]: { kind, procedures } } });
-        }
-
-        this.workload++;
-        return `Welcome ${petName}!`;
+    const client = this.clients.find((c) => c.ownerName === ownerName);
+    if (client) {
+      const pet = client.pets[petName];
+      if (pet && pet.procedures.length) {
+        throw new Error(
+          `This pet is already registered under ${ownerName} name! ${petName} is on our lists, waiting for ${pet.procedures.join(
+            ', '
+          )}.`
+        );
+      } else {
+        client.pets[petName] = { kind, procedures };
+      }
+    } else {
+      this.clients.push({ ownerName, pets: { [petName]: { kind, procedures } } });
     }
 
-    onLeaving(ownerName, petName) {
-        const foundClient = this.clients.find((c) => c.ownerName === ownerName);
-        if (!foundClient) {
-            throw new Error('Sorry, there is no such client!');
-        }
+    this.currentWorkload++;
+    return `Welcome ${petName}!`;
+  };
 
-        const foundPet = foundClient.pets[petName];
-        if (!foundPet || !foundPet.procedures.length) {
-            throw new Error(`Sorry, there are no procedures for ${petName}!`);
-        }
-
-        this.profit += foundPet.procedures.length * 500;
-        foundPet.procedures.length = 0;
-        this.workload--;
-        return `Goodbye ${petName}. Stay safe!`;
+  onLeaving = (ownerName, petName) => {
+    const client = this.clients.find((c) => c.ownerName === ownerName);
+    if (!client) {
+      throw new Error('Sorry, there is no such client!');
     }
 
-    toString() {
-        const busy = `${this.clinicName} is ${Math.floor((100 / this.capacity) * this.workload)}% busy today!\n`;
-        const profit = `Total profit: ${this.profit.toFixed(2)}$\n`;
-        const clients = this.clients
-            .sort((a, b) => a.ownerName.localeCompare(b.ownerName))
-            .map((client) => {
-                return (
-                    `${client.ownerName} with:\n` +
-                    Object.entries(client.pets)
-                        .sort((a, b) => a[0].localeCompare(b[0]))
-                        .map(([petName, { kind, procedures }]) => {
-                            return `---${petName} - a ${kind.toLowerCase()} that needs: ${procedures.join(', ')}`;
-                        })
-                        .join('\n')
-                );
-            })
-            .join('\n');
-
-        return `${busy}${profit}${clients}`;
+    const pet = client.pets[petName];
+    if (!pet || !pet.procedures.length) {
+      throw new Error(`Sorry, there are no procedures for ${petName}!`);
     }
+
+    this.totalProfit += pet.procedures.length * 500;
+    pet.procedures.length = 0;
+    this.currentWorkload--;
+    return `Goodbye ${petName}. Stay safe!`;
+  };
+
+  toString = () => {
+    const percentage = `${this.clinicName} is ${Math.floor((100 / this.capacity) * this.currentWorkload)}% busy today!`;
+    const profit = `\nTotal profit: ${this.totalProfit.toFixed(2)}$\n`;
+    const pets = this.clients
+      .sort((a, b) => a.ownerName.localeCompare(b.ownerName))
+      .map(({ ownerName, pets }) => {
+        return `${ownerName} with:\n${Object.entries(pets)
+          .sort((a, b) => a[0].localeCompare(b[0]))
+          .map(
+            ([petName, { kind, procedures }]) =>
+              `---${petName} - a ${kind.toLowerCase()} that needs: ${procedures.join(', ')}`
+          )
+          .join('\n')}`;
+      })
+      .join('\n');
+
+    return percentage + profit + pets;
+  };
 }

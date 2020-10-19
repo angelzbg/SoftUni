@@ -1,72 +1,41 @@
 solve = () => {
-    const createElements = (...types) => types.map((type) => document.createElement(type));
+  const createElements = (...types) => types.map((type) => document.createElement(type));
+  const append = (child, parent) => {
+    parent.appendChild(child);
+    return (nextChild, nextParent) => append(nextChild, nextParent || parent);
+  };
 
-    const append = (child, parent) => {
-        parent.appendChild(child);
-        return (nextChild, nextParent) => append(nextChild, nextParent || parent);
-    };
+  const [nameIn, ageIn, kindIn, ownerIn, adoption, adopted] = [...document.querySelectorAll('#container input, ul')];
+  document.getElementById('add').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const [name, age, kind, owner] = [nameIn, ageIn, kindIn, ownerIn].map((el) => el.value);
+    if ([name, kind, owner].findIndex((value) => !value) === -1 && !isNaN(age)) {
+      [nameIn, ageIn, kindIn, ownerIn].forEach((el) => (el.value = ''));
+      const elements = createElements('li', 'p', 'span', 'button');
+      const [li, p, span, button] = elements;
+      p.innerHTML = `<strong>${name}</strong> is a <strong>${+age}</strong> year old <strong>${kind}</strong>`;
+      [span.textContent, button.textContent] = [`Owner: ${owner}`, 'Contact with owner'];
+      append(p, li)(span)(button)(li, adoption);
 
-    const [adoptionUL, adoptedUL, nameInput, ageInput, kindInput, ownerInput] = [
-        ...document.querySelectorAll('ul'),
-        ...document.querySelectorAll('#container input'),
-    ];
+      button.addEventListener('click', () => {
+        const [div, input, buttonTake] = createElements('div', 'input', 'button');
+        [input.placeholder, buttonTake.textContent] = ['Enter your names', 'Yes! I take it!'];
+        li.removeChild(button);
+        append(input, div)(buttonTake)(div, li);
 
-    const [state, setState] = [
-        { pets: [] },
-        (newState) => {
-            Object.assign(state, newState);
-            Object.keys(newState).forEach(render);
-        },
-    ];
+        buttonTake.addEventListener('click', () => {
+          const newOwner = input.value;
+          if (newOwner) {
+            span.textContent = `New Owner: ${newOwner}`;
+            li.removeChild(div);
 
-    function render(property) {
-        ({
-            pets: () => {
-                [adoptionUL.innerHTML, adoptedUL.innerHTML] = ['', ''];
-                state.pets.forEach(generateItem);
-            },
-        }[property]());
+            const [buttonCheck] = createElements('button');
+            buttonCheck.textContent = 'Checked';
+            append(buttonCheck, li)(li, adopted);
+            buttonCheck.addEventListener('click', () => adopted.removeChild(li));
+          }
+        });
+      });
     }
-
-    function generateItem(pet, index) {
-        const [li, p, span, button] = createElements('li', 'p', 'span', 'button');
-        p.innerHTML = `<strong>${pet.name}</strong> is a <strong>${pet.age}</strong> year old <strong>${pet.kind}</strong>`;
-        span.textContent = `${pet.adopted ? 'New Owner' : 'Owner'}: ${pet.owner}`;
-        append(p, li)(span)(li, pet.adopted ? adoptedUL : adoptionUL);
-        button.textContent = !pet.adopted ? (pet.adopting ? 'Yes! I take it!' : 'Contact with owner') : 'Checked';
-        if (!pet.adopted) {
-            if (pet.adopting) {
-                const [div, input] = createElements('div', 'input');
-                input.placeholder = 'Enter your names';
-                append(div, li)(input, div)(button);
-                button.addEventListener('click', () => {
-                    if (input.value) {
-                        [pet.owner, pet.adopted] = [input.value, true];
-                        setState({ pets: state.pets });
-                    }
-                });
-            } else {
-                append(button, li);
-                button.addEventListener('click', () => {
-                    pet.adopting = true;
-                    setState({ pets: state.pets });
-                });
-            }
-        } else {
-            append(button, li);
-            button.addEventListener('click', () => {
-                state.pets.splice(index, 1);
-                setState({ pets: state.pets });
-            });
-        }
-    }
-
-    document.getElementById('add').addEventListener('submit', (event) => {
-        event.preventDefault();
-        const [name, age, kind, owner] = [nameInput, ageInput, kindInput, ownerInput].map((el) => el.value);
-        if (![name, age, kind, owner].filter((value) => !value).length && !isNaN(age)) {
-            [nameInput.value, ageInput.value, kindInput.value, ownerInput.value] = ['', '', '', ''];
-            setState({ pets: state.pets.concat({ name, age, kind, owner }) });
-        }
-    });
+  });
 };
