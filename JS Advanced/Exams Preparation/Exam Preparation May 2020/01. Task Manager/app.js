@@ -20,10 +20,10 @@ function solve() {
       const [article, h3, pDescription, pDue, div, buttonStart, buttonDelete, buttonFinish] = elements;
 
       const classes = ['flex', 'green', 'red', 'orange'];
-      [div, buttonStart, buttonDelete, buttonFinish].map((el, i) => (el.className = classes[i]));
+      [div, buttonStart, buttonDelete, buttonFinish].forEach((el, i) => (el.className = classes[i]));
 
       const texts = [name, `Description: ${description}`, `Due Date: ${due}`, 'Start', 'Delete', 'Finish'];
-      [h3, pDescription, pDue, buttonStart, buttonDelete, buttonFinish].map((el, i) => (el.textContent = texts[i]));
+      [h3, pDescription, pDue, buttonStart, buttonDelete, buttonFinish].forEach((el, i) => (el.textContent = texts[i]));
 
       buttonStart.addEventListener('click', () => {
         div.removeChild(buttonStart);
