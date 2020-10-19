@@ -7,7 +7,7 @@ function solve() {
     return (nextChild, nextParent) => append(nextChild, nextParent || parent);
   };
 
-  const [trash, open, progress, complete] = [...document.querySelectorAll('.wrapper section div:nth-child(2)')];
+  const [open, progress, complete] = [...document.querySelectorAll('.wrapper section div:nth-child(2)')].slice(1);
 
   const [taskIn, descriptionIn, dateIn, add] = byIDs('task', 'description', 'date', 'add');
   add.addEventListener('click', (event) => {
