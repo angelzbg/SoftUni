@@ -7,52 +7,46 @@ halls = () => {
     hallEvent(title) {
       if (this.events.includes(title)) {
         throw new Error('This event is already added!');
-      } else {
-        return [this.events.push(title), 'Event is added.'].pop();
       }
+
+      this.events.push(title);
+      return 'Event is added.';
     }
 
     close() {
-      return [(this.events.length = 0), `${this.name} hall is closed.`].pop();
+      this.events.length = 0;
+      return `${this.name} hall is closed.`;
     }
 
     toString() {
-      return `${this.name} hall - ${this.capacity}${this.events.length ? `\nEvents: ${this.events.join(', ')}` : ''}`;
+      return `${this.name} hall - ${this.capacity}${this.events.length ? `Events: ${this.events.join(', ')}` : ''}`;
     }
   }
 
   class MovieTheater extends Hall {
     constructor(capacity, name, screenSize) {
       super(capacity, name);
-      this.screenSize = screenSize;
+      Object.assign(this, { screenSize });
     }
 
-    close() {
-      return `${super.close()}Аll screenings are over.`;
-    }
+    close = () => `${super.close()}Аll screenings are over.`;
 
-    toString() {
-      return `${super.toString()}\n${this.name} is a movie theater with ${this.screenSize} screensize and ${
+    toString = () =>
+      `${super.toString()}\n${this.name} is a movie theater with ${this.screenSize} screensize and ${
         this.capacity
       } seats capacity.`;
-    }
   }
 
   class ConcertHall extends Hall {
-    hallEvent(title, performers) {
-      const result = super.hallEvent(title);
+    hallEvent = (title, performers) => {
+      const res = super.hallEvent(title);
       this.performers = performers;
-      return result;
-    }
+      return res;
+    };
 
-    close() {
-      this.performers.length = 0;
-      return `${super.close()}Аll performances are over.`;
-    }
+    close = () => `${super.close()}Аll performances are over.`;
 
-    toString() {
-      return `${super.toString()}${this.events.length ? `\nPerformers: ${this.performers.join(', ')}.` : ''}`;
-    }
+    toString = () => `${super.toString()}${this.events.length ? `\nPerformers: ${this.performers.join(', ')}.` : ''}`;
   }
 
   return { Hall, MovieTheater, ConcertHall };
