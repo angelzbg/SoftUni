@@ -1,43 +1,41 @@
 solve = () => {
   const createElements = (...types) => types.map((type) => document.createElement(type));
-
   const append = (child, parent) => {
     parent.appendChild(child);
     return (nextChild, nextParent) => append(nextChild, nextParent || parent);
   };
 
-  const elements = [...document.querySelectorAll('#container input'), ...document.querySelectorAll('ul')];
-  const [imputName, inputHall, inputTicketPrice, moviesUL, archiveUL] = elements;
+  const elements = document.querySelectorAll('input, button, ul');
+  const [nameIn, hallIn, priceIn, add, ulScreen, ulArchive, clear] = elements;
 
-  document.getElementById('add-new').addEventListener('submit', (event) => {
+  add.addEventListener('click', (event) => {
     event.preventDefault();
-    const [name, hall, ticketPrice] = [imputName, inputHall, inputTicketPrice].map((el) => el.value);
-    if (![name, hall, ticketPrice].filter((value) => !value).length && !isNaN(ticketPrice)) {
-      [imputName.value, inputHall.value, inputTicketPrice.value] = ['', '', ''];
+    const [name, hall, price] = [nameIn, hallIn, priceIn].map((el) => el.value.trim());
+    if ([name, hall, price].findIndex((value) => !value) === -1 && !isNaN(price)) {
+      [nameIn, hallIn, priceIn].forEach((el) => (el.value = ''));
 
-      const elements = ['li', 'span', 'strong', 'div', 'strong', 'input', 'button'];
-      const [liMov, span, strong1, div, strong2, input, button] = createElements(...elements);
+      const elements = createElements('li', 'span', 'strong', 'div', 'strong', 'input', 'button');
+      const [li, spanName, strongHall, div, strongPrice, inputTickets, buttonArchive] = elements;
 
-      const values = [name, `Hall: ${hall}`, Number(ticketPrice).toFixed(2), 'Tickets Sold', 'Archive'];
-      [span.textContent, strong1.textContent, strong2.textContent, input.placeholder, button.textContent] = values;
+      const texts = [name, `Hall: ${hall}`, (+price).toFixed(2), 'Archive'];
+      [spanName, strongHall, strongPrice, buttonArchive].forEach((el, i) => (el.textContent = texts[i]));
+      inputTickets.placeholder = 'Tickets Sold';
 
-      append(liMov, moviesUL)(span, liMov)(strong1)(div)(strong2, div)(input)(button);
+      append(spanName, li)(strongHall)(div)(strongPrice, div)(inputTickets)(buttonArchive)(li, ulScreen);
 
-      button.addEventListener('click', () => {
-        if (input.value && !isNaN(input.value)) {
-          const totalPrice = (input.value * ticketPrice).toFixed(2);
-
-          const [liArch, span, strong, button] = createElements('li', 'span', 'strong', 'button');
-          [span.textContent, strong.textContent, button.textContent] = [name, `Total amount: ${totalPrice}`, 'Delete'];
-
-          append(liArch, archiveUL)(span, liArch)(strong)(button);
-          moviesUL.removeChild(liMov);
-
-          button.addEventListener('click', () => archiveUL.removeChild(liArch));
+      buttonArchive.addEventListener('click', () => {
+        const tickets = inputTickets.value.trim();
+        if (tickets && !isNaN(tickets)) {
+          li.removeChild(div);
+          strongHall.textContent = `Total amount: ${(+price * tickets).toFixed(2)}`;
+          const [deleteButton] = createElements('button');
+          deleteButton.textContent = 'Delete';
+          append(li, ulArchive)(deleteButton, li);
+          deleteButton.addEventListener('click', () => li.parentElement.removeChild(li));
         }
       });
     }
   });
 
-  document.querySelector('#archive button').addEventListener('click', () => (archiveUL.innerHTML = ''));
+  clear.addEventListener('click', () => (ulArchive.innerHTML = ''));
 };
