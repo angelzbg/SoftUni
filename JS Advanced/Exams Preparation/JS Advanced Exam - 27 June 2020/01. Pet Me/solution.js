@@ -5,34 +5,32 @@ solve = () => {
     return (nextChild, nextParent) => append(nextChild, nextParent || parent);
   };
 
-  const [nameIn, ageIn, kindIn, ownerIn, adoption, adopted] = [...document.querySelectorAll('#container input, ul')];
+  const [nameIn, ageIn, kindIn, ownerIn, adoption, adopted] = [...document.querySelectorAll('input, ul')];
   document.getElementById('add').addEventListener('submit', (event) => {
     event.preventDefault();
-    const [name, age, kind, owner] = [nameIn, ageIn, kindIn, ownerIn].map((el) => el.value);
-    if ([name, kind, owner].findIndex((value) => !value) === -1 && !isNaN(age)) {
+    const [name, age, kind, owner] = [nameIn, ageIn, kindIn, ownerIn].map((el) => el.value.trim());
+    if ([name, age, kind, owner].findIndex((value) => !value) === -1 && !isNaN(age)) {
       [nameIn, ageIn, kindIn, ownerIn].forEach((el) => (el.value = ''));
       const elements = createElements('li', 'p', 'span', 'button');
-      const [li, p, span, button] = elements;
-      p.innerHTML = `<strong>${name}</strong> is a <strong>${+age}</strong> year old <strong>${kind}</strong>`;
-      [span.textContent, button.textContent] = [`Owner: ${owner}`, 'Contact with owner'];
-      append(p, li)(span)(button)(li, adoption);
-
-      button.addEventListener('click', () => {
-        const [div, input, buttonTake] = createElements('div', 'input', 'button');
-        [input.placeholder, buttonTake.textContent] = ['Enter your names', 'Yes! I take it!'];
-        li.removeChild(button);
-        append(input, div)(buttonTake)(div, li);
-
-        buttonTake.addEventListener('click', () => {
-          const newOwner = input.value;
-          if (newOwner) {
-            span.textContent = `New Owner: ${newOwner}`;
+      const [li, p, span, buttonContact] = elements;
+      p.innerHTML = `<strong>${name}</strong> is a <strong>${age}</strong> year old <strong>${kind}</strong>`;
+      const texts = [`Owner: ${owner}`, 'Contact with owner'];
+      [span, buttonContact].forEach((el, i) => (el.textContent = texts[i]));
+      append(p, li)(span)(buttonContact)(li, adoption);
+      buttonContact.addEventListener('click', () => {
+        li.removeChild(buttonContact);
+        const [div, input, button] = createElements('div', 'input', 'button');
+        input.placeholder = 'Enter your names';
+        button.textContent = 'Yes! I take it!';
+        append(div, li)(input, div)(button);
+        button.addEventListener('click', () => {
+          if (input.value) {
             li.removeChild(div);
-
             const [buttonCheck] = createElements('button');
             buttonCheck.textContent = 'Checked';
+            span.textContent = `New Owner: ${input.value}`;
             append(buttonCheck, li)(li, adopted);
-            buttonCheck.addEventListener('click', () => adopted.removeChild(li));
+            buttonCheck.addEventListener('click', () => li.parentElement.removeChild(li));
           }
         });
       });

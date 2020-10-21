@@ -5,8 +5,8 @@ petHouse = () => {
     }
 
     addComment(comment) {
-      if (this.comments.indexOf(comment) !== -1) {
-        throw new Error('This comment is already added!');
+      if (this.comments.includes(comment)) {
+        throw new Error('"This comment is already added!');
       }
 
       this.comments.push(comment);
@@ -18,10 +18,9 @@ petHouse = () => {
     }
 
     toString() {
-      return (
-        `Here is ${this.owner}'s pet ${this.name}.` +
-        (this.comments.length ? `\nSpecial requirements: ${this.comments.join(', ')}` : '')
-      );
+      return `Here is ${this.owner}'s pet ${this.name}.${
+        this.comments.length ? `\nSpecial requirements: ${this.comments.join(', ')}` : ''
+      }`;
     }
   }
 
@@ -31,17 +30,12 @@ petHouse = () => {
       Object.assign(this, { insideHabits, scratching });
     }
 
-    feed = () => {
-      return super.feed() + `, happy and purring.`;
-    };
+    feed = () => `${super.feed()}, happy and purring.`;
 
-    toString = () => {
-      return (
-        super.toString() +
-        `\nMain information:\n${this.name} is a cat with ${this.insideHabits}` +
-        (this.scratching ? ', but beware of scratches.' : '')
-      );
-    };
+    toString = () =>
+      `${super.toString()}\nMain information:\n${this.name} is a cat with ${this.insideHabits}${
+        this.scratching ? ', but beware of scratches.' : ''
+      }`;
   }
 
   class Dog extends Pet {
@@ -50,16 +44,12 @@ petHouse = () => {
       Object.assign(this, { runningNeeds, trainability });
     }
 
-    feed = () => {
-      return super.feed() + ', happy and wagging tail.';
-    };
+    feed = () => `${super.feed()}, happy and wagging tail.`;
 
-    toString = () => {
-      return (
-        super.toString() +
-        `\nMain information:\n${this.name} is a dog with need of ${this.runningNeeds}km running every day and ${this.trainability} trainability.`
-      );
-    };
+    toString = () =>
+      `${super.toString()}\nMain information:\n${this.name} is a dog with need of ${
+        this.runningNeeds
+      }km running every day and ${this.trainability} trainability.`;
   }
 
   return { Pet, Cat, Dog };
