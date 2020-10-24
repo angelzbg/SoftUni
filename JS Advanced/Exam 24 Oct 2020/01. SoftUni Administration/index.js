@@ -5,7 +5,7 @@ function solve(modules = {}) {
     return (nextChild, nextParent) => append(nextChild, nextParent || parent);
   };
 
-  const elements = [...document.querySelectorAll('input, input, select, button, .modules, form')];
+  const elements = [...document.querySelectorAll('input, select, button, .modules, form')];
   const [modulesList, form, nameIn, dateIn, selectIn, add] = elements;
 
   const render = () => {
