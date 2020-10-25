@@ -20,13 +20,8 @@ function solve(modules = {}) {
           const values = ['flex', `${lecture} - ${date.replace(/-/g, '/').replace('T', ' - ')}`, 'red', 'Del'];
           [li.className, h4.textContent, button.className, button.textContent] = values;
           button.addEventListener('click', () => {
-            if (lectures.length === 1) {
-              delete modules[modulE];
-              modulesList.removeChild(div);
-            } else {
-              lectures.splice(index, 1);
-              ul.removeChild(li);
-            }
+            lectures.length === 1 ? delete modules[modulE] : lectures.splice(index, 1);
+            render();
           });
           append(h4, li)(button)(li, ul);
         });
