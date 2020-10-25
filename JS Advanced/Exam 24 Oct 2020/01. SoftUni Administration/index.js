@@ -13,6 +13,7 @@ function solve(modules = {}) {
     Object.entries(modules).forEach(([modulE, lectures]) => {
       const [div, h3, ul] = createElements('div', 'h3', 'ul');
       [div.className, h3.textContent] = ['module', `${modulE.toUpperCase()}-MODULE`];
+      const lecturesCount = Object.keys(lectures).length;
       Object.entries(lectures)
         .sort((a, b) => new Date(a[1]) - new Date(b[1]))
         .forEach(([lecture, date]) => {
@@ -20,7 +21,7 @@ function solve(modules = {}) {
           const values = ['flex', `${lecture} - ${date.replace(/-/g, '/').replace('T', ' - ')}`, 'red', 'Del'];
           [li.className, h4.textContent, button.className, button.textContent] = values;
           button.addEventListener('click', () => {
-            Object.keys(modules[modulE]).length === 1 ? delete modules[modulE] : delete modules[modulE][lecture];
+            lecturesCount === 1 ? delete modules[modulE] : delete modules[modulE][lecture];
             render();
           });
           append(h4, li)(button)(li, ul);
