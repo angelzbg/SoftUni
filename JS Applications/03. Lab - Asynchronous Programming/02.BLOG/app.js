@@ -1,6 +1,6 @@
 ((posts = {}) => {
   const getDo = (url, func) => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://blog-apps-c12bf.firebaseio.com/posts/${url}.json`)
+    fetch(`https://blog-apps-c12bf.firebaseio.com/posts/${url}.json`)
       .then((res) => {
         if (res.ok) {
           return res.json();
