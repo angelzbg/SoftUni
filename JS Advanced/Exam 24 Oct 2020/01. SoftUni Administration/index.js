@@ -13,16 +13,20 @@ function solve(modules = {}) {
     Object.entries(modules).forEach(([modulE, lectures]) => {
       const [div, h3, ul] = createElements('div', 'h3', 'ul');
       [div.className, h3.textContent] = ['module', `${modulE.toUpperCase()}-MODULE`];
-      const lecturesCount = Object.keys(lectures).length;
-      Object.entries(lectures)
-        .sort((a, b) => new Date(a[1]) - new Date(b[1]))
-        .forEach(([lecture, date]) => {
+      lectures
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .forEach(({ lecture, date }, index) => {
           const [li, h4, button] = createElements('li', 'h4', 'button');
           const values = ['flex', `${lecture} - ${date.replace(/-/g, '/').replace('T', ' - ')}`, 'red', 'Del'];
           [li.className, h4.textContent, button.className, button.textContent] = values;
           button.addEventListener('click', () => {
-            lecturesCount === 1 ? delete modules[modulE] : delete modules[modulE][lecture];
-            render();
+            if (lectures.length === 1) {
+              delete modules[modulE];
+              modulesList.removeChild(div);
+            } else {
+              lectures.splice(index, 1);
+              ul.removeChild(li);
+            }
           });
           append(h4, li)(button)(li, ul);
         });
@@ -32,9 +36,9 @@ function solve(modules = {}) {
 
   add.addEventListener('click', (event) => {
     event.preventDefault();
-    const [name, date, modulE] = [nameIn, dateIn, selectIn].map((el) => el.value.trim());
-    if (name && date && modulE !== 'Select module') {
-      modules[modulE] ? (modules[modulE][name] = date) : (modules[modulE] = { [name]: date });
+    const [lecture, date, modulE] = [nameIn, dateIn, selectIn].map((el) => el.value.trim());
+    if (lecture && date && modulE !== 'Select module') {
+      modules[modulE] ? modules[modulE].push({ lecture, date }) : (modules[modulE] = [{ lecture, date }]);
       form.reset();
       render();
     }
