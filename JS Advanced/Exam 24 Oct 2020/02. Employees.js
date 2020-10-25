@@ -50,13 +50,7 @@ solve = () => {
       let taskIndex = this.tasks.findIndex((t) => t.id === taskId);
       if (taskIndex !== -1) {
         const task = this.tasks.splice(taskIndex, 1)[0];
-        if (task.priority === 'high') {
-          task.priority = 'low';
-          this.tasks.push(task);
-        } else {
-          task.priority = 'high';
-          this.tasks.unshift(task);
-        }
+        this.tasks[(task.priority = task.priority === 'high' ? 'low' : 'high') === 'high' ? 'unshift' : 'push'](task);
         return task;
       }
     }
