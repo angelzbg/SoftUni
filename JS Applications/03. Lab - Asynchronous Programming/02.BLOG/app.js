@@ -16,13 +16,11 @@
   const [btnLoad, select, btnView, h1Title, ulBody, ulComments] = elements;
 
   btnLoad.addEventListener('click', () =>
-    getDo(
-      '',
-      (res) =>
-        (select.innerHTML = Object.entries((posts = res)).map(
-          ([uuid, { title }]) => `<option value="${uuid}">${title}</option>`
-        ))
-    )
+    getDo('', (res) => {
+      select.innerHTML = Object.entries((posts = res)).map(
+        ([uuid, { title }]) => `<option value="${uuid}">${title}</option>`
+      );
+    })
   );
 
   btnView.addEventListener('click', () => {
