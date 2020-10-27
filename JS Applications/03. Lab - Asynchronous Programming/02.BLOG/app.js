@@ -26,7 +26,8 @@
   btnView.addEventListener('click', () => {
     const post = posts[select.value];
     if (post) {
-      getDo(select.value, (res) => { // this data is already present...
+      getDo(select.value, (res) => {
+        // this data is already present...
         h1Title.textContent = res.title;
         ulBody.innerHTML = res.body; // ooooowkay xD
         ulComments.innerHTML = (res.comments || []).map(({ id, text }) => `<li id="${id}">${text}</li>`).join('');
