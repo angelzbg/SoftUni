@@ -1,0 +1,42 @@
+{
+  "rules": {
+    "teams": {
+      ".read": "auth != null && query.orderByPriority",
+      "$teamUUID": {
+        ".read": "auth != null",
+        ".write": "auth != null && ((!root.child('members/' + auth.uid).exists() && !data.exists() && newData.exists()) || (data.exists() && data.child('creator').val() === auth.token.email) && newData.exists())",
+        ".validate": "newData.hasChildren(['name', 'creator', 'comment'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length < 257"
+        },
+        "comment": {
+          ".validate": "newData.isString() && newData.val().length < 513"
+        },
+        "creator": {
+          ".validate": "newData.isString() && newData.val() === auth.token.email"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "members": {
+      ".indexOn": "team",
+      ".read": "auth != null && query.orderByChild == 'team'",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && ((auth.uid === $uid && !data.exists() && newData.exists()) || (auth.uid === $uid && data.exists() && !newData.exists()) || (data.exists() && !newData.exists() && root.child('teams/' + data.child('team').val() + '/creator').val() === auth.token.email && root.child('members/' + auth.uid + '/team').val() === data.child('team').val()))",
+        ".validate": "newData.hasChildren(['team', 'username'])",
+        "team": {
+          ".validate": "root.child('teams/' + newData.val()).exists()"
+        },
+        "username": {
+          ".validate": "newData.isString() && newData.val() === auth.token.email"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+  }
+}

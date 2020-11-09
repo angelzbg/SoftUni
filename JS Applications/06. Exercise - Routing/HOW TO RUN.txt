@@ -1,0 +1,12 @@
+#1
+- Open Node.js and ented the directory Team Manager
+- npm i
+- npm start
+
+OR
+
+#2
+- Open vsc
+- Install the extension Live Server
+- Navigate to Team Manager/index.html
+- Click Go Live or right click in the index.html and Open with Live Server

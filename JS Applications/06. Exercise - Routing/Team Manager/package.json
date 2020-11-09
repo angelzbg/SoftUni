@@ -1,0 +1,14 @@
+{
+  "name": "team-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -o --cors"
+  },
+  "author": "Angel Zlatanov",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}

@@ -1,0 +1,4 @@
+1. Open node cmd or terminal
+2. Enter this directory
+3. npm i
+4. npm test

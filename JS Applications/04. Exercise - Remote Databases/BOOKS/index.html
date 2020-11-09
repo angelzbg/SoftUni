@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <button id="loadBooks">LOAD ALL BOOKS</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <form><button id="addBooks">ADD BOOK</button></form>
+
+    <form id="formAdd" style="display: none;">
+        <h3>FORM</h3>
+        <label>TITLE</label>
+        <input type="text" maxlength="256" id="title" placeholder="Title...">
+        <label>AUTHOR</label>
+        <input type="text" maxlength="256" id="author" placeholder="Author...">
+        <label>ISBN</label>
+        <input type="text" maxlength="13" id="isbn" placeholder="Isnb...">
+        </div>
+        <button>Submit</button>
+    </form>
+
+    <div class="notifications" id="notifications">
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
+
+<!--Feel free to change/update/modify the HTML Structure-->

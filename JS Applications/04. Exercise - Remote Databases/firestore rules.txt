@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	match /students/{studentId} {
+      allow get, list;
+    }
+    match /students/{studentId} {
+    	allow create:
+      if request.resource.data.keys().hasOnly([
+      	'ID',
+        'FirstName',
+        'LastName',
+        'FacultyNumber',
+        'Grade'
+      ])
+      && request.resource.data.keys().size() == 5
+      && request.resource.data['ID'] is int
+      && request.resource.data['ID'] >= 0
+      && request.resource.data['ID'] <= 1000000
+      && request.resource.data['FirstName'] is string
+      && request.resource.data['FirstName'].size() > 0
+      && request.resource.data['FirstName'].size() < 257
+      && request.resource.data['LastName'] is string
+      && request.resource.data['LastName'].size() > 0
+      && request.resource.data['LastName'].size() < 257
+      && request.resource.data['FacultyNumber'] is string
+      && request.resource.data['FacultyNumber'].size() > 0
+      && request.resource.data['FacultyNumber'].size() < 13
+      && request.resource.data['FacultyNumber'].matches("^[0-9]+$") == true
+      && request.resource.data['Grade'] is number
+      && request.resource.data['Grade'] >= 2
+      && request.resource.data['Grade'] <= 6;
+    }
+    match /books/{bookId} {
+      allow get, list, delete;
+    }
+    match /books/{bookId} {
+      allow create:
+      if request.resource.data.keys().hasOnly([
+      	'title',
+        'author',
+        'isbn'
+      ])
+      && request.resource.data.keys().size() == 3
+      && request.resource.data['author'] is string
+      && request.resource.data['author'].size() > 0
+      && request.resource.data['author'].size() < 257
+      && request.resource.data['title'] is string
+      && request.resource.data['title'].size() > 0
+      && request.resource.data['title'].size() < 257
+      && request.resource.data['isbn'] is string
+      && request.resource.data['isbn'].size() > 0
+      && request.resource.data['isbn'].size() < 14;
+      
+      allow update:
+      if resource.data.diff(request.resource.data).affectedKeys().hasOnly([
+              "author",
+              "title",
+              "isbn"
+              ])
+           && request.resource.data["author"] is string
+           && request.resource.data["author"].size() > 0
+           && request.resource.data["author"].size() < 257
+           && request.resource.data["title"] is string
+           && request.resource.data["title"].size() > 0
+           && request.resource.data["title"].size() < 257
+           && request.resource.data["isbn"] is string
+           && request.resource.data["isbn"].size() > 0
+           && request.resource.data["isbn"].size() < 14;
+    }
+  }
+}

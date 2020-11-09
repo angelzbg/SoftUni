@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Students</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <table id="results">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Faculty Number</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <form id="formAdd">
+      <input type="number" min="0" max="1000000" placeholder="ID..." /><br />
+      <input type="text" maxlength="256" placeholder="First Name..." /><br />
+      <input type="text" maxlength="256" placeholder="Last Name.." /><br />
+      <input type="text" maxlength="12" placeholder="Faculty Number..." /><br />
+      <input type="number" min="2.00" max="6.00" step=".01" placeholder="Grade..." /><br />
+      <center><button>Submit</button></center>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
