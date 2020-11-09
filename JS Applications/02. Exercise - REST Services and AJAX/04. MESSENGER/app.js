@@ -1,10 +1,10 @@
-((url = 'http://localhost:8000/messenger') => {
+((url = 'https://rest-messanger.firebaseio.com/messanger.json') => {
   const toJson = (res) => {
-    return res.ok
-      ? res.json()
-      : (function () {
-          throw new Error(res.statusText);
-        })();
+    if (res.ok) {
+      return res.json();
+    }
+
+    throw new Error(res.statusText);
   };
 
   const elements = ['messages', 'author', 'content', 'submit', 'refresh'].map((id) => document.getElementById(id));
@@ -14,6 +14,7 @@
     textarea.value = Object.values(data)
       .map(({ author, content }) => `${author}: ${content}`)
       .join('\n');
+    textarea.scrollTo({ top: textarea.scrollHeight, behavior: 'smooth' });
   };
 
   const loadData = () => {
@@ -32,6 +33,7 @@
       .then(() => {
         loadData();
         messageIn.value = '';
+        messageIn.focus();
       })
       .catch((e) => console.error(e.message));
   };
@@ -45,5 +47,12 @@
     }
   });
 
-  loadData();
+  messageIn.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      submit.click();
+    }
+  });
+
+  refresh.click();
 })();

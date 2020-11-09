@@ -5,7 +5,7 @@ const solve = (currentStop = 'Depot', nextStop = 'Depot') => {
   const toggle = (d = true, a = true) => ([departBtn.disabled, arriveBtn.disabled] = [d, a]);
 
   const fetchData = (isDeparting = false) => {
-    fetch(`http://localhost:8000/schedule/${encodeURIComponent(nextStop.toLowerCase())}`)
+    fetch(`https://judgetests.firebaseio.com/schedule/${encodeURIComponent(nextStop.toLowerCase())}.json`)
       .then((res) => {
         if (res.ok) {
           return res.json();

@@ -1,7 +1,9 @@
 function getInfo() {
-  const [div, ul] = document.querySelectorAll('#result *');
+  const [input, div, ul] = document.querySelectorAll('#result *, input#stopId');
 
-  fetch(`http://localhost:8000/businfo/${document.getElementById('stopId').value}`)
+  div.textContent = '';
+  ul.innerHTML = '';
+  fetch(`https://judgetests.firebaseio.com/businfo/${input.value}.json`)
     .then((res) => {
       if (res.ok) {
         return res.json();
@@ -14,6 +16,7 @@ function getInfo() {
       ul.innerHTML = Object.entries(buses)
         .map(([busId, time]) => `<li>Bus ${busId} arrives in ${time}</li>`)
         .join('');
+      input.value = '';
     })
     .catch(() => ([div.textContent, ul.textContent] = ['Error', '']));
 }

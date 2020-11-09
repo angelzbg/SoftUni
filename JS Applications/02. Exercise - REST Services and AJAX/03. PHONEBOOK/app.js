@@ -1,10 +1,10 @@
-((phonebook = {}, url = 'http://localhost:8000/phonebook') => {
+((phonebook = {}, url = 'https://phonebook-nakov.firebaseio.com/phonebook') => {
   const toJson = (res) => {
-    return res.ok
-      ? res.json()
-      : (function () {
-          throw new Error(res.statusText);
-        })();
+    if (res.ok) {
+      return res.json();
+    }
+
+    throw new Error(res.statusText);
   };
 
   const list = document.getElementById('phonebook');
@@ -16,14 +16,17 @@
   };
 
   const loadData = () => {
-    fetch(url)
+    fetch(url + '.json')
       .then(toJson)
-      .then((res) => render((phonebook = res)))
+      .then((res) => {
+        phonebook = res || {};
+        render();
+      })
       .catch((e) => console.error(e.message));
   };
 
   const addRecord = (data = {}) => {
-    fetch(url, {
+    fetch(url + '.json', {
       method: 'POST',
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
       body: JSON.stringify(data),
@@ -36,7 +39,7 @@
   };
 
   const deleteRecord = (uuid = '') => {
-    fetch(`${url}/${uuid}`, { method: 'DELETE' })
+    fetch(`${url}/${uuid}.json`, { method: 'DELETE' })
       .then(loadData)
       .catch((e) => console.error(e.message));
   };
