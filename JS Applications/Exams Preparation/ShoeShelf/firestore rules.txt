@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /shoes/{shoeId} {
+    allow get, list: if request.auth != null;
+      allow create:
+      if request.auth != null
+      && request.resource.data.keys().hasOnly([
+        'name',
+        'price',
+        'imageUrl',
+        'description',
+        'brand',
+        'creator',
+        'people'
+      ])
+      && request.resource.data.keys().size() == 7
+      && request.resource.data['creator'] is map
+      && request.resource.data['creator']['uid'] == request.auth.uid
+      && request.resource.data['creator']['email'] == request.auth.token.email
+      && request.resource.data['name'] is string
+      && request.resource.data['name'].size() > 0
+      && request.resource.data['price'] is string
+      && request.resource.data['price'].size() > 0
+      && request.resource.data['imageUrl'] is string
+      && request.resource.data['imageUrl'].size() > 0
+      && request.resource.data['description'] is string
+      && request.resource.data['description'].size() > 0
+      && request.resource.data['brand'] is string
+      && request.resource.data['brand'].size() > 0
+      && request.resource.data['people'] is map
+      && request.resource.data['people'].size() == 0;
+
+      allow delete:
+      if request.auth != null
+      && request.auth.uid == resource.data['creator']['uid'];
+
+      allow update:
+      if request.auth != null
+      &&
+        (
+          ( // update users
+              request.resource.data.diff(resource.data).affectedKeys().hasOnly(["people"])
+           && request.resource.data.people.diff(resource.data.people).affectedKeys().hasOnly([
+              request.auth.uid
+           ])
+           && request.auth.uid != resource.data['creator']['uid']
+           && (
+               request.resource.data['people'][request.auth.uid] == request.auth.token.email
+               ||
+               !(request.auth.uid in request.resource.data['people'].keys())
+              )
+          )
+          ||
+          ( // update fields
+              request.auth.uid == resource.data['creator']['uid']
+           && resource.data.diff(request.resource.data).affectedKeys().hasOnly([
+              'name',
+              'price',
+              'imageUrl',
+              'description',
+              'brand'
+           ])
+           && request.resource.data['name'] is string
+           && request.resource.data['name'].size() > 0
+           && request.resource.data['price'] is string
+           && request.resource.data['price'].size() > 0
+           && request.resource.data['imageUrl'] is string
+           && request.resource.data['imageUrl'].size() > 0
+           && request.resource.data['description'] is string
+           && request.resource.data['description'].size() > 0
+           && request.resource.data['brand'] is string
+           && request.resource.data['brand'].size() > 0
+          )
+        );
+    } // match /shoes/{shoeId}
+  } // match /databases/{database}/documents
+} // service cloud.firestore

@@ -1,0 +1,6 @@
+Open Node.js command prompt
+- Enter current App.js directory
+- npm i
+- npm start
+
+! For any problems regarding old resources from the server go to dev tools -> network -> disable cache

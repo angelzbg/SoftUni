@@ -1,0 +1,14 @@
+{
+  "name": "exam",
+  "version": "1.0.0",
+  "description": "JS Aplications Exam",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -P http://localhost:8080? -o --cors"
+  },
+  "author": "Angel Zlatanov",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "0.12.3"
+  }
+}
