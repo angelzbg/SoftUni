@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- Firebase -->
+    <script src="./node_modules/firebase/firebase.js"></script>
+
+    <!-- Modules -->
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="./node_modules/sammy/lib/sammy.js"></script>
+    <script src="./node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+
+    <!-- Scripts -->
+    <script src="./scripts/app.js" type="module"></script>
+</head>
+
+<body>
+
+    <!-- Notifications -->
+    <div>
+        <div class="notification loadingBox">
+            Loading …
+        </div>
+        <div class="notification infoBox">
+            Info
+        </div>
+        <div class="notification errorBox">
+            Error: destination name can't be empty!
+        </div>
+    </div>
+    <div id="container">
+
+
+        <!-- Header -->
+        <nav>
+            <div class="left-container">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Destinations</a></li>
+                    <li><a href="">Add +</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Register</a></li>
+                </ul>
+            </div>
+            <div class="right-container">
+                <span>Welcome, {name} |</span>
+                <a href="" class="log-out">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Register -->
+        <section id="viewRegister">
+            <h2>Create your account:</h2>
+            <form id="formRegister">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Email">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+                <label for="rePassword">Repeat Password:</label>
+                <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password">
+                <input type="submit" class="register" value="Register">
+            </form>
+        </section>
+
+        <!-- Login -->
+        <section id="viewLogin">
+            <h2>Login to your account:</h2>
+            <form id="formLogin">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your Email">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password">
+                <input type="submit" class="login" value="Login">
+            </form>
+        </section>
+
+        <!-- Home -->
+        <section id="viewCatalog" class="background-img">
+            <div class="added-destinations">
+                <a href="" class="added-destination">
+                    <img src="https://image.freepik.com/free-vector/showplace-illustration-with-all-famous-buildings-linear-banner_1416-984.jpg"
+                        alt="" class="picture-added-destination">
+                    <h3>Berlin</h3>
+                    <span>to Berlin </span><span>2020-12-22</span>
+                </a>
+                <a href="" class="added-destination">
+                    <img src="https://image.freepik.com/free-photo/buildings-tall-tower_181624-20757.jpg" alt=""
+                        class="picture-added-destination">
+                    <h3>Canada</h3>
+                    <span>to Toronto </span><span>2021-09-02</span>
+                </a>
+                <a href="" class="added-destination">
+                    <img src="https://image.freepik.com/free-photo/walking-hooker-valley-track-with-view-mount-cook-new-zealand_181624-17124.jpg"
+                        alt="" class="picture-added-destination">
+                    <h3>New Zealand</h3>
+                    <span>to Auckland </span><span>2021-11-15</span>
+                </a>
+            </div>
+            <div class="guest">
+                No destinations possible! Please sign in...
+            </div>
+        </section>
+
+        <!-- Create  -->
+        <section id="viewAdddestination">
+            <h2>Add new destination</h2>
+            <form id="formAdddestination">
+                <label for="destination">Destination name:</label>
+                <input type="text" id="destination" name="destination" placeholder="Destination name">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="City">
+                <label for="duration">Duration:</label>
+                <input type="number" id="duration" name="duration" placeholder="Duration">
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate">
+                <label for="imgUrl">Image:</label>
+                <input type="text" id="imgUrl" name="imgUrl" placeholder="https://">
+
+                <input type="submit" class="create" value="Add">
+            </form>
+        </section>
+
+        <!-- Details  -->
+        <section id="viewdestinationDetails">
+            <div class="destination-area">
+                <div class="destination-area-left">
+                    <img src="https://image.freepik.com/free-photo/walking-hooker-valley-track-with-view-mount-cook-new-zealand_181624-17124.jpg"
+                        alt="">
+                </div>
+                <div class="destination-area-right">
+                    <h3>New Zealand</h3>
+                    <div>to Auckland</div>
+                    <div class="data-and-time">
+                        15 November 2021
+                        <a href="" class="edit-destination-detail"></a>
+                    </div>
+                    <div>
+                        15 days
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Edit  -->
+        <section id="viewEditdestination">
+            <h2>Edit existing destination</h2>
+            <form id="formAdddestination">
+                <label for="destination">Destination name:</label>
+                <input type="text" id="destination" name="destination" value="New Zealand">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" value="Auckland">
+                <label for="duration">Duration:</label>
+                <input type="number" id="duration" name="duration" value="15">
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate" value="2021-11-15">
+                <label for="imgUrl">Image:</label>
+                <input type="text" id="imgUrl" name="imgUrl"
+                    value="https://image.freepik.com/free-photo/walking-hooker-valley-track-with-view-mount-cook-new-zealand_181624-17124.jpg">
+
+                <input type="submit" class="create" value="Edit">
+            </form>
+        </section>
+
+        <!-- Details Dashboard  -->
+        <section id="viewMydestinations">
+            <h3>Your destinations</h3>
+            <div class="destination-ticket">
+                <div class="destination-left">
+                    <img src="https://image.freepik.com/free-photo/walking-hooker-valley-track-with-view-mount-cook-new-zealand_181624-17124.jpg"
+                        alt="">
+                </div>
+                <div class="destination-right">
+                    <div>
+                        <h3>New Zealand</h3><span>2020-11-15</span>
+                    </div>
+                    <div>
+                        to Auckland
+                    </div>
+                    <p>15 days </p>
+                    <a href="" class="remove">REMOVE</a>
+                    <a href="" class="details">Details</a>
+                </div>
+
+            </div>
+            <div class="destination-ticket">
+                <div class="destination-left">
+                    <img src="https://image.freepik.com/free-photo/buildings-tall-tower_181624-20757.jpg" alt="">
+                </div>
+                <div class="destination-right">
+                    <div>
+                        <h3>Canada</h3><span>2021-09-02</span>
+                    </div>
+                    <div>
+                        to Toronto
+                    </div>
+                    <p>13 days </p>
+                    <a href="" class="remove">REMOVE</a>
+                    <a href="" class="details">Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer  -->
+        <footer>@SoftUni Destinations 2020</footer>
+    </div>
+
+</body>
+
+</html>
