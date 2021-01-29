@@ -3,6 +3,7 @@ const register = ({ user, data, error, path }) => {
   if (data) {
     ({ email, username, password, rePassword } = data);
   }
+
   return `
     <section id="viewRegister">
       <h2>Create your account:</h2>

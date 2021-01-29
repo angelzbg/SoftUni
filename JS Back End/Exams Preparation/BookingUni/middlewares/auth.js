@@ -18,12 +18,12 @@ module.exports = (req, res, next) => {
 
     let user;
     if (req.path.match('^/profile/.+$')) {
-      user = await userModel.findById(decoded.userId).populate('booked');
+      user = await userModel.findById(decoded.userId).populate('booked').lean();
     } else {
-      user = await userModel.findById(decoded.userId);
+      user = await userModel.findById(decoded.userId).lean();
     }
 
-    req.user = JSON.parse(JSON.stringify(user));
+    req.user = user;
     res.locals.isLogged = !!req.user;
     next();
   });

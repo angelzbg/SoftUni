@@ -3,6 +3,7 @@ const add = ({ user, data, error, path }) => {
   if (data) {
     ({ name, city, imageUrl, rooms } = data);
   }
+
   return `
     <section id="viewAddhotel">
     <h2>Add new hotel</h2>

@@ -52,16 +52,15 @@ router.get('/details/:id', checkAuth(true), async (req, res, next) => {
     return;
   }
 
-  res.send(getPage({ componentName: 'details', user, path: '../', data: JSON.parse(JSON.stringify(hotel)) }));
+  res.send(getPage({ componentName: 'details', user, path: '../', data: hotel }));
 });
 
 router.get('/delete/:id', checkAuth(true), async (req, res, next) => {
   const user = req.user;
   const hotelId = req.params.id;
   let hotel = await hotelSchema.findById(hotelId);
-  hotel = JSON.parse(JSON.stringify(hotel));
 
-  if (!hotel || user._id !== hotel.owner) {
+  if (!hotel || !user._id.equals(hotel.owner)) {
     res.redirect('/');
     return;
   }
@@ -88,9 +87,7 @@ router.get('/book/:id', checkAuth(true), async (req, res, next) => {
     return;
   }
 
-  hotel = JSON.parse(JSON.stringify(hotel));
-
-  if (hotel.owner === user._id || hotel.booked.includes(user._id)) {
+  if (hotel.owner.equals(user._id) || hotel.booked.findIndex((hId) => hId.equals(user._id)) !== -1) {
     res.redirect('/');
     return;
   }
@@ -114,9 +111,7 @@ router.get('/edit/:id', checkAuth(true), async (req, res, next) => {
     return;
   }
 
-  hotel = JSON.parse(JSON.stringify(hotel));
-
-  if (hotel.owner !== user._id) {
+  if (!hotel.owner.equals(user._id)) {
     res.redirect('/');
     return;
   }
@@ -133,9 +128,7 @@ router.post('/edit/:id', checkAuth(true), async (req, res, next) => {
     return;
   }
 
-  hotel = JSON.parse(JSON.stringify(hotel));
-
-  if (hotel.owner !== user._id) {
+  if (!hotel.owner.equals(user._id)) {
     res.redirect('/');
     return;
   }

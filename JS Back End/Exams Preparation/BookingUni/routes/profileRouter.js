@@ -5,7 +5,7 @@ const checkAuth = require('../middlewares/check-auth.js');
 router.get('/profile/:id', checkAuth(true), (req, res, next) => {
   const id = req.params.id;
   const user = req.user;
-  if (id !== user._id) {
+  if (!user._id.equals(id)) {
     res.redirect('/');
     return;
   }

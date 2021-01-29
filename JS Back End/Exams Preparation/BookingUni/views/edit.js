@@ -1,5 +1,6 @@
 const edit = ({ user, data, error, path }) => {
   const { _id, name, city, imageUrl, rooms } = data;
+
   return `
     <section id="viewAddhotel">
         <h2>Edit existing hotel</h2>

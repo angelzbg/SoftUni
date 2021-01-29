@@ -3,6 +3,7 @@ const login = ({ user, data, error, path }) => {
   if (data) {
     ({ username, password } = data);
   }
+
   return `
     <section id="viewLogin">
       <h2>Login:</h2>
