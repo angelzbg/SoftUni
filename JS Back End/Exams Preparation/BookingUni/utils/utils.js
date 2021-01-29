@@ -25,7 +25,7 @@ const validateHotel = ({ name, city, rooms, imageUrl }) => {
     return 'Number of free rooms should be between 1 and 100!';
   }
 
-  if (!imageUrl || !imageUrl.startsWith('http') || !imageUrl.startsWith('https')) {
+  if (!imageUrl || !imageUrl.match('^https?')) {
     return 'Image URLs should start with http or https!';
   }
 };

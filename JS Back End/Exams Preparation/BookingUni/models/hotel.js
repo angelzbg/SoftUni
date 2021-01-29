@@ -16,6 +16,7 @@ const hotelSchema = new mongoose.Schema({
   imageUrl: {
     type: String,
     required: true,
+    validate: /^https?/,
   },
   rooms: {
     type: Number,
