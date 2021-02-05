@@ -20,15 +20,11 @@ app.get('*', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  if (err.message === 'BAD_REQUEST') {
-    res.status(400);
-    return;
-  }
-
-  if (err.message === 'UNAUTHORIZED') {
-    res.redirect('/');
-    return;
-  }
+  // Vsichki greshki pri normalna rabota sa hvanati i redirectvat kum homepage
+  // Vsichki greshki otnosno validaciqta pri normalna rabota se pokazvat vuv FE
+  // Kofti zaqwvki ot nedobrojelateli si hodqt na home page
+  console.log(err);
+  res.redirect('/');
 });
 
 mongoose
