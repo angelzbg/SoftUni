@@ -13,6 +13,12 @@ app.use(express.static('public'));
 
 app.use(auth);
 
+router.forEach((r) => app.use(r));
+
+app.get('*', (req, res) => {
+  res.redirect('/');
+});
+
 app.use((err, req, res, next) => {
   if (err.message === 'BAD_REQUEST') {
     res.status(400);
@@ -23,12 +29,6 @@ app.use((err, req, res, next) => {
     res.redirect('/');
     return;
   }
-});
-
-router.forEach((r) => app.use(r));
-
-app.get('*', (req, res) => {
-  res.redirect('/');
 });
 
 mongoose
