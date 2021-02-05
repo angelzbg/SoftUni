@@ -18,6 +18,11 @@ app.use((err, req, res, next) => {
     res.status(400);
     return;
   }
+
+  if (err.message === 'UNAUTHORIZED') {
+    res.redirect('/');
+    return;
+  }
 });
 
 router.forEach((r) => app.use(r));
