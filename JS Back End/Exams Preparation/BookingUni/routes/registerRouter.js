@@ -60,7 +60,7 @@ router.post('/register', checkAuth(false), async (req, res, next) => {
     .then(async (doc) => {
       const jwtToken = await signToken({ userId: doc._id }, jwtSecret);
       res.cookie(authCookieName, jwtToken, { httpOnly: true });
-      res.redirect('/');
+      res.redirect('/#register');
     })
     .catch(next);
 });

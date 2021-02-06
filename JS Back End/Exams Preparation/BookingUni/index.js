@@ -23,8 +23,10 @@ app.use((err, req, res, next) => {
   // Vsichki greshki pri normalna rabota sa hvanati i redirectvat kum homepage
   // Vsichki greshki otnosno validaciqta pri normalna rabota se pokazvat vuv FE
   // Kofti zaqwvki ot nedobrojelateli si hodqt na home page
-  console.log(err);
-  res.redirect('/');
+  if (err) {
+    console.log(err);
+    res.redirect('/');
+  }
 });
 
 mongoose

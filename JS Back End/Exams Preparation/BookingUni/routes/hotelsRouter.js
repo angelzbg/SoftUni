@@ -36,7 +36,7 @@ router.post('/add', checkAuth(true), async (req, res, next) => {
     .create({ name, city, rooms: parseInt(rooms), imageUrl, owner: user._id })
     .then((doc) => {
       userSchema.updateOne({ _id: req.user._id }, { $push: { offered: doc._id } }).then(() => {
-        res.redirect(`/details/${doc._id}`);
+        res.redirect(`/details/${doc._id}#add`);
       });
     })
     .catch(next);
@@ -73,7 +73,7 @@ router.get('/delete/:id', checkAuth(true), async (req, res, next) => {
     userSchema.updateMany({ _id: { $in: users } }, { $pull: { booked: hotelId } }),
   ])
     .then(() => {
-      res.redirect('/');
+      res.redirect('/#delete');
     })
     .catch(next);
 });
@@ -97,7 +97,7 @@ router.get('/book/:id', checkAuth(true), async (req, res, next) => {
     userSchema.findByIdAndUpdate(user._id, { $push: { booked: id } }),
   ])
     .then(() => {
-      res.redirect(`/details/${id}`);
+      res.redirect(`/details/${id}#book`);
     })
     .catch(next);
 });
@@ -145,7 +145,7 @@ router.post('/edit/:id', checkAuth(true), async (req, res, next) => {
   await hotelSchema
     .findByIdAndUpdate(id, { name, city, rooms: parseInt(rooms), imageUrl })
     .then(() => {
-      res.redirect(`/details/${id}`);
+      res.redirect(`/details/${id}#edit`);
     })
     .catch(next);
 });

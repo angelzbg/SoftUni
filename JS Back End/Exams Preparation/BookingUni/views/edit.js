@@ -14,7 +14,7 @@ const edit = ({ user, data, error, path }) => {
             <label for="imageUrl">Image:</label>
             <input type="text" id="imageUrl" name="imageUrl" value="${imageUrl}">
 
-            <input type="submit" class="create" value="Edit">
+            <input type="submit" class="create" value="Edit" onclick="showLoading()">
         </form>
     </section>`;
 };

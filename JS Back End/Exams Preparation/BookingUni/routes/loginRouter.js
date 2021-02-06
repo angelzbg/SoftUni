@@ -27,15 +27,17 @@ router.post('/login', checkAuth(false), (req, res, next) => {
       return signToken({ userId: user._id }, jwtSecret);
     })
     .then((jwtToken) => {
-      res.cookie(authCookieName, jwtToken, { httpOnly: true });
-      res.redirect('/');
+      if (jwtToken) {
+        res.cookie(authCookieName, jwtToken, { httpOnly: true });
+        res.redirect('/#login');
+      }
     })
     .catch(next);
 });
 
 router.get('/logout', checkAuth(true), (req, res) => {
   res.clearCookie(authCookieName);
-  res.redirect('/');
+  res.redirect('/#logout');
 });
 
 module.exports = router;

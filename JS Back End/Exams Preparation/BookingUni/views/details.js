@@ -16,11 +16,11 @@ const details = ({ user, data, error, path }) => {
                 <p><span >Free rooms: ${data.rooms}</span> </p>
                 ${
                   user._id.equals(data.owner)
-                    ? `<a href="/edit/${data._id}" class="edit">Edit</a>
-                        <a href="/delete/${data._id}" class="remove">Delete</a>`
+                    ? `<a href="/edit/${data._id}" class="edit" onclick="showLoading()">Edit</a>
+                        <a href="/delete/${data._id}" class="remove" onclick="showLoading()">Delete</a>`
                     : data.booked.findIndex((hId) => hId.equals(user._id)) !== -1
                     ? `<p><span class="green">You already have booked a room</span> </p>`
-                    : `<a href="/book/${data._id}" class="book">Book</a>`
+                    : `<a href="/book/${data._id}" class="book" onclick="showLoading()">Book</a>`
                 }
             </div>
         </div>
