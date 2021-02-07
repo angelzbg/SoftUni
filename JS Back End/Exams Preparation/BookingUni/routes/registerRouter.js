@@ -16,43 +16,37 @@ router.get('/register', checkAuth(false), (req, res, next) => {
 router.post('/register', checkAuth(false), async (req, res, next) => {
   const { email, username, password, rePassword } = req.body;
 
+  const onValidationFail = (error) => {
+    res.send(getPage({ componentName: 'register', error, data: req.body }));
+  };
+
   if (!validateEmail(email)) {
-    res.send(getPage({ componentName: 'register', error: 'Please enter a valid Email address!', data: req.body }));
-    return;
+    return onValidationFail('Please enter a valid Email address!');
   }
 
   if (!username) {
-    res.send(getPage({ componentName: 'register', error: 'Please enter Username!', data: req.body }));
-    return;
+    return onValidationFail('Please enter Username!');
   }
 
   if (!password) {
-    res.send(getPage({ componentName: 'register', error: 'Please enter a password!', data: req.body }));
-    return;
+    return onValidationFail('Please enter a password!');
   }
 
   if (!password.match(/^[0-9a-zA-Z]{5,}$/)) {
-    res.send(
-      getPage({
-        componentName: 'register',
-        error: 'Password should be at least 5 characters long and should consist only english letters and digits!',
-        data: req.body,
-      })
+    return onValidationFail(
+      'Password should be at least 5 characters long and should consist only english letters and digits!'
     );
-    return;
   }
 
   if (password !== rePassword) {
-    res.send(getPage({ componentName: 'register', error: "Passwords don't match!", data: req.body }));
-    return;
+    return onValidationFail("Passwords don't match!");
   }
 
   const user = await userModel.findOne({
     $or: [{ email }, { username }],
   });
   if (user) {
-    res.send(getPage({ componentName: 'register', error: 'User already exists!', data: req.body }));
-    return;
+    return onValidationFail('User already exists!');
   }
 
   userModel
