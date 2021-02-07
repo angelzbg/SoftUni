@@ -16,7 +16,7 @@ const register = ({ user, data, error, path }) => {
         <input type="password" id="password" name="password" placeholder="Password"  value="${password}">
         <label for="rePassword">Repeat Password:</label>
         <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password"  value="${rePassword}">
-        <input type="submit" class="register" value="Register" onclick="showLoading()">
+        <input type="submit" class="register" value="Register" onclick="showLoading(event)">
       </form>
     </section>`;
 };

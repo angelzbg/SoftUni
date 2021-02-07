@@ -8,7 +8,7 @@ const profile = require('./profile.js');
 
 const components = { home, login, register, add, details, edit, profile };
 
-const getPage = ({ componentName, user, data, error, info, path = './' }) => {
+const getPage = ({ componentName, user, data, error, path = './' }) => {
   const component = components[componentName];
 
   return `
@@ -52,8 +52,9 @@ const getPage = ({ componentName, user, data, error, info, path = './' }) => {
               <footer>@SoftUni - JS Back-end - BookingUni 2020</footer>
           </div>
           <script>
-            function showLoading() {
+            function showLoading(e) {
                 console.log('blegh');
+                e.target.style.display = 'none';
                 document.querySelector('.notification.loadingBox').style.display = 'block';
                 const errorBox = document.querySelector('.notification.errorBox');
                 const infoBox = document.querySelector('.notification.infoBox');

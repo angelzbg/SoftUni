@@ -12,7 +12,7 @@ const login = ({ user, data, error, path }) => {
         <input type="text" id="username" name="username" placeholder="Enter your Username" value="${username}">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" placeholder="Enter your Password" value="${password}">
-        <input type="submit" class="login" value="Login" onclick="showLoading()">
+        <input type="submit" class="login" value="Login" onclick="showLoading(event)">
       </form>
     </section>`;
 };

@@ -142,6 +142,20 @@ router.post('/edit/:id', checkAuth(true), async (req, res, next) => {
 
   const { name, city, rooms, imageUrl } = hotelData;
 
+  const _hotel = await hotelSchema.findOne({ name });
+  if (_hotel && !_hotel._id.equals(hotel._id)) {
+    res.send(
+      getPage({
+        componentName: 'edit',
+        path: '../',
+        user: req.user,
+        error: 'Hotel with this name already exists!',
+        data: hotelData,
+      })
+    );
+    return;
+  }
+
   await hotelSchema
     .findByIdAndUpdate(id, { name, city, rooms: parseInt(rooms), imageUrl })
     .then(() => {

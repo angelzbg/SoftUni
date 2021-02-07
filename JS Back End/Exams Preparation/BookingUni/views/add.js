@@ -17,7 +17,7 @@ const add = ({ user, data, error, path }) => {
         <label for="imageUrl">Image:</label>
         <input type="text" id="imageUrl" name="imageUrl" placeholder="https://" value="${imageUrl}">
 
-        <input type="submit" class="create" value="Add" onclick="showLoading()">
+        <input type="submit" class="create" value="Add" onclick="showLoading(event)">
     </form>
     </section>`;
 };
