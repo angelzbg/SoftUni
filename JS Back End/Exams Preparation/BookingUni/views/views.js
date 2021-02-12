@@ -53,7 +53,6 @@ const getPage = ({ componentName, user, data, error, path = './' }) => {
           </div>
           <script>
             function showLoading(e) {
-                console.log('blegh');
                 e.target.style.display = 'none';
                 document.querySelector('.notification.loadingBox').style.display = 'block';
                 const errorBox = document.querySelector('.notification.errorBox');

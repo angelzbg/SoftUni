@@ -3,30 +3,30 @@ const getPage = require('../views/views.js');
 const checkAuth = require('../middlewares/check-auth.js');
 const hotelSchema = require('../models/hotel.js');
 const userSchema = require('../models/user.js');
-const { validateHotel } = require('../utils/utils.js');
+const { validateData } = require('../utils/utils.js');
 
 router.get('/add', checkAuth(true), (req, res, next) => {
   res.send(getPage({ componentName: 'add', user: req.user }));
 });
 
 router.post('/add', checkAuth(true), async (req, res, next) => {
-  const user = req.user;
-  const hotelData = req.body;
-  let error = validateHotel(hotelData);
+  const { user, body: data } = req;
+  const error = validateData(data);
   if (error) {
-    res.send(getPage({ componentName: 'add', user: req.user, error, data: hotelData }));
+    res.send(getPage({ componentName: 'add', user: req.user, error, data }));
     return;
   }
-  const { name, city, rooms, imageUrl } = hotelData;
 
-  const hotel = await hotelSchema.findOne({ name });
-  if (hotel) {
+  const { name, city, rooms, imageUrl } = data;
+
+  const result = await hotelSchema.findOne({ name });
+  if (result) {
     res.send(
       getPage({
         componentName: 'add',
-        user: req.user,
+        user: user,
         error: `Hotel with ${name} name already exists!`,
-        data: hotelData,
+        data,
       })
     );
     return;
@@ -35,7 +35,7 @@ router.post('/add', checkAuth(true), async (req, res, next) => {
   hotelSchema
     .create({ name, city, rooms: parseInt(rooms), imageUrl, owner: user._id })
     .then((doc) => {
-      userSchema.updateOne({ _id: req.user._id }, { $push: { offered: doc._id } }).then(() => {
+      userSchema.updateOne({ _id: user._id }, { $push: { offered: doc._id } }).then(() => {
         res.redirect(`/details/${doc._id}#add`);
       });
     })
@@ -43,34 +43,38 @@ router.post('/add', checkAuth(true), async (req, res, next) => {
 });
 
 router.get('/details/:id', checkAuth(true), async (req, res, next) => {
-  const user = req.user;
-  const id = req.params.id;
-  const hotel = await hotelSchema.findById(id);
+  const {
+    user,
+    params: { id: dataId },
+  } = req;
 
-  if (!hotel) {
+  const result = await hotelSchema.findById(dataId);
+  if (!result) {
     res.redirect('/');
     return;
   }
 
-  res.send(getPage({ componentName: 'details', user, path: '../', data: hotel }));
+  res.send(getPage({ componentName: 'details', user, path: '../', data: result }));
 });
 
 router.get('/delete/:id', checkAuth(true), async (req, res, next) => {
-  const user = req.user;
-  const hotelId = req.params.id;
-  let hotel = await hotelSchema.findById(hotelId);
+  const {
+    user,
+    params: { id: dataId },
+  } = req;
 
-  if (!hotel || !user._id.equals(hotel.owner)) {
+  const result = await hotelSchema.findById(dataId);
+  if (!result || !user._id.equals(result.owner)) {
     res.redirect('/');
     return;
   }
 
-  const users = hotel.booked;
+  const users = result.booked;
 
   Promise.all([
-    hotelSchema.findByIdAndDelete({ _id: hotelId }),
-    userSchema.findByIdAndUpdate(user._id, { $pull: { offered: hotelId } }),
-    userSchema.updateMany({ _id: { $in: users } }, { $pull: { booked: hotelId } }),
+    hotelSchema.findByIdAndDelete({ _id: dataId }),
+    userSchema.findByIdAndUpdate(user._id, { $pull: { offered: dataId } }),
+    userSchema.updateMany({ _id: { $in: users } }, { $pull: { booked: dataId } }),
   ])
     .then(() => {
       res.redirect('/#delete');
@@ -79,79 +83,89 @@ router.get('/delete/:id', checkAuth(true), async (req, res, next) => {
 });
 
 router.get('/book/:id', checkAuth(true), async (req, res, next) => {
-  const id = req.params.id;
-  const user = req.user;
-  let hotel = await hotelSchema.findById(id);
-  if (!hotel) {
+  const {
+    user,
+    params: { id: dataId },
+  } = req;
+
+  const result = await hotelSchema.findById(dataId);
+  if (!result) {
     res.redirect('/');
     return;
   }
 
-  if (hotel.owner.equals(user._id) || hotel.booked.findIndex((hId) => hId.equals(user._id)) !== -1) {
+  if (result.owner.equals(user._id) || result.booked.findIndex((_id) => _id.equals(user._id)) !== -1) {
     res.redirect('/');
     return;
   }
 
   Promise.all([
-    hotelSchema.findByIdAndUpdate(id, { $push: { booked: user._id } }),
-    userSchema.findByIdAndUpdate(user._id, { $push: { booked: id } }),
+    hotelSchema.findByIdAndUpdate(dataId, { $push: { booked: user._id } }),
+    userSchema.findByIdAndUpdate(user._id, { $push: { booked: dataId } }),
   ])
     .then(() => {
-      res.redirect(`/details/${id}#book`);
+      res.redirect(`/details/${dataId}#book`);
     })
     .catch(next);
 });
 
 router.get('/edit/:id', checkAuth(true), async (req, res, next) => {
-  const id = req.params.id;
-  const user = req.user;
-  let hotel = await hotelSchema.findById(id);
-  if (!hotel) {
+  const {
+    user,
+    params: { id: dataId },
+  } = req;
+
+  const result = await hotelSchema.findById(dataId);
+  if (!result) {
     res.redirect('/');
     return;
   }
 
-  if (!hotel.owner.equals(user._id)) {
+  if (!result.owner.equals(user._id)) {
     res.redirect('/');
     return;
   }
 
-  res.send(getPage({ componentName: 'edit', user, data: hotel, path: '../' }));
+  res.send(getPage({ componentName: 'edit', user, data: result, path: '../' }));
 });
 
 router.post('/edit/:id', checkAuth(true), async (req, res, next) => {
-  const id = req.params.id;
-  const user = req.user;
-  let hotel = await hotelSchema.findById(id);
-  if (!hotel) {
+  const {
+    user,
+    params: { id: dataId },
+  } = req;
+
+  const result = await hotelSchema.findById(dataId);
+  if (!result) {
     res.redirect('/');
     return;
   }
 
-  if (!hotel.owner.equals(user._id)) {
+  if (!result.owner.equals(user._id)) {
     res.redirect('/');
     return;
   }
 
-  const hotelData = { ...req.body, _id: id };
-  let error = validateHotel(hotelData);
+  const data = { ...req.body, _id: dataId };
+
+  const error = validateData(data);
   if (error) {
-    res.send(getPage({ componentName: 'edit', path: '../', user: req.user, error, data: hotelData }));
+    res.send(getPage({ componentName: 'edit', path: '../', user, error, data }));
     return;
   }
 
-  const { name, city, rooms, imageUrl } = hotelData;
+  const { name, city, rooms, imageUrl } = data;
 
-  if (hotel.name !== name) {
-    const _hotel = await hotelSchema.findOne({ name });
-    if (_hotel && !_hotel._id.equals(hotel._id)) {
+  if (result.name !== name) {
+    const _data = await hotelSchema.findOne({ name });
+    if (!!_data && !_data._id.equals(data._id)) {
       res.send(
         getPage({
           componentName: 'edit',
           path: '../',
-          user: req.user,
+          user,
           error: 'Hotel with this name already exists!',
-          data: hotelData,
+          data,
         })
       );
       return;
@@ -159,9 +173,9 @@ router.post('/edit/:id', checkAuth(true), async (req, res, next) => {
   }
 
   await hotelSchema
-    .findByIdAndUpdate(id, { name, city, rooms: parseInt(rooms), imageUrl })
+    .findByIdAndUpdate(data._id, { name, city, rooms: parseInt(rooms), imageUrl })
     .then(() => {
-      res.redirect(`/details/${id}#edit`);
+      res.redirect(`/details/${data._id}#edit`);
     })
     .catch(next);
 });

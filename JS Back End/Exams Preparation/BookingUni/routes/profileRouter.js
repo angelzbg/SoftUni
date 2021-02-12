@@ -3,8 +3,11 @@ const getPage = require('../views/views.js');
 const checkAuth = require('../middlewares/check-auth.js');
 
 router.get('/profile/:id', checkAuth(true), (req, res, next) => {
-  const id = req.params.id;
-  const user = req.user;
+  const {
+    user,
+    params: { id },
+  } = req;
+
   if (!user._id.equals(id)) {
     res.redirect('/');
     return;

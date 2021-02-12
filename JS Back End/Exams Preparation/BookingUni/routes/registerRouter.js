@@ -42,9 +42,7 @@ router.post('/register', checkAuth(false), async (req, res, next) => {
     return onValidationFail("Passwords don't match!");
   }
 
-  const user = await userModel.findOne({
-    $or: [{ email }, { username }],
-  });
+  const user = await userModel.findOne({ $or: [{ email }, { username }] });
   if (user) {
     return onValidationFail('User already exists!');
   }

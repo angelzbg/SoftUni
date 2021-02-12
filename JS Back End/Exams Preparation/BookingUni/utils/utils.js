@@ -3,7 +3,7 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 
-const validateHotel = ({ name, city, rooms, imageUrl }) => {
+const validateData = ({ name, city, rooms, imageUrl }) => {
   if (!name || name.length < 4) {
     return 'Hotel name must be at least 4 characters!';
   }
@@ -30,4 +30,4 @@ const validateHotel = ({ name, city, rooms, imageUrl }) => {
   }
 };
 
-module.exports = { validateEmail, validateHotel };
+module.exports = { validateEmail, validateData };
