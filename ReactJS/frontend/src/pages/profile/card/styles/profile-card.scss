@@ -1,0 +1,440 @@
+.profile-card {
+  background-color: var(--dark);
+  width: 656px;
+  height: 150px;
+  border-radius: 10px;
+  margin-top: 16px;
+  -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+  -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+  box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+  position: relative;
+
+  .profile-card-avatar {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--darker);
+    border-radius: 50%;
+    position: absolute;
+    left: 23px;
+    top: 23px;
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    &.self {
+      cursor: pointer;
+      border-color: var(--medium);
+      &:hover {
+        border-color: var(--medium2);
+        &::after {
+          content: '';
+          position: absolute;
+          width: 98px;
+          height: 98px;
+          background: var(--scroll);
+          left: 1px;
+          top: 1px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .profile-card-info {
+    //background-color: red;
+    width: 420px;
+    height: 104px;
+    position: absolute;
+    top: 23px;
+    left: 150px;
+
+    .profile-card-account-type {
+      font-size: 16px;
+      color: var(--light);
+      padding-left: 6px;
+      padding-top: 2px;
+    }
+
+    .profile-card-link-wrap {
+      position: absolute;
+      right: -60px;
+      bottom: 0;
+      &.disabled {
+        div {
+          opacity: 0.8;
+          &:hover {
+            background-color: var(--medium);
+            border: 1px solid transparent;
+          }
+        }
+      }
+      .p-link-remove-button {
+        cursor: pointer;
+        color: var(--lightest);
+        background-color: var(--medium);
+        padding: 6px 12px 7px 8px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        svg {
+          width: 20px;
+          height: 20px;
+          color: var(--error);
+        }
+        &:hover {
+          background-color: var(--medium2);
+          border: 1px solid var(--error2);
+          svg {
+            color: var(--error2);
+          }
+        }
+      }
+      .p-link-add-button {
+        cursor: pointer;
+        color: var(--lightest);
+        background-color: var(--medium);
+        padding: 6px 8px 7px 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        svg {
+          width: 20px;
+          height: 20px;
+          color: var(--link1);
+        }
+        &:hover {
+          background-color: var(--medium2);
+          border: 1px solid var(--link1);
+          svg {
+            color: var(--link2);
+          }
+        }
+      }
+      .p-link-accept-button {
+        margin-right: 4px;
+        cursor: pointer;
+        display: inline-block;
+        color: var(--lightest);
+        background-color: var(--medium);
+        padding: 6px 12px 7px 8px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        svg {
+          width: 20px;
+          height: 20px;
+          color: var(--link1);
+        }
+        &:hover {
+          background-color: var(--medium2);
+          border: 1px solid var(--link1);
+          svg {
+            color: var(--link2);
+          }
+        }
+      }
+      .p-link-decline-button {
+        cursor: pointer;
+        display: inline-block;
+        color: var(--lightest);
+        background-color: var(--medium);
+        padding: 6px 12px 7px 8px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        svg {
+          width: 20px;
+          height: 20px;
+          color: var(--error);
+        }
+        &:hover {
+          background-color: var(--medium2);
+          border: 1px solid var(--error2);
+          svg {
+            color: var(--error2);
+          }
+        }
+      }
+    }
+  }
+
+  .profile-card-name-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--lightest);
+    padding-left: 7px;
+    line-height: 26px;
+
+    .edit-button-name {
+      display: inline-block;
+      cursor: pointer;
+      width: 26px;
+      height: 26px;
+      svg {
+        width: 16px;
+        height: 16px;
+        color: var(--link2);
+        margin-bottom: 2px;
+        margin-left: 2px;
+      }
+      &:hover {
+        color: var(--link1);
+      }
+    }
+  }
+
+  .profile-card-location-text {
+    font-size: 15px;
+    color: var(--lightest);
+    padding-left: 6px;
+    line-height: 26px;
+    margin-top: 4px;
+
+    .profile-card-icon-location {
+      vertical-align: bottom;
+      display: inline-block;
+      width: 22px;
+      height: 26px;
+      svg {
+        color: var(--lightest);
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .edit-button-location {
+      display: inline-block;
+      cursor: pointer;
+      width: 26px;
+      height: 26px;
+      svg {
+        width: 16px;
+        height: 16px;
+        color: var(--link2);
+        margin-bottom: 2px;
+        margin-left: 2px;
+      }
+      &:hover {
+        color: var(--link1);
+      }
+    }
+  }
+
+  .profile-card-location-input-wrap {
+    margin-top: 4px;
+    .profile-card-icon-location {
+      vertical-align: bottom;
+      display: inline-block;
+      width: 18px;
+      height: 26px;
+      margin-left: 6px;
+      svg {
+        color: var(--lightest);
+        width: 18px;
+        height: 18px;
+        margin-top: 4px;
+      }
+    }
+
+    input {
+      vertical-align: bottom;
+      outline: none;
+      display: inline-block;
+      background-color: var(--medium);
+      color: var(--lightest);
+      font-size: 15px;
+      border-radius: 16px;
+      border: 1px solid var(--light);
+      &.error {
+        border: 1px solid var(--error);
+        &::placeholder {
+          color: var(--error2);
+        }
+      }
+      padding: 3px 6px;
+      width: 200px;
+      &::placeholder {
+        color: var(--light);
+      }
+      animation: slide-input-profile-card-city 0.4s ease-out;
+    }
+  }
+
+  .profile-card-name-input-wrap {
+    input {
+      vertical-align: bottom;
+      outline: none;
+      display: inline-block;
+      background-color: var(--medium);
+      color: var(--lightest);
+      font-size: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--light);
+      &.error {
+        border: 1px solid var(--error);
+        &::placeholder {
+          color: var(--error2);
+        }
+      }
+      padding: 3px 6px;
+      width: 280px;
+      font-weight: bold;
+      &::placeholder {
+        color: var(--light);
+      }
+      animation: slide-input-profile-card-name 0.4s ease-out;
+    }
+  }
+
+  .accept-button {
+    vertical-align: bottom;
+    display: inline-block;
+    padding: 2px;
+    cursor: pointer;
+    svg {
+      color: var(--link2);
+      width: 22px;
+      height: 22px;
+    }
+    &:hover {
+      svg {
+        color: var(--link1);
+      }
+    }
+  }
+
+  .cancel-button {
+    vertical-align: bottom;
+    display: inline-block;
+    padding: 2px;
+    cursor: pointer;
+    svg {
+      color: var(--error2);
+      width: 22px;
+      height: 22px;
+    }
+    &:hover {
+      svg {
+        color: var(--error);
+      }
+    }
+    animation: close-input-pop 0.8s ease-out;
+  }
+}
+
+.profile-card-refresh-icon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+  color: var(--link2);
+  &:hover {
+    color: var(--link1);
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  &.syncing {
+    animation: rotation-sync-profile 0.4s infinite linear;
+  }
+}
+
+.profile-card-stars {
+  line-height: 20px;
+  margin-left: 6px;
+  margin-top: 4px;
+
+  .profile-card-rating-text {
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 15px;
+    font-size: 15px;
+    color: var(--light);
+  }
+
+  .profile-card-star {
+    vertical-align: bottom;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    &.voted {
+      svg {
+        color: var(--link2);
+      }
+    }
+    &.notvoted {
+      svg {
+        color: var(--medium2);
+      }
+    }
+    &.can {
+      cursor: pointer;
+      svg {
+        color: var(--link2) !important;
+      }
+      &:hover {
+        svg {
+          color: var(--link1) !important;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotation-sync-profile {
+  0% {
+    transform: rotate(359deg) scale(1);
+    color: var(--link2);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    color: var(--link1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    color: var(--link2);
+  }
+}
+
+@keyframes slide-input-profile-card-name {
+  0% {
+    width: 140px;
+  }
+  80% {
+    width: 350px;
+  }
+  100% {
+    width: 280px;
+  }
+}
+
+@keyframes slide-input-profile-card-city {
+  0% {
+    width: 100px;
+  }
+  80% {
+    width: 260px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+
+@keyframes close-input-pop {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

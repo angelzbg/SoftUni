@@ -1,0 +1,207 @@
+.notif-wrapper {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  right: 16px;
+  top: 8px;
+
+  .bell {
+    cursor: pointer;
+    position: relative;
+    background-color: var(--medium);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--lightest);
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: var(--medium2);
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-top: 8px;
+      margin-left: 8px;
+    }
+    &.active {
+      color: var(--active);
+      background-color: var(--active-bgr);
+    }
+    .notif-count {
+      background-color: var(--error2);
+      color: var(--lightest);
+      width: max-content;
+      font-size: 13px;
+      font-weight: bold;
+      height: 18px;
+      border-radius: 9px;
+      position: absolute;
+      top: -4px;
+      left: -5px;
+      line-height: 18px;
+      padding-left: 4px;
+      padding-right: 6px;
+    }
+  }
+
+  .notif-container-wrap {
+    -webkit-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+    -moz-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+    box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+    animation: popup 0.2s;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    z-index: 2;
+    width: 360px;
+    background-color: var(--dark);
+    border-radius: 6px;
+    .notif-container {
+      position: relative;
+      margin: 0 3px 0 10px;
+      overflow-y: scroll;
+      max-height: calc(100vh - 100px);
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          background-color: var(--scroll1);
+        }
+      }
+      .notif-empty {
+        text-align: center;
+        font-size: 15px;
+        color: var(--light);
+        padding: 8px 0;
+        color: var(--link1);
+      }
+      .notif-header {
+        position: relative;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--lightest);
+        height: 24px;
+        line-height: 24px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+        padding-left: 12px;
+        .notif-sync {
+          position: absolute;
+          right: 5px;
+          top: 1px;
+          cursor: pointer;
+          color: var(--link1);
+          &:hover {
+            color: var(--link2);
+          }
+          &.notif-syncing {
+            animation: rotation-sync-notif-header 0.4s infinite linear;
+          }
+          svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+      .friend-request-wrap {
+        color: var(--lightest);
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: var(--medium);
+        }
+        border-radius: 8px;
+        margin-right: 3px;
+        &:last-child {
+          margin-bottom: 12px;
+        }
+        .friend-request-text {
+          font-size: 15px;
+          color: var(--lightest);
+          display: inline-block;
+          vertical-align: top;
+          margin-bottom: 12px;
+          margin-top: 10px;
+          position: relative;
+          margin-left: 10px;
+          margin-right: 10px;
+          //background-color: red;
+          width: calc(100% - 90px);
+          word-break: break-word;
+          .friend-request-date {
+            color: var(--light);
+            padding-top: 4px;
+            &.new {
+              font-weight: bold;
+              color: var(--link1);
+            }
+          }
+        }
+        .friend-request-avatar {
+          margin-top: 8px;
+          margin-left: 10px;
+          margin-bottom: 12px;
+          display: inline-block;
+          vertical-align: top;
+          position: relative;
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+          .friend-request-icon {
+            position: absolute;
+            bottom: 0px;
+            right: -4px;
+            width: 25px;
+            height: 25px;
+            background: rgb(30, 88, 210);
+            background: linear-gradient(360deg, rgba(30, 88, 210, 1) 0%, rgba(144, 208, 252, 1) 100%);
+            border-radius: 50%;
+            svg {
+              width: 15px;
+              height: 15px;
+              color: var(--lightest);
+              margin-top: 5px;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        //background-color: var(--link1);
+        background-color: transparent;
+        &:hover {
+          background-color: var(--scroll2);
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotation-sync-notif-header {
+  0% {
+    transform: rotate(359deg);
+    color: var(--link2);
+  }
+  50% {
+    transform: rotate(180deg);
+    color: var(--link1);
+  }
+  100% {
+    transform: rotate(0deg);
+    color: var(--link2);
+  }
+}

@@ -1,0 +1,16 @@
+.header-wrapper {
+  width: 100vw;
+  height: 56px;
+  background-color: var(--dark);
+  -webkit-box-shadow: 0 1px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  -moz-box-shadow: 0 1px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  box-shadow: 0 1px 2px var(--shadow1), 0 0 10px var(--shadow2);
+}
+
+.header-logo {
+  width: 41px;
+  height: 44px;
+  position: fixed;
+  top: 6px;
+  left: 16px;
+}

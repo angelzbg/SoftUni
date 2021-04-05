@@ -1,0 +1,152 @@
+.friends-wrapper {
+  width: 345px;
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  z-index: 1;
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scroll1);
+    }
+  }
+  /* width */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    //background-color: var(--link1);
+    background-color: transparent;
+    &:hover {
+      background-color: var(--scroll2);
+    }
+  }
+
+  .con-title {
+    margin-top: 8px;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--lightest);
+    margin-bottom: 8px;
+  }
+
+  .friends-connection {
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 8px;
+    padding-bottom: 4px;
+    transition: background-color 0.3s ease;
+    &.new {
+      animation: new-message-connections 1.9s linear infinite;
+    }
+    &:last-child {
+      margin-bottom: 8px;
+    }
+    &:hover {
+      background-color: var(--medium);
+      .con-chat {
+        background-color: var(--medium2);
+      }
+    }
+    .con-avatar {
+      vertical-align: top;
+      display: inline-block;
+      margin-top: 4px;
+      margin-left: 4px;
+      margin-bottom: 6px;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    .con-data {
+      vertical-align: top;
+      display: inline-block;
+      margin-left: 4px;
+      margin-top: 4px;
+
+      .con-name {
+        display: block;
+        font-size: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--lightest);
+        width: 245px;
+        a {
+          text-decoration: none;
+          color: var(--lightest);
+        }
+      }
+
+      .con-msg {
+        color: var(--lightest);
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 245px;
+        cursor: pointer;
+      }
+
+      .con-msg-date {
+        color: var(--light);
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 245px;
+        margin-bottom: 6px;
+        cursor: pointer;
+      }
+    }
+
+    .con-chat {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-top: 8px;
+      margin-left: 5px;
+      color: var(--light);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: var(--active-bgr);
+        color: var(--link1);
+      }
+      &.active {
+        background-color: var(--active-bgr) !important;
+        color: var(--link1) !important;
+        cursor: default !important;
+      }
+      svg {
+        width: 18px;
+        height: 18px;
+        margin-top: 6px;
+        margin-left: 6px;
+      }
+    }
+  }
+}
+
+@keyframes new-message-connections {
+  0% {
+    background-color: var(--active-bgr);
+  }
+  80% {
+    background-color: var(--medium);
+  }
+  100% {
+    background-color: var(--active-bgr);
+  }
+}

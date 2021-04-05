@@ -1,0 +1,214 @@
+.user-menu-wrapper {
+  top: 8px;
+  right: 16px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 3;
+  &.auth {
+    right: 64px;
+    .user-menu-pop {
+      right: -48px;
+    }
+  }
+  /*&.inactive {
+    &:hover {
+      //opacity: 0.9;
+    }
+  }*/
+  &.active {
+    .profile-icon {
+      -webkit-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+      -moz-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+      box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+      background-color: var(--active-bgr);
+      color: var(--active);
+      .user-menu-name {
+        color: var(--active);
+      }
+      &:hover {
+        background-color: var(--active-bgr);
+      }
+    }
+  }
+
+  .profile-icon {
+    background-color: var(--medium);
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: inline-block;
+    vertical-align: top;
+    transition: background-color 0.3s ease;
+    &.logged {
+      width: max-content;
+    }
+
+    &:hover {
+      background-color: var(--medium2);
+    }
+
+    .user-menu-avatar {
+      background-color: var(--medium);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+
+    .user-menu-name {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--lightest);
+      line-height: 40px;
+      height: 40px;
+      position: relative;
+      top: -10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    svg {
+      margin-top: 8px;
+      margin-left: 8px;
+      width: 25px;
+      height: 25px;
+    }
+    color: var(--light);
+  }
+}
+
+.user-menu-pop {
+  -webkit-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  -moz-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  animation: popup 0.2s;
+  cursor: default;
+  padding: 6px;
+  width: 280px;
+  background-color: var(--dark);
+  position: absolute;
+  right: 0;
+  top: 46px;
+  border-radius: 6px;
+  -webkit-box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+
+  .user-menu-separator {
+    height: 1px;
+    margin: 8px;
+    background-color: var(--medium);
+  }
+
+  .user-menu-item-me {
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--medium);
+    }
+
+    .user-menu-item-me-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .user-menu-item-me-info-wrapper {
+      display: inline-block;
+      position: absolute;
+      //top: 8px;
+      top: 14px;
+      left: 96px;
+      width: 176px;
+      margin: 0 auto;
+      //background-color: red;
+      .me-name {
+        color: var(--lightest);
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+      }
+      .me-type {
+        color: var(--light);
+        font-size: 15px;
+        display: block;
+      }
+      .me-star-count {
+        color: var(--light);
+        font-size: 14px;
+        position: relative;
+        top: -2px;
+      }
+      .me-star {
+        padding-top: 6px;
+        display: inline-block;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+        &.voted {
+          svg {
+            color: var(--link2);
+          }
+        }
+        &.notvoted {
+          svg {
+            color: var(--light);
+          }
+        }
+      }
+    }
+  }
+
+  .user-menu-item {
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--medium);
+    }
+
+    .user-menu-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--lightest);
+      background-color: var(--medium2);
+      display: inline-block;
+      border-radius: 50%;
+      background-clip: padding-box;
+      &.Light {
+        color: #ebcc67;
+      }
+      &.Dark {
+        color: #4e00ba;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        margin-top: 8px;
+        margin-left: 8px;
+      }
+    }
+
+    .user-menu-title {
+      display: inline-block;
+      font-size: 15px;
+      line-height: 36px;
+      height: 36px;
+      margin-left: 12px;
+      font-weight: bold;
+      color: var(--lightest);
+    }
+  }
+}

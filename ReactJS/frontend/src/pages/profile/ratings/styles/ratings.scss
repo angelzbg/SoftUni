@@ -1,0 +1,345 @@
+.ratings-profile-wrapper {
+  width: 220px;
+  min-height: 200px;
+  max-height: calc(100vh - 56px - 16px - 150px - 16px - 16px);
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+  -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+  box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+  background-color: var(--dark);
+  overflow-x: visible !important;
+
+  .profile-no-ratings {
+    text-align: center;
+    color: var(--light);
+    font-size: 16px;
+    font-weight: bold;
+    height: calc(200px - 13px - 40px);
+    svg {
+      width: 74px;
+      height: 74px;
+      color: var(--light);
+      margin-top: calc((200px - 13px - 40px - 93px) / 2);
+    }
+  }
+
+  .bottom-hr {
+    height: 1px;
+    width: 194px;
+    background-color: var(--medium2);
+    margin-left: 13px;
+    margin-bottom: 12px;
+    border-radius: 0.5px;
+  }
+
+  .ratings-wrapper {
+    margin-right: 4px;
+    overflow-y: scroll;
+    overflow-x: visible !important;
+    padding-right: 7px;
+    &.pop {
+      padding-left: 420px;
+      margin-left: -420px;
+    }
+    min-height: 147px;
+    max-height: calc(100vh - 56px - 16px - 150px - 16px - 16px - 13px - 40px);
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--scroll1);
+      }
+    }
+
+    .border {
+      height: 1px;
+      background-color: var(--medium);
+      margin-left: 27px;
+      margin-right: 12px;
+    }
+
+    .rating {
+      position: relative;
+      padding: 8px 8px 4px 8px;
+      margin-left: 15px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      border-radius: 8px;
+      -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+      -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+      box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+      overflow-x: visible !important;
+      &:hover {
+        background-color: var(--medium);
+      }
+      .by {
+        color: var(--lightest);
+        font-size: 15px;
+        width: fit-content;
+        .by-avatar {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          vertical-align: middle;
+          margin-right: 8px;
+        }
+      }
+      .how {
+        font-size: 14px;
+        margin-top: 4px;
+        color: var(--light);
+        padding-left: 28px;
+        svg {
+          color: var(--link1);
+          width: 14px;
+          height: 14px;
+          vertical-align: middle;
+        }
+      }
+      .when {
+        margin-top: 6px;
+        color: var(--light);
+        font-size: 12px;
+        text-align: right;
+      }
+
+      .profile-pop-wrap {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 180px;
+        width: 30px;
+        height: 73px;
+        background-color: transparent;
+        z-index: 1;
+        animation: popup-r-p 0.4s;
+
+        .arrow {
+          position: absolute;
+          width: 0;
+          height: 0;
+          margin-left: 9px;
+          margin-top: 10px;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-left: 8px solid var(--dark);
+          div {
+            position: absolute;
+            width: 0;
+            height: 0;
+            margin-left: -8px;
+            margin-top: -7px;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 7px solid var(--darker);
+          }
+        }
+
+        .profile-pop {
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          right: 20px;
+          min-width: 200px;
+          width: max-content;
+          height: auto;
+          background-color: var(--darker);
+          border-radius: 10px;
+          border: 1px solid var(--dark);
+          -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+          -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+          box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+          padding: 8px 8px 4px 8px;
+
+          .p-avatar {
+            width: 51px;
+            height: 51px;
+            border-radius: 50%;
+            display: inline-block;
+          }
+
+          .info {
+            display: inline-block;
+            //background-color: red;
+            vertical-align: top;
+            margin-left: 8px;
+            .name {
+              font-size: 15px;
+              font-weight: bold;
+              color: var(--lightest);
+              text-align: top;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+              svg.type {
+                width: 15px;
+                height: 15px;
+                margin-left: 8px;
+                margin-bottom: -2px;
+                color: var(--light);
+              }
+            }
+            .location {
+              font-size: 14px;
+              color: var(--light);
+              margin-top: 2px;
+              svg {
+                width: 14px;
+                height: 14px;
+                margin-right: 4px;
+                margin-bottom: 2px;
+              }
+            }
+            .p-stars {
+              margin-top: 2px;
+              &.voted {
+                svg {
+                  color: var(--link1);
+                }
+              }
+              svg {
+                color: var(--medium);
+                width: 15px;
+                height: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: var(--dark);
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      //background-color: var(--link1);
+      background-color: transparent;
+      &:hover {
+        background-color: var(--scroll2);
+      }
+    }
+  }
+
+  .rating-filter-profile {
+    height: 40px;
+    position: relative;
+    display: block;
+
+    .header-hr {
+      height: 1px;
+      width: 194px;
+      background-color: var(--medium2);
+      bottom: 0;
+      left: 13px;
+      position: absolute;
+    }
+
+    .rating-filter {
+      background-color: transparent;
+      line-height: 20px;
+      font-size: 16px;
+      position: absolute;
+      width: fit-content;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      .filter-name {
+        color: var(--link2);
+        cursor: pointer;
+        text-shadow: 1px 1px 1px var(--darker);
+        .name {
+          display: inline-block;
+          width: 60px;
+        }
+        &.open {
+          color: var(--link1);
+          cursor: default;
+        }
+      }
+      .filter-popup-wrap {
+        background-color: var(--darker);
+        padding: 8px 0;
+        margin-left: -9px;
+        border-radius: 8px;
+        border: 1px solid var(--dark);
+        -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+        -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+        box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+        animation: popup 0.2s;
+
+        .filter-popup {
+          cursor: pointer;
+          color: var(--light);
+          padding: 2px 8px;
+          .name {
+            display: inline-block;
+            width: 60px;
+          }
+          &:hover {
+            background-color: var(--medium);
+            color: var(--link2);
+          }
+        }
+      }
+    }
+
+    .refresh-icon {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      cursor: pointer;
+      color: var(--link2);
+      &:hover {
+        color: var(--link1);
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+      &.syncing {
+        animation: rotation-sync-profile 0.4s infinite linear;
+      }
+    }
+  }
+}
+
+@keyframes rotation-sync-profile {
+  0% {
+    transform: rotate(359deg) scale(1);
+    color: var(--link2);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    color: var(--link1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    color: var(--link2);
+  }
+}
+
+@keyframes popup-r-p {
+  0% {
+    opacity: 0;
+    transform: scaleX(0) scaleY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scaleX(0) scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}

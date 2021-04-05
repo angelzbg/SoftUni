@@ -1,0 +1,139 @@
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--darker);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content-wrapper {
+  //background-color: yellowgreen;
+  position: absolute;
+  top: 57px;
+  width: 670px;
+  height: calc(100vh - 57px);
+  left: calc((100vw - 657px) / 2);
+}
+
+.scroll-h {
+  overflow-y: auto;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    //border-radius: 4px;
+    background-color: var(--darker);
+    width: 10px;
+    &:hover {
+      background-color: var(--scroll);
+    }
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroll1);
+    border-radius: 4px;
+    &:hover {
+      background-color: var(--scroll2);
+    }
+  }
+}
+
+.comments-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  background-color: var(--blur);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.1s ease-out;
+  .box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark);
+    border: 1px solid var(--darker);
+    border-radius: 10px;
+    max-width: 300px;
+    -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+    -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+    box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+    .header {
+      margin: 8px 12px;
+      font-size: 15px;
+      color: var(--lightest);
+      display: flex;
+      align-items: center;
+      svg {
+        width: 16px;
+        height: 15px;
+        color: #fcba03;
+        margin-right: 4px;
+      }
+    }
+    .title {
+      font-size: 14px;
+      color: var(--lightest);
+      padding: 8px 12px;
+      border-top: 1px solid #fcba03;
+      border-bottom: 1px solid var(--medium2);
+    }
+    .buttons {
+      margin: 4px 12px 0px 0px;
+      button {
+        float: right;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+        font-size: 14px;
+        padding: 4px 8px;
+        font-weight: bold;
+        background-color: transparent;
+        margin-bottom: 4px;
+      }
+      .confirm {
+        background-color: var(--link2);
+        color: var(--lightest);
+        &:hover {
+          background-color: var(--link1);
+        }
+      }
+      .decline {
+        margin-left: 6px;
+        color: var(--link2);
+        &:hover {
+          color: var(--link1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes opacity-keyframe {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0.5;
+    transform: scaleX(0) scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}

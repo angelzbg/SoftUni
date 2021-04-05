@@ -1,0 +1,240 @@
+.activity-filter-wrapper {
+  width: 656px;
+  height: 32px;
+  position: relative;
+  margin-top: 8px;
+
+  .activity-filter {
+    width: max-content;
+    .activity-selected {
+      padding: 0 16px;
+      width: fit-content;
+      line-height: 32px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: transparent;
+      cursor: pointer;
+      color: var(--link1);
+    }
+    .activity-filters-wrap {
+      z-index: 1;
+      animation: popup 0.2s;
+      width: max-content;
+      background-color: var(--darker);
+      cursor: pointer;
+      position: absolute;
+      top: 32px;
+      border-radius: 10px;
+      font-size: 20px;
+      padding: 12px 0;
+      border: 1px solid var(--dark);
+      -webkit-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+      -moz-box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+      box-shadow: 0 1px 4px var(--shadow1), 0 0 40px var(--shadow2);
+      .activity-filter-option {
+        text-decoration: none;
+        display: block;
+        padding: 4px 24px 4px 12px;
+        color: var(--light);
+        &:hover {
+          background-color: var(--medium);
+          color: var(--link2);
+          svg {
+            color: var(--link2);
+          }
+        }
+        svg {
+          width: 18px;
+          height: 18px;
+          margin-bottom: 3px;
+          margin-right: 8px;
+          color: var(--link1);
+        }
+      }
+    }
+  }
+}
+
+.activity-comments-container {
+  width: 656px;
+  .activity-comment-wrap {
+    position: relative;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    &:hover {
+      background-color: var(--dark);
+    }
+    &:last-child {
+      margin-bottom: 35px;
+    }
+    .activity-comment-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-top: 12px;
+      margin-left: 12px;
+      margin-bottom: 20px;
+      vertical-align: top;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    .card-friends-linked {
+      position: absolute;
+      top: 70px;
+      left: 65px;
+      width: 30px;
+      height: 30px;
+      background: rgb(30, 88, 210);
+      background: linear-gradient(360deg, rgba(30, 88, 210, 1) 0%, rgba(144, 208, 252, 1) 100%);
+      border-radius: 50%;
+      text-align: center;
+      svg {
+        width: 20px;
+        height: 20px;
+        color: var(--lightest);
+        margin-top: 5px;
+      }
+    }
+    .card-request-from {
+      position: absolute;
+      top: 70px;
+      left: 65px;
+      width: 30px;
+      height: 30px;
+      background: rgb(30, 88, 210);
+      background: linear-gradient(360deg, rgba(30, 88, 210, 1) 0%, rgba(144, 208, 252, 1) 100%);
+      border-radius: 50%;
+      text-align: center;
+      svg {
+        width: 20px;
+        height: 20px;
+        color: var(--lightest);
+        margin-top: 5px;
+      }
+    }
+    .card-request-to {
+      position: absolute;
+      top: 70px;
+      left: 65px;
+      width: 30px;
+      height: 30px;
+      background: rgb(30, 88, 210);
+      background: linear-gradient(360deg, rgba(30, 88, 210, 1) 0%, rgba(144, 208, 252, 1) 100%);
+      border-radius: 50%;
+      text-align: center;
+      svg {
+        width: 20px;
+        height: 20px;
+        color: var(--lightest);
+        margin-top: 5px;
+      }
+    }
+    .activity-comment-info {
+      margin-top: 15px;
+      margin-left: 12px;
+      display: inline-block;
+      vertical-align: top;
+      width: 540px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      .title {
+        color: var(--lightest);
+        a {
+          text-decoration: none;
+          color: var(--lightest);
+        }
+      }
+      .content {
+        margin-top: 6px;
+        font-size: 15px;
+        color: var(--lightest);
+      }
+      .ratio {
+        margin-top: 6px;
+        color: var(--light);
+        font-size: 14px;
+        .likes {
+          display: inline-block;
+          color: var(--light);
+          font-size: 14px;
+          &.liked {
+            color: var(--link1);
+          }
+          svg {
+            width: 15px;
+            height: 15px;
+            margin-bottom: 2px;
+          }
+        }
+        .dislikes {
+          margin-left: 4px;
+          display: inline-block;
+          color: var(--light);
+          font-size: 14px;
+          &.disliked {
+            color: var(--error2);
+          }
+          svg {
+            width: 15px;
+            height: 15px;
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.activity-comments-paginate {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  .activity-comments-show {
+    display: inline-block;
+    width: max-content;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--link1);
+    &:hover {
+      color: var(--link2);
+    }
+  }
+}
+
+.activity-comments-paginating-info {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: var(--light);
+}
+
+.activity-comments-paginating {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 19px;
+  svg {
+    animation: rotation-a-c-p 0.8s infinite linear;
+    width: 20px;
+    height: 20px;
+    color: var(--link1);
+  }
+}
+
+@keyframes rotation-a-c-p {
+  0% {
+    transform: rotate(359deg) scale(1);
+    color: var(--link1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    color: var(--link2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    color: var(--link1);
+  }
+}

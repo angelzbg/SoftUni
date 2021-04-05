@@ -1,0 +1,172 @@
+.app-loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--medium2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: var(--blur);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.4s ease-out;
+
+  svg {
+    color: var(--link2);
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: calc((100vh - 20vmin) / 2);
+    margin-left: calc((100vw - 20vmin) / 2);
+    animation: rotation 2.3s infinite linear;
+  }
+}
+
+.page-loader {
+  width: 656px;
+  height: calc(100vh - 60px);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.4s ease-out;
+  position: relative;
+
+  svg {
+    color: var(--link2);
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: calc((100vh - 60px - 20vmin) / 2);
+    margin-left: calc((656px - 20vmin) / 2);
+    animation: rotation 2.3s infinite linear;
+  }
+}
+
+.developers-loader {
+  width: 656px;
+  height: calc(100vh - 100px);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.4s ease-out;
+  position: relative;
+
+  svg {
+    color: var(--link2);
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: calc((100vh - 100px - 20vmin) / 2);
+    margin-left: calc((656px - 20vmin) / 2);
+    animation: rotation 2.3s infinite linear;
+  }
+}
+
+.search-loader {
+  width: 656px;
+  height: calc(100vh - 220px);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.4s ease-out;
+  position: relative;
+
+  svg {
+    color: var(--link2);
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: calc((100vh - 220px - 20vmin) / 2);
+    margin-left: calc((656px - 20vmin) / 2);
+    animation: rotation 2.3s infinite linear;
+  }
+}
+
+.organizations-loader {
+  width: 656px;
+  height: calc(100vh - 100px);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.4s ease-out;
+  position: relative;
+
+  svg {
+    color: var(--link2);
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: calc((100vh - 100px - 20vmin) / 2);
+    margin-left: calc((656px - 20vmin) / 2);
+    animation: rotation 2.3s infinite linear;
+  }
+}
+
+.activity-loader {
+  width: 656px;
+  height: calc(100vh - 100px);
+  backdrop-filter: blur(2px);
+  animation: opacity-keyframe 0.4s ease-out;
+  position: relative;
+
+  svg {
+    color: var(--link2);
+    width: 20vmin;
+    height: 20vmin;
+    margin-top: calc((100vh - 100px - 20vmin) / 2);
+    margin-left: calc((656px - 20vmin) / 2);
+    animation: rotation 2.3s infinite linear;
+  }
+}
+
+.profile-loader {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: opacity-keyframe 0.4s ease-out;
+
+  svg {
+    color: var(--link2);
+    width: 75px;
+    height: 75px;
+    animation: rotation 2.3s infinite linear;
+    position: absolute;
+    top: calc((100% - 75px) / 2);
+    right: calc((100% - 75px) / 2);
+  }
+}
+
+.profile-comments-loader {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  animation: opacity-keyframe 0.4s ease-out;
+
+  svg {
+    color: var(--link2);
+    width: 75px;
+    height: 75px;
+    animation: rotation 2.3s infinite linear;
+    position: absolute;
+    top: calc((100% - 75px) / 2);
+    right: calc((100% - 75px) / 2);
+  }
+}
+
+.profile-ratings-loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: opacity-keyframe 0.4s ease-out;
+
+  svg {
+    color: var(--link2);
+    width: 75px;
+    height: 75px;
+    animation: rotation 2.3s infinite linear;
+    position: absolute;
+    top: calc((100% - 75px) / 2);
+    right: calc((100% - 75px) / 2);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(359deg) scale(1);
+    color: var(--link2);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    color: var(--link1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    color: var(--link2);
+  }
+}

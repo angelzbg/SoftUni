@@ -1,0 +1,181 @@
+.friends-wrapper {
+  width: 345px;
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  z-index: 1;
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+.friends-wrapper:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scroll1);
+}
+
+.friends-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.friends-wrapper::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.friends-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.friends-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll2);
+}
+
+.friends-wrapper .con-title {
+  margin-top: 8px;
+  margin-left: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--lightest);
+  margin-bottom: 8px;
+}
+
+.friends-wrapper .friends-connection {
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 8px;
+  padding-bottom: 4px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.friends-wrapper .friends-connection.new {
+  -webkit-animation: new-message-connections 1.9s linear infinite;
+          animation: new-message-connections 1.9s linear infinite;
+}
+
+.friends-wrapper .friends-connection:last-child {
+  margin-bottom: 8px;
+}
+
+.friends-wrapper .friends-connection:hover {
+  background-color: var(--medium);
+}
+
+.friends-wrapper .friends-connection:hover .con-chat {
+  background-color: var(--medium2);
+}
+
+.friends-wrapper .friends-connection .con-avatar {
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 4px;
+  margin-left: 4px;
+  margin-bottom: 6px;
+}
+
+.friends-wrapper .friends-connection .con-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.friends-wrapper .friends-connection .con-data {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+.friends-wrapper .friends-connection .con-data .con-name {
+  display: block;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--lightest);
+  width: 245px;
+}
+
+.friends-wrapper .friends-connection .con-data .con-name a {
+  text-decoration: none;
+  color: var(--lightest);
+}
+
+.friends-wrapper .friends-connection .con-data .con-msg {
+  color: var(--lightest);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 245px;
+  cursor: pointer;
+}
+
+.friends-wrapper .friends-connection .con-data .con-msg-date {
+  color: var(--light);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 245px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.friends-wrapper .friends-connection .con-chat {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  margin-left: 5px;
+  color: var(--light);
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.friends-wrapper .friends-connection .con-chat:hover {
+  background-color: var(--active-bgr);
+  color: var(--link1);
+}
+
+.friends-wrapper .friends-connection .con-chat.active {
+  background-color: var(--active-bgr) !important;
+  color: var(--link1) !important;
+  cursor: default !important;
+}
+
+.friends-wrapper .friends-connection .con-chat svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+@-webkit-keyframes new-message-connections {
+  0% {
+    background-color: var(--active-bgr);
+  }
+  80% {
+    background-color: var(--medium);
+  }
+  100% {
+    background-color: var(--active-bgr);
+  }
+}
+
+@keyframes new-message-connections {
+  0% {
+    background-color: var(--active-bgr);
+  }
+  80% {
+    background-color: var(--medium);
+  }
+  100% {
+    background-color: var(--active-bgr);
+  }
+}
+/*# sourceMappingURL=friends.css.map */

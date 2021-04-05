@@ -1,0 +1,65 @@
+.navigation-wrapper {
+  height: 56px;
+  position: absolute;
+  width: calc(100vw - 108px);
+  top: 0;
+  left: 52px;
+  text-align: center;
+}
+
+.navigation-wrapper .nav-icon-link {
+  width: 125px;
+  height: 41px;
+  margin-top: 4px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 8px;
+  padding-top: 8px;
+  text-decoration: none;
+}
+
+.navigation-wrapper .nav-icon-link:hover .tip-navigation {
+  display: block;
+}
+
+.navigation-wrapper .nav-icon-link.inactive {
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-wrapper .nav-icon-link.inactive:hover {
+  border-radius: 8px;
+  background-color: var(--medium);
+}
+
+.navigation-wrapper .nav-icon-link.active {
+  height: 40px;
+  border-bottom: 4px solid var(--link1);
+}
+
+.navigation-wrapper .nav-icon-link.active svg {
+  color: var(--link1);
+}
+
+.navigation-wrapper .nav-icon-link:first-child {
+  margin-left: 0;
+}
+
+.navigation-wrapper .nav-icon-link svg {
+  color: var(--light);
+}
+
+.navigation-wrapper .nav-icon-link .tip-navigation {
+  width: 109px;
+  border-radius: 8px;
+  padding: 4px 8px 5px 8px;
+  color: var(--darker);
+  background-color: var(--lightest);
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+  position: absolute;
+  display: none;
+  z-index: 2;
+}
+/*# sourceMappingURL=navigation.css.map */

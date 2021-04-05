@@ -1,0 +1,256 @@
+.notif-wrapper {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  right: 16px;
+  top: 8px;
+}
+
+.notif-wrapper .bell {
+  cursor: pointer;
+  position: relative;
+  background-color: var(--medium);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--lightest);
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.notif-wrapper .bell:hover {
+  background-color: var(--medium2);
+}
+
+.notif-wrapper .bell svg {
+  width: 24px;
+  height: 24px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.notif-wrapper .bell.active {
+  color: var(--active);
+  background-color: var(--active-bgr);
+}
+
+.notif-wrapper .bell .notif-count {
+  background-color: var(--error2);
+  color: var(--lightest);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 13px;
+  font-weight: bold;
+  height: 18px;
+  border-radius: 9px;
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  line-height: 18px;
+  padding-left: 4px;
+  padding-right: 6px;
+}
+
+.notif-wrapper .notif-container-wrap {
+  -webkit-box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  box-shadow: 0 0px 2px var(--shadow1), 0 0 10px var(--shadow2);
+  -webkit-animation: popup 0.2s;
+          animation: popup 0.2s;
+  position: absolute;
+  right: 0;
+  top: 46px;
+  z-index: 2;
+  width: 360px;
+  background-color: var(--dark);
+  border-radius: 6px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container {
+  position: relative;
+  margin: 0 3px 0 10px;
+  overflow-y: scroll;
+  max-height: calc(100vh - 100px);
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+.notif-wrapper .notif-container-wrap .notif-container:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scroll1);
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .notif-empty {
+  text-align: center;
+  font-size: 15px;
+  color: var(--light);
+  padding: 8px 0;
+  color: var(--link1);
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .notif-header {
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--lightest);
+  height: 24px;
+  line-height: 24px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  padding-left: 12px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .notif-header .notif-sync {
+  position: absolute;
+  right: 5px;
+  top: 1px;
+  cursor: pointer;
+  color: var(--link1);
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .notif-header .notif-sync:hover {
+  color: var(--link2);
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .notif-header .notif-sync.notif-syncing {
+  -webkit-animation: rotation-sync-notif-header 0.4s infinite linear;
+          animation: rotation-sync-notif-header 0.4s infinite linear;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .notif-header .notif-sync svg {
+  width: 22px;
+  height: 22px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap {
+  color: var(--lightest);
+  text-decoration: none;
+  display: block;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  margin-right: 3px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap:hover {
+  background-color: var(--medium);
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap:last-child {
+  margin-bottom: 12px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-text {
+  font-size: 15px;
+  color: var(--lightest);
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 12px;
+  margin-top: 10px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: calc(100% - 90px);
+  word-break: break-word;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-text .friend-request-date {
+  color: var(--light);
+  padding-top: 4px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-text .friend-request-date.new {
+  font-weight: bold;
+  color: var(--link1);
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-avatar {
+  margin-top: 8px;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-avatar .friend-request-icon {
+  position: absolute;
+  bottom: 0px;
+  right: -4px;
+  width: 25px;
+  height: 25px;
+  background: #1e58d2;
+  background: -webkit-gradient(linear, left bottom, left top, from(#1e58d2), to(#90d0fc));
+  background: linear-gradient(360deg, #1e58d2 0%, #90d0fc 100%);
+  border-radius: 50%;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container .friend-request-wrap .friend-request-avatar .friend-request-icon svg {
+  width: 15px;
+  height: 15px;
+  color: var(--lightest);
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.notif-wrapper .notif-container-wrap .notif-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll2);
+}
+
+@-webkit-keyframes rotation-sync-notif-header {
+  0% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+    color: var(--link2);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    color: var(--link1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    color: var(--link2);
+  }
+}
+
+@keyframes rotation-sync-notif-header {
+  0% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+    color: var(--link2);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    color: var(--link1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    color: var(--link2);
+  }
+}
+/*# sourceMappingURL=notif.css.map */
