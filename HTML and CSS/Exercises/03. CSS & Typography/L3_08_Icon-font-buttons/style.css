@@ -1,0 +1,22 @@
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+
+html {
+  font-size: 16px;
+  line-height: 2;
+}
+a:link {
+  text-decoration: none;
+}
+
+.button {
+  color: white;
+  padding: 0.5em;
+}
+
+p:nth-child(1) {
+  background: green;
+}
+
+p:nth-child(2) {
+  background: orange;
+}
