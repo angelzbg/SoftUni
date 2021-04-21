@@ -1,0 +1,4 @@
+.gallery li {
+    display: inline-block;
+    border: 0.4rem solid black;
+}
