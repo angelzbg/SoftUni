@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+  padding: 5px;
+  border: 2px solid #000;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(238, 238, 238);
+}
+
+main {
+  width: 70%;
+}
+
+main,
+aside {
+  display: inline-block;
+}
+
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Georgia, serif;
+}
+
+.site-title {
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 50px;
+  padding-bottom: 0.5em;
+}
+
+.clear-fix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.pull-right {
+  float: right;
+  margin-left: 20px;
+}
+
+.pull-left {
+  float: left;
+  margin-right: 20px;
+}
+
+.page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 100px, 0;
+}
+
+header {
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+}
+
+header li {
+  display: inline-block;
+  padding-right: 10px;
+  color: green;
+}
+
+header ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4em;
+}
+
+.quote-and-description > p,
+.quote-and-description > blockquote {
+  width: 50%;
+  margin: 0;
+}
+
+.quote-and-description > p {
+  padding-right: 20px;
+}
+
+.quote-and-description blockquote {
+  padding-left: 20px;
+  border-left: 2px solid #ccc;
+}
+
+.quote-and-description blockquote p {
+  width: 100%;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+}
+
+blockquote footer {
+  text-align: right;
+}
+
+blockquote p {
+  margin-top: 0;
+}
+
+aside {
+  vertical-align: top;
+  width: 30%;
+  float: right;
+  padding-left: 5em;
+  padding-top: 2em;
+}
+
+aside a {
+  color: green;
+}

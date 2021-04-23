@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(238, 238, 238);
+}
+
+section {
+  background: rgb(255, 255, 255);
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+section div:nth-child(1) img {
+  position: absolute;
+}
+
+section div:nth-child(2) {
+  margin-top: 333px;
+  padding: 1px 20px 20px 20px;
+}
+
+section div:nth-child(2) button {
+  background-color: rgb(0, 153, 0);
+  border: 0;
+  padding: 7px 10px;
+  color: #fff;
+  border-radius: 3px;
+  margin-left: auto;
+  display: block;
+}

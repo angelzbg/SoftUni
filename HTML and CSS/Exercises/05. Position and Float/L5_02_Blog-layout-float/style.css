@@ -1,0 +1,47 @@
+html {
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+header p.site-title {
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+section::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+section:nth-child(1) img {
+  position: relative;
+  float: right;
+}
+
+section:nth-child(2) blockquote {
+  position: relative;
+  float: right;
+  width: 50%;
+  font-family: Georgia, serif;
+}
+
+section:nth-child(3) img {
+  position: relative;
+  float: left;
+}
+
+aside {
+  float: right;
+  position: relative;
+}
