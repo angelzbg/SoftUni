@@ -1,0 +1,9 @@
+body,
+ul,
+li {
+  display: flex;
+}
+ul {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

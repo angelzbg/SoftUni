@@ -1,0 +1,23 @@
+body {
+  padding: 2rem;
+}
+
+header {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+
+header > h1 {
+  flex-grow: 1;
+  text-transform: uppercase;
+}
+
+header > nav > ul {
+  display: flex;
+  list-style: none;
+}
+
+header > nav > ul > li > a {
+  color: rgb(0, 153, 0);
+}

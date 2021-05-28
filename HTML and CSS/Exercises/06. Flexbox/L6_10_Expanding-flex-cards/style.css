@@ -1,0 +1,36 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: rgb(238, 238, 238);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  max-width: 60%;
+}
+
+div {
+  background: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  flex: 1 1 10px;
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  justify-content: center;
+}
+
+.expanding {
+  flex: 4 4 10px;
+}
+
+img {
+  flex-basis: 90%;
+}
