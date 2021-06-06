@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font: 16px/1.5 Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body,
+form,
+input,
+textarea,
+option,
+select,
+button {
+  font: inherit;
+}
+
+p,
+ul,
+ol {
+  padding-bottom: 1.5em;
+}
+
+ul,
+ol {
+  padding-left: 2.5em;
+}
+
+p.site-title {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-size: 45px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  html {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+img {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: 1em/1.2 Georgia, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  padding: 0 2.5em;
+  border-left: 2px rgb(221, 221, 221) solid;
+  font-style: italic;
+}
+
+blockquote p.quote-author {
+  padding-bottom: 0;
+  text-align: right;
+}
+
+.first-section {
+  display: inline-block;
+}
+
+.first-section img {
+  float: right;
+  padding: 0.5em;
+  background-color: white;
+  border: 2px solid black;
+  margin-left: 1em;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.second-section p {
+  display: inline-block;
+  width: 100%;
+}
+.second-section .half-section-paragraph {
+  width: 50%;
+}
+
+.second-section .half-section-quote {
+  float: right;
+  width: 30%;
+}
+
+.third-section {
+  width: 100%;
+}
+
+.third-section img {
+  float: left;
+  padding: 0.5em;
+  background-color: white;
+  border: 2px solid black;
+  margin-right: 1em;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.header {
+  flex: 0 0 100%;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}

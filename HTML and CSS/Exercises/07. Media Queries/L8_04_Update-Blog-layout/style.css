@@ -1,0 +1,172 @@
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+  font-family: Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 3em;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.page > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.page-nav {
+  padding-right: 0;
+}
+
+.page-nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+.page-nav > ul {
+  padding: 0.5em;
+  background-color: white;
+}
+
+.page-nav ul::after {
+  content: '';
+  display: block;
+  clear: left;
+}
+
+.page-nav li {
+  list-style: none outside;
+}
+
+.page-nav > ul > li {
+  display: block;
+  float: left;
+}
+
+.page-nav > ul > li > ul {
+  display: none; /*hide inner ul*/
+}
+
+.page-nav ul ul {
+  position: absolute; /*the inner ul will not play a part in resizing*/
+}
+
+.page-nav li:hover ul {
+  display: block;
+}
+
+.page-nav a {
+  display: block; /*take up the li space*/
+  background-color: black;
+  color: white;
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  border-radius: 0.25em;
+}
+
+.page-nav a:hover {
+  background-color: green;
+}
+
+blockquote,
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+}
+
+blockquote {
+  font-style: italic;
+  box-sizing: border-box;
+  width: 50%;
+  display: block;
+}
+
+blockquote cite {
+  padding: 1em;
+}
+
+.page-title {
+  font-family: Helvetica, serif;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (min-width: 800px) {
+  .page-header {
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: 0.25em;
+  }
+
+  label {
+    display: none;
+  }
+
+  .page > main {
+    flex-basis: 65%;
+  }
+
+  .page > aside {
+    flex-basis: 25%;
+  }
+}
+
+@media (max-width: 800px) {
+  .page-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .page-nav {
+    width: 80%;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: gray;
+    border-bottom-color: gray;
+    border-top-width: 0.2em;
+    border-bottom-width: 0.2em;
+  }
+
+  .page-nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .page-nav > ul > * {
+    flex-basis: 100%;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+}

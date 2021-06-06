@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap');
+@import url(https://use.fontawesome.com/releases/v5.8.2/css/all.css);
+
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: PT Sans, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: PT Serif, serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.8em;
+}
+h3 {
+  font-size: 1.6em;
+}
+h4 {
+  font-size: 1.4em;
+}
+h5 {
+  font-size: 1.2em;
+}
+h6 {
+  font-size: 1em;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.site {
+  background: white;
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+header {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+header div.site-title {
+  flex: 0 0 40%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header div.site-title h2 {
+  color: rgb(128, 0, 128);
+  flex: 1 1 100%;
+  margin-bottom: 0;
+}
+
+header div.site-title p {
+  font-size: 0.6rem;
+}
+
+header nav {
+  flex: 0 0 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+section.website {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+}
+
+section.website .content {
+  flex: 0 1 30%;
+  margin-right: 2rem;
+}
+
+section.website i {
+  font-size: 6rem;
+}
+
+section.website button {
+  border: 1px solid black;
+  padding: 0.2rem;
+  background: white;
+  cursor: pointer;
+}
+
+.team {
+  text-align: center;
+}
+
+.team h2 {
+  margin-bottom: 2rem;
+}
+
+section.team .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 0 33%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.card .media {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 30%;
+  max-width: 124px;
+  max-height: 124px;
+  margin-bottom: 1rem;
+}
+
+.card .content {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card .content .name {
+  font-weight: bold;
+  margin-bottom: 0;
+  flex: 1 1 100%;
+}
+
+.card .content .job {
+  flex: 1 1 100%;
+}
+
+.card .content .about-person {
+  font-style: italic;
+  flex: 0 0 40%;
+}
+
+.newsletter {
+  background: rgb(104, 52, 123);
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 0;
+}
+
+.newsletter h2 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter form p {
+  margin: 0;
+  flex: 0 0 20%;
+  display: flex;
+}
+
+.newsletter form input[type='email'] {
+  padding: 0.2rem;
+  margin-right: 1rem;
+  flex: 0 0 80%;
+}
+
+.newsletter form input[type='submit'] {
+  border: 1px solid black;
+  padding: 0.2rem;
+  background: white;
+  cursor: pointer;
+}
+
+.testimonial {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.testimonial h2 {
+  margin-bottom: 2rem;
+}
+
+.testimonial .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer {
+  border-top: 1px solid grey;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(104, 52, 123);
+}
+
+footer p,
+footer h3,
+footer a {
+  color: white;
+  font-weight: 400;
+}
+
+footer .description {
+  flex: 0 0 30%;
+}
+
+footer .contacts {
+  flex: 0 0 20%;
+}
+
+footer .sitemap {
+  flex: 1 1 auto;
+}
+
+footer .description p {
+  width: 40%;
+}
+footer .contacts p {
+  margin-bottom: 0.1rem;
+}
+
+footer .sitemap {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+footer .sitemap h3 {
+  flex: 1 1 100%;
+}
+
+footer .sitemap ul {
+  flex: 0 0 30%;
+}
+
+footer .sitemap ul li {
+  list-style: none;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+@media (min-width: 800px) {
+  label {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  /*Resposive nav*/
+  header {
+    flex-wrap: wrap;
+  }
+
+  header .site-title {
+    flex: 1 1 100%;
+  }
+
+  header nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  input + header nav ul {
+    display: none;
+  }
+
+  input:checked + header nav label {
+    display: block;
+    font-weight: bold;
+  }
+
+  input:checked + header nav ul {
+    flex: 1 1 100%;
+    display: block;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  header nav ul li:first-child {
+    margin-top: 0.5rem;
+  }
+
+  header nav ul li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  section.website .content {
+    flex: 0 0 80%;
+  }
+
+  .card {
+    flex: 0 0 50%;
+  }
+
+  .card .content .about-person {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+
+  section.website i {
+    font-size: 3rem;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+
+  footer h3 {
+    margin-top: 1rem;
+  }
+
+  footer .description {
+    flex: 0 0 100%;
+  }
+
+  footer .description p {
+    width: 100%;
+  }
+
+  footer .contacts {
+    flex: 0 0 100%;
+  }
+
+  footer .sitemap {
+    flex: 0 0 100%;
+  }
+
+  footer .sitemap ul {
+    flex: 0 0 50%;
+  }
+}
