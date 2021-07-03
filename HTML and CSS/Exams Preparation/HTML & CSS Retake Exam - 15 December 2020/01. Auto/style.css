@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.3/css/all.css');
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  color: #707070;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #222222;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  margin-bottom: 1.3rem;
+}
+
+.auto-wrapper {
+  display: flex;
+  padding: 42px 213px;
+  justify-content: space-between;
+  line-height: 1.37;
+}
+
+.auto-wrapper article:nth-child(1) {
+  margin-right: 51px;
+}
+
+.auto-wrapper article:nth-child(2) {
+  margin-right: 21px;
+}
+
+.info-list {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 42px;
+}
+
+.info-list > li {
+  display: flex;
+}
+
+.info-list > li:not(first-child) {
+  margin-top: 24px;
+}
+
+.info-list > li > img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.info-list > li > div > h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #222222;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.info-list > li > div > p {
+  margin: 0;
+  padding: 0;
+}
